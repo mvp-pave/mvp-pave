@@ -1,6 +1,7 @@
 var router = require('express').Router();
 
 router
-  .route('/restaurants')
+  .route('/search')
+  .get(getProducts)
 
 module.exports = router;

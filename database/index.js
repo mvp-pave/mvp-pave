@@ -1,31 +1,49 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/mvp');
 
 var db = mongoose.connection;
 
-db.on('error', function() {
+db.on('error', function () {
   console.log('mongoose connection error');
 });
 
-db.once('open', function() {
+db.once('open', function () {
   console.log('mongoose connected successfully');
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var resturantSchema = mongoose.Schema({
+  ID: Number,
+  price: String,
+  name: String,
+  url: String,
+  phone: String,
+  display_phone: String,
+  categories: [],
+  rating: Number,
+  city: String,
+  display_address: String,
+  photos: [],
+  hours: [],
+  img_url: String,
+  review_count: Number,
+  num_recommendations: Number,
+  who_recommended: []
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var Resturant = mongoose.model('Resturant', resturantSchema);
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
-};
+var userSchema = mongoose.Schema({
+  ID: Number,
+  username: String,
+  profile_picture: String,
+  bio: String,
+  recommendations: [],
+  past_visited: [],
+  follows: [],
+  followed_by: [],
+  posts: []
+});
 
-module.exports.selectAll = selectAll;
+var User = mongoose.model('User', userSchema);
+
+module.exports = { Resturant, User };
