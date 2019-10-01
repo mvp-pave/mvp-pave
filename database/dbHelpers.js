@@ -1,44 +1,47 @@
-const { Resturant, User } = require('./index.js');
+const { Restaurant, User } = require('./index.js');
 
-const postResturant = (ID, num_recommendations, who_recommended) => {
-  //when user adds resturant to reccomendations or takes off reccomendations
-  return Resturant.create({ ID, num_recommendations, who_recommended })
+const postRestaurant = (ID, num_recommendations, who_recommended) => {
+  //when user adds restaurant to recommendation for the first time for the restaurant
+  return Restaurant.create({ ID, num_recommendations, who_recommended })
+}
+
+const updateRestaurant = (ID, num_recommendations, who_recommended) => {
+  //when user adds restaurant to recommendation or takes off recommendations when the restaurant is already in db
+  return Restaurant.findOneAndUpdate({ ID }, { num_recommendations, who_recommended })
 }
 
 const updateUserRec = (ID, recommendations) => {
-  //when user adds resturant to reccomendations or takes off reccomendations
-  return Resturant.findOneAndUpdate({ ID }, { recommendations })
+  //when user adds restaurant to recommendation or takes off recommendation
+  return User.findOneAndUpdate({ ID }, { recommendations })
 }
 
-// const getResturantsByLocation = (city) => {
+// const getRestaurantsByLocation = (city) => {
 //   //when user searches
-//   return Resturant.find({city}).limit(20);
+//   return Restaurant.find({city}).limit(20);
 // };
 
-// const getOneResturant = (ID) => {
-//   //when user clicks on a resturant
-//   return Resturant.findOne({ ID }).limit(1);
+// const getOneRestaurant = (ID) => {
+//   //when user clicks on a restaurant
+//   return Restaurant.findOne({ ID }).limit(1);
 // };
 
 // const getRandomNum = (min, max) => {
 //   return Math.ceil(Math.random() * (max - min) + min);
 // }
 
-// const getRandomResturants = () => {
+// const getRandomRestaurants = () => {
 //   //incomplete for main page when user sees main global page
-//   return Resturant.find({ })
+//   return Restaurant.find({ })
 // }
 
 const getOneUser = (ID) => {
   return User.findOne({ ID });
 };
 
-const postUser = (ID, username, profile_picture, bio, recommendations,
-  past_visited, follows, followed_by, posts) => {
+const postUser = (ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts) => {
   //when user creates account or logins first time using fb
   return User.create({
-    ID, username, profile_picture, bio, recommendations,
-    past_visited, follows, followed_by, posts
+    ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts
   });
 };
 
@@ -73,11 +76,12 @@ const updateUserPic = (ID, profile_picture) => {
 };
 
 module.exports = {
-  updateResturant,
+  postRestaurant,
+  updateRestaurant,
   updateUserRec,
-  // getResturantsByLocation,
-  // getOneResturant,
-  // getRandomResturants,
+  // getRestaurantsByLocation,
+  // getOneRestaurant,
+  // getRandomRestaurants,
   getOneUser,
   postUser,
   updateUserPast,
