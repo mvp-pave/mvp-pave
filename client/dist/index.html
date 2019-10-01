@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <!-- <link rel="icon" href="./images/icon.jpg"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pavé</title>
 </head>
+
 <body>
-<div id="app"></div>
-<script type="text/javascript" src="bundle.js"></script>
+  <div class="fec-container">
+    <div id='app'></div>
+
+  </div>
+  <script>
+    window.onscroll = function () { myFunction() };
+
+    var navbar = document.getElementById("full-topbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
 </body>
+
 </html>
