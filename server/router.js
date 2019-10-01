@@ -1,6 +1,4 @@
-const router = require('express').Router()
-const getProducts = require('./controller.js');
-
+var router = require('express').Router();
 
 router
   .route('/search')
