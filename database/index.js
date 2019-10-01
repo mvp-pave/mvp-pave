@@ -13,19 +13,6 @@ db.once('open', function () {
 
 var resturantSchema = mongoose.Schema({
   ID: Number,
-  price: String,
-  name: String,
-  url: String,
-  phone: String,
-  display_phone: String,
-  categories: [],
-  rating: Number,
-  city: String,
-  display_address: String,
-  photos: [],
-  hours: [],
-  img_url: String,
-  review_count: Number,
   num_recommendations: Number,
   who_recommended: []
 });
