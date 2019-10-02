@@ -1,32 +1,32 @@
-const { Resturant, User } = require('./index.js');
+const { Restaurant, User } = require('./index.js');
 
-const postResturant = (ID, num_recommendations, who_recommended) => {
-  //when user adds resturant to reccomendations or takes off reccomendations
-  return Resturant.create({ ID, num_recommendations, who_recommended })
+const postRestaurant = (ID, num_recommendations, who_recommended) => {
+  //when user adds restaurant to reccomendations or takes off reccomendations
+  return Restaurant.create({ ID, num_recommendations, who_recommended })
 }
 
 const updateUserRec = (ID, recommendations) => {
-  //when user adds resturant to reccomendations or takes off reccomendations
-  return Resturant.findOneAndUpdate({ ID }, { recommendations })
+  //when user adds restaurant to reccomendations or takes off reccomendations
+  return Restaurant.findOneAndUpdate({ ID }, { recommendations })
 }
 
-// const getResturantsByLocation = (city) => {
+// const getRestaurantsByLocation = (city) => {
 //   //when user searches
-//   return Resturant.find({city}).limit(20);
+//   return Restaurant.find({city}).limit(20);
 // };
 
-// const getOneResturant = (ID) => {
-//   //when user clicks on a resturant
-//   return Resturant.findOne({ ID }).limit(1);
+// const getOneRestaurant = (ID) => {
+//   //when user clicks on a restaurant
+//   return Restaurant.findOne({ ID }).limit(1);
 // };
 
 // const getRandomNum = (min, max) => {
 //   return Math.ceil(Math.random() * (max - min) + min);
 // }
 
-// const getRandomResturants = () => {
+// const getRandomRestaurants = () => {
 //   //incomplete for main page when user sees main global page
-//   return Resturant.find({ })
+//   return Restaurant.find({ })
 // }
 
 const getOneUser = (ID) => {
@@ -73,11 +73,11 @@ const updateUserPic = (ID, profile_picture) => {
 };
 
 module.exports = {
-  updateResturant,
+  updateRestaurant,
   updateUserRec,
-  // getResturantsByLocation,
-  // getOneResturant,
-  // getRandomResturants,
+  // getRestaurantsByLocation,
+  // getOneRestaurant,
+  // getRandomRestaurants,
   getOneUser,
   postUser,
   updateUserPast,
@@ -85,5 +85,6 @@ module.exports = {
   updateUserFollowedBy,
   updateUserBio,
   updateUserPost,
-  updateUserPic
+  updateUserPic,
+  postRestaurant
 }

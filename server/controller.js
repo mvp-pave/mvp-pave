@@ -1,9 +1,9 @@
 const { 
-  updateResturant,
+  updateRestaurant,
   updateUserRec,
-  // getResturantsByLocation,
-  // getOneResturant,
-  // getRandomResturants,
+  // getRestaurantsByLocation,
+  // getOneRestaurant,
+  // getRandomRestaurants,
   getOneUser,
   postUser,
   updateUserPast,
@@ -11,6 +11,7 @@ const {
   updateUserFollowedBy,
   updateUserBio,
   updateUserPost,
-  updateUserPic 
+  updateUserPic,
+  postRestaurant
 } = require('../database/dbHelpers.js');
 
