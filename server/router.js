@@ -13,7 +13,8 @@ let {
   updateUserFollowedBy,
   updateUserBio,
   // updateUserPost,
-  updateUserPic
+  updateUserPic,
+  yelpRecs
 } = require('./controller.js')
 
 router
@@ -46,6 +47,11 @@ router
 router 
   .route('/pic/:ID')
     .put(updateUserPic)
+
+
+// router  
+//   .route('/yelp')
+//   .get(yelpRecs)
 
 module.exports = router;
 
