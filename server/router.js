@@ -1,6 +1,7 @@
 var router = require('express').Router();
 let {
   postRestaurant,
+  getUsers,
   updateRestaurant,
   updateUserRec,
   // getRestaurantsByLocation,
@@ -13,8 +14,9 @@ let {
   updateUserFollowedBy,
   updateUserBio,
   // updateUserPost,
-  updateUserPic,
-  yelpRecs
+  yelpRecs,
+  updateUserPass,
+  updateUserPic
 } = require('./controller.js')
 
 router
@@ -23,6 +25,7 @@ router
     .put(updateRestaurant)
 router
     .route('/user')
+    .get(getUsers)
     .post(postUser)
 router
   .route('/rec/:ID')
@@ -44,6 +47,9 @@ router
     .put(updateUserBio)
   // .route('/userPost')
   //   .put(updateUserPost)
+router
+  .route('/pass/:ID')
+    .put(updateUserPass)
 router 
   .route('/pic/:ID')
     .put(updateUserPic)

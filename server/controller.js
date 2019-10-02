@@ -6,12 +6,14 @@ const {
   // getOneRestaurant,
   // getRandomRestaurants,
   getOneUser,
+  getAllUsers,
   postUser,
   updateUserPast,
   updateUserFollowing,
   updateUserFollowedBy,
   updateUserBio,
-  updateUserPost,
+  // updateUserPost,
+  updateUserPass,
   updateUserPic
 } = require('../database/dbHelpers.js');
 
@@ -52,6 +54,11 @@ let controller = {
       .then((data) => res.status(200).send(data))
       .catch((err) => res.status(400).send(err))
   },
+  getUsers: (req, res) => {
+    getAllUsers()
+    .then((data) => res.status(200).send(data))
+    .catch((err) => res.status(400).send(err))
+  },
   updateUserPast: (req, res) => {
     let { ID } = req.params;
     let { past_visited } = req.body;
@@ -79,6 +86,13 @@ let controller = {
     updateUserBio(ID, bio)
       .then(() => res.status(200).send('User Bio Updated!'))
       .catch((err) => res.status(400).send(err))
+  },
+  updateUserPass: (req, res) => {
+    let { ID } = req.params;
+    let { password } = req.body;
+    updateUserBio(ID, password)   
+    .then(() => res.status(200).send('User Password Updated!'))
+    .catch((err) => res.status(400).send(err))     
   },
   updateUserPic: (req, res) => {
     let { ID } = req.params;
