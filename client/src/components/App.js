@@ -1,22 +1,143 @@
 import React, { Component } from 'react';
-// import PromoHeader from './PromoHeader.js';
-// import SiteHeader from './SiteHeader.js';
-// import MainNavigation from './MainNavigation.js';
-// import '../styles/app.css';
+import Topbar from './TopBar.js';
+import SearchResults from './SearchResults.js';
+import List from './List.js';
+import SuggestedBottom from './SuggestedBottom.js';
+import axios from 'axios';
+import { IoMdSearch } from 'react-icons/fa';
+
+const suggestions = ["mexican", "thai", "chinese", "taiwanese", "italian", "cambodian", "moroccan", "soul food", "indian", "vietnamese", "american", "cajun", "french", "japanese", "spanish", "greek", "mediterranean", "korean", "seafood", "vegan", "vegetarian", "tapas", "cuban"];
+const trends = ["Tokyo, Japan", "Paris, France", "Los Angeles, CA", "New York, NY", "Rome, Italy"];
+
 
 export default class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      query: '',
+      location: '',
+      moused: false,
+      searchClicked: false,
+      results: [],
+      suggestionOptions: [],
+      trending: []
+    }
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.handleClickInside = this.handleClickInside.bind(this);
+    // this.mouseOut = this.mouseOut.bind(this);
+    // this.mouseOver = this.mouseOver.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.suggestionChange = this.suggestionChange.bind(this);
+    this.getTrending = this.getTrending.bind(this);
+    this.getResults = this.getResults.bind(this);
   }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  setWrapperRef(node) {
+    this.wrapperRef = node;
+  }
+
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.setState({ searchClicked: false }, () => this.setState({ query: '', location: '' }));
+    }
+  }
+
+  handleClickInside() {
+    this.setState({ searchClicked: true });
+  }
+
+  // mouseOut() {
+  //   this.setState({ moused: false });
+  // }
+
+  // mouseOver() {
+  //   this.setState({ moused: true });
+  // }
+
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value }, () => this.suggestionChange());
+  }
+
+  suggestionChange() {
+    let arr = [];
+    for (var i = 0; i < suggestions.length; i++) {
+      if (!suggestions[i].includes(' ')) {
+        if (suggestions[i].slice(0, this.state.query.length) === this.state.query) {
+          arr.push(suggestions[i])
+        }
+      } else {
+        if (suggestions[i].includes(this.state.query)) {
+          arr.push(suggestions[i])
+        }
+      }
+    }
+    arr = arr.slice(0, 5)
+    this.setState({ suggestionOptions: arr }, () => this.getTrending())
+  }
+
+  getTrending() {
+    let arr = [];
+    let loc = this.state.location;
+    loc[0] = loc[0].toUpperCase();
+    for (var i = 0; i < trends.length; i++) {
+      if (trends[i].includes(loc)) {
+        arr.push(trends[i])
+      }
+    }
+    arr = arr.slice(0, 5)
+    this.setState({ trending: arr }, () => this.getResults())
+  }
+
+  getResults() {
+    axios.get('/search')
+      .then(response => {
+        let arr = [];
+        for (var i = 0; i < response.data.length; i++) {
+          if (response.data[i].title.includes(this.state.query) || response.data[i].color.includes(this.state.query)) {
+            arr.push(response.data[i])
+          }
+        }
+        if (arr.length !== 0) {
+          arr = Object.values(arr.reduce((acc, curr) => {
+            if (!acc[curr.image1]) {
+              acc[curr.image1] = curr;
+            }
+            return acc;
+          }, {})
+          );
+          arr = arr.slice(0, 3)
+          this.setState({ results: arr })
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+
   render() {
     return (
       <div>
-          {/* <PromoHeader /> */}
-          <div id="full-topbar">
-            <div id="content">
+        <div id="full-topbar">
+          <h2>PAVÉ</h2>
+          <div onClick={this.handleClickInside} > <IoMdSearch /> </div>
+          <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Taste "Rome"" className="search" ></input>
+          <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="search" className="search" ></input>
 
-              {/* <SiteHeader /> */}
-              {/* <MainNavigation /> */}
+          <SearchResults searchClicked={this.state.searchClicked} query={this.state.query} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
+          <Topbar />
+          <div id="content">
+            <List />
+            <SuggestedBottom />
           </div>
         </div>
       </div>
