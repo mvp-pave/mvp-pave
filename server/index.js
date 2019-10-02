@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 app.use('/pave', router)
 
-app.use('/yelp', axios.get )
+// not sure if we need this
+// app.use('/yelp', axios.get )
 
 app.listen(port, () => console.log(`listening on port ${port}!`))
