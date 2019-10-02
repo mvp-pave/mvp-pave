@@ -56,15 +56,15 @@ export default class SearchResults extends Component {
             <span className="trend"><img className="tiny" src={'./images/TinySearch.png'}></img>shower curtain</span>
           </div>
           <div className="popular-products">
-            <h3 className="popular-h">Popular Products</h3>
+            <h3 className="popular-h">Popular Destinations</h3>
             <div className="popular">
               {this.state.popular1 ? <img className="result-img" name="popular1" src={'./images/popular4.webp'} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img> : <img className="result-img" name="popular1" src={'./images/popular3.webp'} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>}
-              <div className="title">Dickens Trousers</div></div>
+              <div className="title"></div>New York, NY</div>
             <div className="popular">
               {this.state.popular2 ? <img className="result-img" name="popular2" src={'./images/popular2.webp'} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img> : <img className="result-img" name="popular2" src={'./images/popular1.webp'} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>}
-              <div className="title">Euphrates Dyed Tunic Dress</div></div>
+              <div className="title">Paris, France</div></div>
             <div className="popular"><img className="result-img" src={'./images/popular5.webp'}></img>
-              <div className="title">Wallace Cane and Oak Sideboard</div></div>
+              <div className="title">Tokyo, Japan</div></div>
           </div>
         </div>
       )
@@ -84,7 +84,7 @@ export default class SearchResults extends Component {
             </div>
           </div>
           <div className="popular-products">
-            <h3 className="popular-h">Product Results: {query}</h3>
+            <h3 className="popular-h">Search Results: {query}</h3>
             <div className="popular">
               {this.state.image1 ? <img className="result-img" name="image1" src={results[0].image2} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img> 
               : <img className="result-img" name="image1" src={results[0].image1} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>}
