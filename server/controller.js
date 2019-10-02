@@ -18,7 +18,7 @@ const {
 } = require('../database/dbHelpers.js');
 
 const yelp = require('yelp-fusion');
-const apiKey = require('../config/key')
+const apiKey = require('../config')
 
 let controller = {
   postRestaurant: (req, res) => {
@@ -103,19 +103,19 @@ let controller = {
   },
 
   yelpRecs: (req, res) => {
-    // let { term, location } = req.body;
-    // const searchRequest = {
-    //   term, location
-    // };
-    // const client = yelp.client(apiKey);
+    let { term, location } = req.body;
+    const searchRequest = {
+      term, location
+    };
+    const client = yelp.client(apiKey);
 
-    // client.search(searchRequest)
-    //   .then(response => {
-    //     const results = response.jsonBody.businesses;
-    //     const prettyJson = JSON.stringify(results, null, 4);
-    //     res.status(200).send(prettyJson)
-    //   })
-    //   .catch(err => res.status(400).send(err))
+    client.search(searchRequest)
+      .then(response => {
+        const results = response.jsonBody.businesses;
+        // const prettyJson = JSON.stringify(results, null, 4);
+        res.status(200).send(results)
+      })
+      .catch(err => res.status(400).send(err))
 
 
 
