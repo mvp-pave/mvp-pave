@@ -38,10 +38,10 @@ const getOneUser = (ID) => {
   return User.findOne({ ID });
 };
 
-const postUser = (ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts) => {
+const postUser = (ID, email, password, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts) => {
   //when user creates account or logins first time using fb
   return User.create({
-    ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts
+    ID, email, password, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts
   });
 };
 
@@ -63,6 +63,11 @@ const updateUserFollowedBy = (ID, followed_by) => {
 const updateUserBio = (ID, bio) => {
   //when user updates their bio
   return User.findOneAndUpdate({ ID }, { bio })
+}
+
+const updateUserPass = (ID, password) => {
+  //when user updates their pass
+  return User.findOneAndUpdate({ ID }, { password })
 }
 
 // const updateUserPost = (ID, posts) => {

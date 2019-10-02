@@ -21,6 +21,8 @@ var Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
 var userSchema = mongoose.Schema({
   ID: Number,
+  email: String,
+  password: String,
   username: String,
   profile_picture: String,
   bio: String,
