@@ -88,6 +88,6 @@ module.exports = {
   updateUserFollowing,
   updateUserFollowedBy,
   updateUserBio,
-  updateUserPost,
+  // updateUserPost,
   updateUserPic
 }
