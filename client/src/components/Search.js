@@ -42,7 +42,7 @@ export default class Search extends Component {
 
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({ searchClicked: false }, () => this.setState({ query: '', location: '' }));
+      this.setState({ searchClicked: false }, () => this.setState({ query: '' }));
     }
   }
 
@@ -59,7 +59,7 @@ export default class Search extends Component {
   }
 
   handleChange(event) {
-    this.setState({ [event.target.name] : event.target.value }, () => this.suggestionChange());
+    this.setState({ query: event.target.value }, () => this.suggestionChange());
   }
 
   suggestionChange() {
@@ -127,13 +127,13 @@ export default class Search extends Component {
               <span onMouseOut={this.mouseOut} onMouseOver={this.mouseOver}>
                 {this.state.moused ? <img src={'./images/HoverSearch.png'}></img> : <img src={'./images/Search.png'}></img>}
               </span>
-              <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} onClick={this.handleClickInside} type="text" placeholder="search" className="search" ></input>
-              <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} onClick={this.handleClickInside} type="text" placeholder="search" className="search" ></input>
+              <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Taste " Rome"" className="search" ></input>
+            <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="search" className="search" ></input>
             </div>
           </form>
-          <SearchResults searchClicked={this.state.searchClicked} query={this.state.query} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
-        </span>
+        <SearchResults searchClicked={this.state.searchClicked} query={this.state.query} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
       </span>
+      </span >
     )
   }
 }

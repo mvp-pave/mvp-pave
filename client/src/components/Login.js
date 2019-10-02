@@ -1,48 +1,64 @@
 import React, { Component } from 'react';
-import fire from '../config/Fire.js';
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: ''
+      XMoused: false,
+
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.login = this.login.bind(this);
-    this.signup = this.signup.bind(this);
+    this.mouseOut = this.mouseOut.bind(this);
+    this.mouseOver = this.mouseOver.bind(this);
+
   }
 
-  login(event) {
-    event.preventDefault();
-    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((data) => { })
-      .catch((error) => console.log(error))
+  mouseOut() {
+    this.setState({ XMoused: false });
   }
 
-  signup(event) {
-    event.preventDefault();
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((data) => { })
-      .catch((error) => console.log(error))
-  }
-
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+  mouseOver() {
+    this.setState({ XMoused: true });
   }
 
   render() {
-    return (
-      <div>
-        <form>
-          <label>Email:</label>
-          <input type="email" name="email" placeholder="Email" onChange={this.handleChange}></input>
-          <label>Password:</label>
-          <input type="password" name="password" placeholder="Password" onChange={this.handleChange}></input>
-          <button type="submit" onClick={this.login}>Login</button>
-          <button onClick={this.signup}>Sign Up</button>
-        </form>
-      </div>
-    )
+    if (this.props.loginClicked) {
+      return (
+        <div>
+          <div className="fullscreen-container">
+
+            <div className="login-modal">
+              <div>
+                {this.state.XMoused ? <img src={'./images/XHover.png'} onClick={this.props.handleXClick} onMouseOut={this.mouseOut} onMouseOver={this.mouseOver} className="X"></img> : <img className="X" src={'./images/X.png'} onClick={this.props.handleXClick} onMouseOut={this.mouseOut} onMouseOver={this.mouseOver} ></img>}
+                <p className="sign-in"> Sign In</p>
+              </div>
+              <form className="login" action="/action_page.php">
+                <div className="login-container">
+
+                  <label className="login-input-label" >EMAIL*</label>
+                  <input type="email" name="uname" className="login-input-box" required></input>
+                </div>
+                <div className="login-container">
+
+                  <label className="login-input-label" >PASSWORD*</label>
+                  <input type="password" className="login-input-label" className="login-input-box" required></input>
+                </div>
+                <div className="psw">Forgot your password?</div>
+                <div id="sumbit-container">
+                  <span>
+                    <button type="submit" id="submit">SIGN IN</button>
+                    <p id="cancel">Cancel</p>
+                  </span>
+                </div>
+              </form>
+              <div className="sign-up-border"></div>
+              <p className="sign-up">Sign Up</p>
+              <button id="create-account">CREATE AN ACCOUNT</button>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return null;
+    }
   }
 }
