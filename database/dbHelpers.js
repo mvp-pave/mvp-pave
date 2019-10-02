@@ -1,13 +1,18 @@
 const { Restaurant, User } = require('./index.js');
 
 const postRestaurant = (ID, num_recommendations, who_recommended) => {
-  //when user adds restaurant to reccomendations or takes off reccomendations
+  //when user adds restaurant to recommendation for the first time for the restaurant
   return Restaurant.create({ ID, num_recommendations, who_recommended })
 }
 
+const updateRestaurant = (ID, num_recommendations, who_recommended) => {
+  //when user adds restaurant to recommendation or takes off recommendations when the restaurant is already in db
+  return Restaurant.findOneAndUpdate({ ID }, { num_recommendations, who_recommended })
+}
+
 const updateUserRec = (ID, recommendations) => {
-  //when user adds restaurant to reccomendations or takes off reccomendations
-  return Restaurant.findOneAndUpdate({ ID }, { recommendations })
+  //when user adds restaurant to recommendation or takes off recommendation
+  return User.findOneAndUpdate({ ID }, { recommendations })
 }
 
 // const getRestaurantsByLocation = (city) => {
@@ -33,12 +38,10 @@ const getOneUser = (ID) => {
   return User.findOne({ ID });
 };
 
-const postUser = (ID, username, profile_picture, bio, recommendations,
-  past_visited, follows, followed_by, posts) => {
+const postUser = (ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts) => {
   //when user creates account or logins first time using fb
   return User.create({
-    ID, username, profile_picture, bio, recommendations,
-    past_visited, follows, followed_by, posts
+    ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts
   });
 };
 
@@ -73,6 +76,7 @@ const updateUserPic = (ID, profile_picture) => {
 };
 
 module.exports = {
+  postRestaurant,
   updateRestaurant,
   updateUserRec,
   // getRestaurantsByLocation,
@@ -84,7 +88,6 @@ module.exports = {
   updateUserFollowing,
   updateUserFollowedBy,
   updateUserBio,
-  updateUserPost,
-  updateUserPic,
-  postRestaurant
+  // updateUserPost,
+  updateUserPic
 }

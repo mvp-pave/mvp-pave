@@ -11,13 +11,13 @@ db.once('open', function () {
   console.log('mongoose connected successfully');
 });
 
-var resturantSchema = mongoose.Schema({
+var restaurantSchema = mongoose.Schema({
   ID: Number,
   num_recommendations: Number,
   who_recommended: []
 });
 
-var Resturant = mongoose.model('Resturant', resturantSchema);
+var Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
 var userSchema = mongoose.Schema({
   ID: Number,
@@ -33,4 +33,4 @@ var userSchema = mongoose.Schema({
 
 var User = mongoose.model('User', userSchema);
 
-module.exports = { Resturant, User };
+module.exports = { Restaurant, User };
