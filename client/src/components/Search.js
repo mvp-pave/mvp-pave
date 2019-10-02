@@ -120,20 +120,22 @@ export default class Search extends Component {
 
   render() {
     return (
-      <span className="search-container" >
-        <span>
-          <form action="/action_page.php" >
+      <div>
+        <div className="search-container" >
             <div className="search-wrapper">
+          <form action="/action_page.php" >
               <span onMouseOut={this.mouseOut} onMouseOver={this.mouseOver}>
                 {this.state.moused ? <img src={'./images/HoverSearch.png'}></img> : <img src={'./images/Search.png'}></img>}
               </span>
-              <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Taste " Rome"" className="search" ></input>
-            <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="search" className="search" ></input>
-            </div>
+              <label>Find</label>
+              <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search" ></input>
+              <label>Near</label>
+            <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search" ></input>
           </form>
+        </div>
         <SearchResults searchClicked={this.state.searchClicked} query={this.state.query} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
-      </span>
-      </span >
+      </div>
+      </div>
     )
   }
 }
