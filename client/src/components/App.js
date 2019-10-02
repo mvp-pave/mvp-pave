@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
-// import PromoHeader from './PromoHeader.js';
-// import SiteHeader from './SiteHeader.js';
-// import MainNavigation from './MainNavigation.js';
-// import '../styles/app.css';
+import Topbar from './TopBar.js';
+import Search from './Search.js';
+import List from './List.js';
+import SuggestedBottom from './SuggestedBottom.js';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      user: {},
+    }
   }
+
+  componentDidMount() {
+    
+  }
+
+
   render() {
     return (
       <div>
-          {/* <PromoHeader /> */}
-          <div id="full-topbar">
-            <div id="content">
-
-              {/* <SiteHeader /> */}
-              {/* <MainNavigation /> */}
-          </div>
-        </div>
+        <h2>PAVÉ</h2>
+        <Search />
+        <Topbar />
+        <List />
+        <SuggestedBottom />
       </div>
     )
   }
