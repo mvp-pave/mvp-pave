@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { IoMdHeart } from "react-icons/io";
 import { MdHome, MdLocationOn, MdPerson } from "react-icons/md";
 import TopBarMenu from './TopBarMenu.js'
 
-class TopBar extends React.Component {
+export default class TopBar extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -41,5 +41,3 @@ class TopBar extends React.Component {
     )
   }
 }
-
-export default TopBar;

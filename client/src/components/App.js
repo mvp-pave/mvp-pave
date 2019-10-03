@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 // import SiteHeader from './SiteHeader.js';
 // import MainNavigation from './MainNavigation.js';
 // import '../styles/app.css';
-import TopBar from './TopBar.js';
 import Topbar from './TopBar.js';
 import Search from './Search.js';
 import List from './List.js';
 import SuggestedBottom from './SuggestedBottom.js';
 import { IoMdSearch } from 'react-icons/fa';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from './Login.js'
+import SearchLocation from './SearchLocation.js';
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -56,25 +57,30 @@ class App extends Component {
   render() {
     //<IoMdSearch />
     return (
-      <Router>
+      // <Router>
         <div>
           <div id="full-topbar">
             <h2>PAVÉ</h2>
-            <Link to="/search" >hi</Link>
+            {/* <Link to="/search" >hi</Link> */}
             <Topbar />
             <div id="content">
-              <TopBar />
+              {/* <TopBar /> */}
               {/* <SiteHeader /> */}
               {/* <MainNavigation /> */}
-              <List />
+              {/* <List /> */}
               <SuggestedBottom />
             </div>
+            <div id="other-page-content">
+              <Login />
+              <SearchLocation />
+            </div>
           </div>
-          <Switch>
+          
+          {/* <Switch>
             <Route exact path='/search' render={(props) => <Search {...props} homeLocation={this.state.homeLocation} />}/>
-          </Switch>
+          </Switch> */}
         </div>
-      </Router>
+      // </Router>
     )
   }
 }
