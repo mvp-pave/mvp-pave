@@ -15,6 +15,18 @@ export default class App extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.newUser = this.newUser.bind(this);
+    this.getAll = this.getAll.bind(this);
+  }
+
+  componentDidMount() {
+    this.getAll();
+  }
+
+  getAll() {
+    axios
+      .get('/pave/user')
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error))
   }
 
   handleChange(event) {
@@ -35,6 +47,10 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('E –––>', this.state.email)
+    console.log('P –––>', this.state.password)
+    console.log('F –––>', this.state.firstName)
+    console.log('L –––>', this.state.lastName)
     return (
       <div>
         <div className="fullscreen-container">
