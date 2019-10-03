@@ -101,7 +101,7 @@ export default class Login extends Component {
                 <div className="border"></div>
                 <div className="new-acc">
                   <span>Don't have an account?</span>
-                  <span className="create">Sign Up</span>
+                  <span className="createAccount" onClick={this.props.clickHandler} >Sign Up</span>
                 </div>
             </form>
           </div>
