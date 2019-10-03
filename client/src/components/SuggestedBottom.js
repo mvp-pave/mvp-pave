@@ -33,7 +33,6 @@ export default class SuggestedBottom extends Component {
   }
 }
 
-
 // CSS
 // .img-container {
 // 	float: left;
