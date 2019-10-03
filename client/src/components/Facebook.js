@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
-import Axios from 'axios';
+import axios from 'axios';
 
 export default class Facebook extends Component {
   constructor(props) {
@@ -19,6 +19,7 @@ export default class Facebook extends Component {
   }
 
   responseFacebook(response) {
+    console.log(response);
     let newName = response.name.split(' ');
     this.setState({
       isLoggedIn: true,
@@ -36,10 +37,14 @@ export default class Facebook extends Component {
         let emailMatch = false;
         for (var i = 0; i < response.data.length; i++) {
           if (response.data[i].email === this.state.email) {
+            // if email match
             emailMatch = true;
+            this.props.changeCurrentUser(this.state.email)
+            this.props.returnToHomepage()
           }
         }
         if (emailMatch === false) {
+          // if email doesn't exist in db, add user to db
           this.postUsers()
         }
       })
@@ -54,7 +59,10 @@ export default class Facebook extends Component {
         lastName: this.state.lastName,
         picture: this.state.picture
       })
-      .then((response) => console.log(response))
+      .then((response) => {
+        this.props.changeCurrentUser(this.state.email)
+        this.props.returnToHomepage()
+      })
       .catch((error) => console.log(error))
   }
 
@@ -66,18 +74,7 @@ export default class Facebook extends Component {
     let fbContent;
 
     if (this.state.isLoggedIn) {
-      fbContent = (null
-        // <div style={{
-        //   width: '400px',
-        //   margin: 'auto',
-        //   background: '#f4f4f4',
-        //   padding: '20px'
-        // }}>
-        //   <img src={this.state.picture} alt={this.state.name} />
-        //   <h2>Welcome {this.state.name}</h2>
-        //   Email: {this.state.email}
-        // </div>
-      );
+      this.props.returnToHomepage();
     } else {
       fbContent = (<FacebookLogin
         appId="659215294487087"
