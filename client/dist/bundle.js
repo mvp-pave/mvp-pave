@@ -1190,7 +1190,7 @@ eval("\n\nmodule.exports = __webpack_require__(/*! ./lib/ReactDOM */ 142);\n//# 
   \*******************/
 /***/ (function(module, exports) {
 
-eval("let REACT_APP_YELP_API_KEY = function () {\n    return 'Bearer lmBnwwniaabQZhlU4EZCMRVPIGp7W8apNMNFzKrTTuKx2peqhcU0pI9wRLENTUm6eU0lxN46cfDLwLSmnBIPVrUVfahFmUQT4X34QUYSmP4ghYIA3_bf_sYkU9KTXXYx'\n}\nmodule.exports = REACT_APP_YELP_API_KEY;\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiOTMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb25maWcuanM/NjkyNiJdLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgUkVBQ1RfQVBQX1lFTFBfQVBJX0tFWSA9IGZ1bmN0aW9uICgpIHtcbiAgICByZXR1cm4gJ0JlYXJlciBsbUJud3duaWFhYlFaaGxVNEVaQ01SVlBJR3A3VzhhcE5NTkZ6S3JUVHVLeDJwZXFoY1UwcEk5d1JMRU5UVW02ZVUwbHhONDZjZkRMd0xTbW5CSVBWclVWZmFoRm1VUVQ0WDM0UVVZU21QNGdoWUlBM19iZl9zWWtVOUtUWFhZeCdcbn1cbm1vZHVsZS5leHBvcnRzID0gUkVBQ1RfQVBQX1lFTFBfQVBJX0tFWTtcblxuXG5cbi8vLy8vLy8vLy8vLy8vLy8vL1xuLy8gV0VCUEFDSyBGT09URVJcbi8vIC4vY29uZmlnLmpzXG4vLyBtb2R1bGUgaWQgPSA5M1xuLy8gbW9kdWxlIGNodW5rcyA9IDAiXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBOyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///93\n");
+eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Users/vivianquan/HRLA31/mvp-pave/config.js'\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiOTMuanMiLCJzb3VyY2VzIjpbXSwibWFwcGluZ3MiOiIiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///93\n");
 
 /***/ }),
 /* 94 */
