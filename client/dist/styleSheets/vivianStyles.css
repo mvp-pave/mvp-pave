@@ -3,21 +3,21 @@
 	float: left;
 }
 
-img {
+.sug-img {
 	height: 200px;
 	width: 200px;
 	display: block;
 	position: relative;
 	left: 70px;
-	border-radius: 20px;
+	/* border-radius: 20px; */
 }
 
 .title {
 	position: relative;
 	width: 50px;
 	height: 20px;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
+	/* border-bottom-left-radius: 20px; */
+	/* border-bottom-right-radius: 20px; */
 	left: 70px;
 	bottom: 40px;
 	background: white;
@@ -47,7 +47,7 @@ h2 {
 	height: 40px;
 	border: 1px solid lightgrey;
 	font-size: 22px;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	padding: 11px;
 }
 
@@ -60,6 +60,7 @@ h2 {
 .login-container,
 .search-location-container {
 	padding-bottom: 10px;
+	padding-top: 10px
 }
 
 .login-modal,
@@ -74,7 +75,7 @@ h2 {
 	width: 290px;
 	height: 40px;
 	font-size: 22px;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	padding: 11px;
 	background: transparent;
 }
@@ -90,10 +91,27 @@ h2 {
 	bottom: 7px;
 }
 
-.border {
+.borderer {
+	padding: 10px;
+	padding-bottom: 30px;
+}
+
+.border-before {
 	border-bottom: 1px solid lightgrey;
 	padding: 10px;
-	width: 284px;
+	padding-left: 110px;
+}
+
+.or {
+	position: relative;
+	top: 17px;
+	padding: 20px;
+}
+
+.border-after {
+	border-bottom: 1px solid lightgrey;
+	padding: 10px;
+	padding-right: 110px;
 }
 
 .new-acc,
@@ -137,7 +155,7 @@ h2 {
 	height: 40px;
 	border: 1px solid lightgrey;
 	font-size: 22px;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	padding: 11px;
 }
 
@@ -176,4 +194,10 @@ h2 {
 	border-bottom: 1px solid lightgrey;
 	padding: 10px;
 	width: 284px;
+}
+
+.kep-login-facebook.metro {
+	/* border-radius: 10px; */
+	width: 290px;
+	height: 60px;
 }
