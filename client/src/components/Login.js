@@ -30,9 +30,14 @@ export default class Login extends Component {
         let emailMatch = false;
         for (var i = 0; i < response.data.length; i++) {
           if (response.data[i].email === this.state.email) {
+            //email is correct
             emailMatch = true;
             if (response.data[i].password !== this.state.password) {
               this.setState({ pwError: true })
+            } else {
+              //if the pass matches then login
+              this.props.changeCurrentUser(this.state.email)
+              this.props.returnToHomepage()
             }
           }
         }
@@ -70,7 +75,7 @@ export default class Login extends Component {
               {/* REROUTE TO HOMEPAGE IF LOGIN IN IS CORRECT
               REROUTE TO SIGN UP PAGE ON CLICK */}
               
-                <Facebook className="fb" />
+                <Facebook className="fb" changeCurrentUser={this.props.changeCurrentUser} returnToHomepage={this.props.returnToHomepage} />
 
                 <div className="borderer">
                   <span className="border-before"></span>
