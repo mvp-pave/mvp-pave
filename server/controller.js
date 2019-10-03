@@ -17,9 +17,6 @@ const {
   updateUserPic
 } = require('../database/dbHelpers.js');
 
-const yelp = require('yelp-fusion');
-const apiKey = require('../config')
-
 let controller = {
   postRestaurant: (req, res) => {
     let { num_recommendations, who_recommended } = req.body;
@@ -36,13 +33,8 @@ let controller = {
       .catch((err) => res.status(400).send(err))
   },
   postUser: (req, res) => {
-<<<<<<< HEAD
     let { ID, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts } = req.body;
     postUser(ID, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts)
-=======
-    let { ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts } = req.body;
-    postUser(ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts)
->>>>>>> 722ac0a167733655c90aa628475cba36006535f6
       .then(() => res.status(201).send('User Account Posted!'))
       .catch((err) => res.status(401).send(err))
   },
@@ -105,32 +97,7 @@ let controller = {
     updateUserPic(ID, profile_picture)
       .then(() => res.status(200).send('User Pic Updated!'))
       .catch((err) => res.status(400).send(err))
-<<<<<<< HEAD
-=======
-  },
-
-  yelpRecs: (req, res) => {
-    let { term, location } = req.body;
-    const searchRequest = {
-      term, location
-    };
-    const client = yelp.client(apiKey);
-
-    client.search(searchRequest)
-      .then(response => {
-        const results = response.jsonBody.businesses;
-        // const prettyJson = JSON.stringify(results, null, 4);
-        res.status(200).send(results)
-      })
-      .catch(err => res.status(400).send(err))
-
-
-
-
-
->>>>>>> 722ac0a167733655c90aa628475cba36006535f6
   }
-
 }
 
 module.exports = controller;
