@@ -38,10 +38,14 @@ const getOneUser = (ID) => {
   return User.findOne({ ID });
 };
 
-const postUser = (ID, email, password, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts) => {
+const getAllUsers = () => {
+  return User.find();
+};
+
+const postUser = (ID, email, password, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts) => {
   //when user creates account or logins first time using fb
   return User.create({
-    ID, email, password, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts
+    ID, email, password, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts
   });
 };
 
@@ -84,6 +88,7 @@ module.exports = {
   postRestaurant,
   updateRestaurant,
   updateUserRec,
+  getAllUsers,
   // getRestaurantsByLocation,
   // getOneRestaurant,
   // getRandomRestaurants,
@@ -94,5 +99,6 @@ module.exports = {
   updateUserFollowedBy,
   updateUserBio,
   // updateUserPost,
+  updateUserPass,
   updateUserPic
 }
