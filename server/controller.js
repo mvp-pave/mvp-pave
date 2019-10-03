@@ -56,8 +56,8 @@ let controller = {
   },
   getUsers: (req, res) => {
     getAllUsers()
-    .then((data) => res.status(200).send(data))
-    .catch((err) => res.status(400).send(err))
+      .then((data) => res.status(200).send(data))
+      .catch((err) => res.status(400).send(err))
   },
   updateUserPast: (req, res) => {
     let { ID } = req.params;
@@ -90,9 +90,9 @@ let controller = {
   updateUserPass: (req, res) => {
     let { ID } = req.params;
     let { password } = req.body;
-    updateUserBio(ID, password)   
-    .then(() => res.status(200).send('User Password Updated!'))
-    .catch((err) => res.status(400).send(err))     
+    updateUserBio(ID, password)
+      .then(() => res.status(200).send('User Password Updated!'))
+      .catch((err) => res.status(400).send(err))
   },
   updateUserPic: (req, res) => {
     let { ID } = req.params;
@@ -100,27 +100,6 @@ let controller = {
     updateUserPic(ID, profile_picture)
       .then(() => res.status(200).send('User Pic Updated!'))
       .catch((err) => res.status(400).send(err))
-  },
-
-  yelpRecs: (req, res) => {
-    let { term, location } = req.body;
-    const searchRequest = {
-      term, location
-    };
-    const client = yelp.client(apiKey);
-
-    client.search(searchRequest)
-      .then(response => {
-        const results = response.jsonBody.businesses;
-        // const prettyJson = JSON.stringify(results, null, 4);
-        res.status(200).send(results)
-      })
-      .catch(err => res.status(400).send(err))
-
-
-
-
-
   }
 
 }
