@@ -3,7 +3,7 @@ import { GoMail } from "react-icons/go";
 import { IoIosLock } from "react-icons/io";
 import axios from 'axios';
 
-export default class App extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {

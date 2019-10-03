@@ -1,37 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App.js';
 import FakeApp from './components/FakeApp.js';
-// import $ from 'jquery';
-// import List from './components/List.jsx';
 
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { 
-//       items: []
-//     }
-//   }
+// ReactDOM.render(<FakeApp />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
 
-//   componentDidMount() {
-//     $.ajax({
-//       url: '/items', 
-//       success: (data) => {
-//         this.setState({
-//           items: data
-//         })
-//       },
-//       error: (err) => {
-//         console.log('err', err);
-//       }
-//     });
-//   }
-
-//   render () {
-//     return (<div>
-//       <h1>Item List</h1>
-//       <List items={this.state.items}/>
-//     </div>)
-//   }
-// }
-
-ReactDOM.render(<FakeApp />, document.getElementById('app'));

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import REACT_APP_YELP_API_KEY from '../../../config.js'
-console.log(REACT_APP_YELP_API_KEY())
+// import REACT_APP_YELP_API_KEY from '../../../../config.js/index.js'
+import ListItem from './ListItem'
 
 class FakeApp extends Component {
   constructor(props) {
@@ -11,28 +11,23 @@ class FakeApp extends Component {
       loading: false
     }
     this.getRestaurants = this.getRestaurants.bind()
-  } 
+  }
   componentDidMount() {
     this.getRestaurants("los angeles")
   }
- 
+
   getRestaurants(location) {
     let key = REACT_APP_YELP_API_KEY()
     // this.setState({ loading: true }) 
     axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${location}`, {
           //required authorization format from API 
-          
           headers: {
-              //to get the API from the .env file use process.env.{variable name}
               Authorization: key
-              
-              // Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
-              // Authorization: `Bearer lmBnwwniaabQZhlU4EZCMRVPIGp7W8apNMNFzKrTTuKx2peqhcU0pI9wRLENTUm6eU0lxN46cfDLwLSmnBIPVrUVfahFmUQT4X34QUYSmP4ghYIA3_bf_sYkU9KTXXYx`
           },
           //option params passed to API call to retrieve only breakfast and lunch spots 
           params: {
-              // categories: `${terms}`,
-              categories: `restaurants`,
+              categories: `restaurant`,
+              limit: 5
           }
           })
           .then((res) => {
@@ -50,8 +45,7 @@ class FakeApp extends Component {
   render() {
     return (
       <div>
-        
-
+        <ListItem /> 
       </div>
     )
   }
