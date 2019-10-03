@@ -40,13 +40,13 @@ export default class App extends Component {
   //   this.setState({ searchClicked: true });
   // }
 
-//   // mouseOut() {
-//   //   this.setState({ moused: false });
-//   // }
+  // mouseOut() {
+  //   this.setState({ moused: false });
+  // }
 
-//   // mouseOver() {
-//   //   this.setState({ moused: true });
-//   // }
+  // mouseOver() {
+  //   this.setState({ moused: true });
+  // }
 
   render() {
     //<IoMdSearch />
