@@ -1,78 +1,69 @@
 import React, { Component } from 'react';
-// import PromoHeader from './PromoHeader.js';
-// import SiteHeader from './SiteHeader.js';
-// import MainNavigation from './MainNavigation.js';
-// import '../styles/app.css';
-import Topbar from './TopBar.js';
 import Search from './Search.js';
+import TopBar from './TopBar.js';
+// import SearchLocation from './SearchLocation.js';
+import Login from './Login.js'
+import CreateAccount from './CreateAccount.js'
 import List from './List.js';
 import SuggestedBottom from './SuggestedBottom.js';
-import { IoMdSearch } from 'react-icons/fa';
-import Login from './Login.js'
-import SearchLocation from './SearchLocation.js';
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-class App extends Component {
+import { IoMdSearch } from 'react-icons/io';
+
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchClicked: false,
-      homeLocation: false, 
-      currentUserEmail: false,
+      homeLocation: false,
+      currentUser: false,
       page: 'homepage',
     }
-    this.handleClickInside = this.handleClickInside.bind(this);
-    this.handleCancelSearch = this.handleCancelSearch.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
+    this.changeHomeLocation = this.changeHomeLocation.bind(this);
+    this.changeCurrentUser = this.changeCurrentUser.bind(this);
   }
 
-  handleClickInside() {
-    this.setState({ searchClicked: true });
+  clickHandler(e) {
+    let name = e.target.getAttribute("class");
+    this.setState({
+      page: name
+    }, () => console.log(this.state))
   }
 
-  handleCancelSearch() {
-    this.setState({ searchClicked: false });
+  changeHomeLocation() {
+    this.setState({ homeLocation: true });
   }
 
-  // mouseOut() {
-  //   this.setState({ moused: false });
-  // }
-
-  // mouseOver() {
-  //   this.setState({ moused: true });
-  // }
+  changeCurrentUser() {
+    this.setState({ currentUser: false });
+  }
 
   render() {
-    switch(this.state.page){
+    switch (this.state.page) {
       case 'homepage':
-        return (<div><Homepage clickHandler={this.clickHandler}/></div>);
-      case 'userprofile':
-        return (<div><UserProfile userAlert={this.state.userAlert}/></div>);
-      case 'login':
-        return (<div><Login loginHandler={this.loginHandler}/></div>);
-      case 'register':
-        return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert}/></div>);
-    }
-    return (
-        <div>
-          <div id="full-topbar">
-            <h2>PAVÉ</h2>
-            <div ><IoMdSearch /></div>
-            <Topbar />
-            <div id="content">
-              {/* <TopBar /> */}
-              {/* <SiteHeader /> */}
-              {/* <MainNavigation /> */}
-              {/* <List /> */}
-              <SuggestedBottom />
-            </div>
-            <div id="other-page-content">
-              <Login />
-              <SearchLocation />
+        return (
+          <div>
+            <div id="full-topbar">
+              <h2>PAVÉ</h2>
+              <IoMdSearch size={40} className='search' id="searchButton" onClick={this.clickHandler} />
+              <TopBar clickHandler={this.clickHandler} changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}/>
+              <div id="content">
+                {/* <List homeLocation={this.state.homeLocation} /> */}
+                <SuggestedBottom changeHomeLocation={this.changeHomeLocation}/>
+              </div>
+              {/* <div id="other-page-content">
+                <SearchLocation clickHandler={this.clickHandler} />
+              </div> */}
             </div>
           </div>
-        </div>
-    )
+        )
+      // case 'userProfile':
+      //   return (<div><UserProfile /></div>);
+      case 'search':
+        return (<div><Search clickHandler={this.clickHandler} /></div>);
+      case 'login':
+        return (<div><Login clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser}/></div>);
+      case 'createAccount':
+        return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser}/></div>);
+    }
   }
 }
-
-export default App;

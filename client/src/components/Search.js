@@ -12,88 +12,87 @@ export default class Search extends Component {
       query: '',
       location: '',
       moused: false,
-      searchClicked: false,
       results: [],
       suggestionOptions: [],
       trending: [],
       loading: false
     }
-    this.setWrapperRef = this.setWrapperRef.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.handleClickInside = this.handleClickInside.bind(this);
-    this.mouseOut = this.mouseOut.bind(this);
-    this.mouseOver = this.mouseOver.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.suggestionChange = this.suggestionChange.bind(this);
-    this.getTrending = this.getTrending.bind(this);
-    this.getResults = this.getResults.bind(this);
+    // this.setWrapperRef = this.setWrapperRef.bind(this);
+    // this.handleClickOutside = this.handleClickOutside.bind(this);
+    // this.handleClickInside = this.handleClickInside.bind(this);
+    // this.mouseOut = this.mouseOut.bind(this);
+    // this.mouseOver = this.mouseOver.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.suggestionChange = this.suggestionChange.bind(this);
+    // this.getTrending = this.getTrending.bind(this);
+    // this.getResults = this.getResults.bind(this);
   }
 
-  componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
-  }
+  // handleClickInside() {
+  //   this.setState({ searchClicked: true });
+  // }
 
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
-  }
+  // handleCancelSearch() {
+  //   this.setState({ searchClicked: false });
+  // }
 
-  setWrapperRef(node) {
-    this.wrapperRef = node;
-  }
+  // // componentDidMount() {
+  // //   document.addEventListener('mousedown', this.handleClickOutside);
+  // // }
 
-  handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({ searchClicked: false }, () => this.setState({ query: '' }));
-    }
-  }
+  // // componentWillUnmount() {
+  // //   document.removeEventListener('mousedown', this.handleClickOutside);
+  // // }
 
-  handleClickInside() {
-    this.setState({ searchClicked: true });
-  }
+  // // setWrapperRef(node) {
+  // //   this.wrapperRef = node;
+  // // }
 
-  mouseOut() {
-    this.setState({ moused: false });
-  }
+  // handleClickOutside(event) {
+  //   if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+  //     this.setState({ searchClicked: false }, () => this.setState({ query: '' }));
+  //   }
+  // }
 
-  mouseOver() {
-    this.setState({ moused: true });
-  }
+  // handleClickInside() {
+  //   this.setState({ searchClicked: true });
+  // }
 
-  handleChange(event) {
-    this.setState({ query: event.target.value }, () => this.suggestionChange());
-  }
+  // handleChange(event) {
+  //   this.setState({ query: event.target.value }, () => this.suggestionChange());
+  // }
 
-  suggestionChange() {
-    let arr = [];
-    for (var i = 0; i < suggestions.length; i++) {
-      if (!suggestions[i].includes(' ')) {
-        if (suggestions[i].slice(0, this.state.query.length) === this.state.query) {
-          arr.push(suggestions[i])
-        }
-      } else {
-        if (suggestions[i].includes(this.state.query)) {
-          arr.push(suggestions[i])
-        }
-      }
-    }
-    arr = arr.slice(0, 5)
-    this.setState({ suggestionOptions: arr }, () => this.getTrending())
-  }
+  // suggestionChange() {
+  //   let arr = [];
+  //   for (var i = 0; i < suggestions.length; i++) {
+  //     if (!suggestions[i].includes(' ')) {
+  //       if (suggestions[i].slice(0, this.state.query.length) === this.state.query) {
+  //         arr.push(suggestions[i])
+  //       }
+  //     } else {
+  //       if (suggestions[i].includes(this.state.query)) {
+  //         arr.push(suggestions[i])
+  //       }
+  //     }
+  //   }
+  //   arr = arr.slice(0, 5)
+  //   this.setState({ suggestionOptions: arr }, () => this.getTrending())
+  // }
 
   getTrending() {
     let arr = [];
     let loc = this.state.location;
     loc[0] = loc[0].toLowerCase();
     for (var i = 0; i < trends.length; i++) {
-      if (trends[i].includes(loc)) {
+      if (trends[i].toLowerCase().includes(loc)) {
         arr.push(trends[i])
       }
     }
     arr = arr.slice(0, 5)
-    this.setState({ trending: arr }, () => this.getResults())
+    this.setState({ trending: arr })
   }
 
-  getRestaurants() {
+  getResults() {
     let key = REACT_APP_YELP_API_KEY()
     // this.setState({ loading: true }) 
     axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
@@ -115,7 +114,7 @@ export default class Search extends Component {
         console.log(res.data.businesses)
         //change the state of App to reflect on the result we are given from the API
         //at the same time, setting the loading state to false 
-        // this.setState({ results: res.data.businesses, loading: false })
+        this.setState({ results: res.data.businesses, loading: false })
       })
       .catch((err) => {
         //fire the errorState message if there is no information return from the API
@@ -128,19 +127,18 @@ export default class Search extends Component {
     return (
       <div>
         <div className="search-container" >
-            <div className="search-wrapper">
-          <form action="/action_page.php" >
-              <span onMouseOut={this.mouseOut} onMouseOver={this.mouseOver}>
-                {this.state.moused ? <img src={'./images/HoverSearch.png'}></img> : <img src={'./images/Search.png'}></img>}
-              </span>
+          <div className="search-wrapper">
+            <form action="/action_page.php" onSubmit={this.getResults}>
               <label>Find</label>
               <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search" ></input>
               <label>Near</label>
-            <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search" ></input>
-          </form>
+              <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search" ></input>
+            </form>
+            <div className="homepage" onClick={this.props.clickHandler} >Cancel</div>
+          </div>
+
+          <SearchResults query={this.state.query} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
         </div>
-        <SearchResults searchClicked={this.state.searchClicked} query={this.state.query} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
-      </div>
       </div>
     )
   }

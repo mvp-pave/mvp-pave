@@ -40,30 +40,26 @@ export default class SearchResults extends Component {
   }
 
   render() {
-    let { suggestionOptions, results, query, searchClicked, trending } = this.props
-    if (!searchClicked) {
-      return null;
-    }
-    if (searchClicked && query.length === 0) {
+    let { suggestionOptions, results, query, trending } = this.props
+    if (query.length === 0) {
       return (
         <div className="suggestions-box">
           <div className="trending">
             <h3 className="trend-h">Trending</h3>
-            <span className="trend"><img className="tiny" src={'./images/TinySearch.png'}></img>kimono</span>
-            <span className="trend"><img className="tiny" src={'./images/TinySearch.png'}></img>planner</span>
-            <span className="trend"><img className="tiny" src={'./images/TinySearch.png'}></img>jumpsuit</span>
-            <span className="trend"><img className="tiny" src={'./images/TinySearch.png'}></img>candle</span>
-            <span className="trend"><img className="tiny" src={'./images/TinySearch.png'}></img>shower curtain</span>
+            <span className="trend">Japanese</span>
+            <span className="trend">Mexican</span>
+            <span className="trend">Korean</span>
+            <span className="trend">Mediterranean</span>
+            <span className="trend">Chinese</span>
+            <span className="trend">Thai</span>
           </div>
           <div className="popular-products">
             <h3 className="popular-h">Popular Destinations</h3>
-            <div className="popular">
-              {this.state.popular1 ? <img className="result-img" name="popular1" src={'./images/popular4.webp'} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img> : <img className="result-img" name="popular1" src={'./images/popular3.webp'} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>}
+            <div className="popular"><img className="result-img" src={'./NYC.jpeg'}></img>
               <div className="title"></div>New York, NY</div>
-            <div className="popular">
-              {this.state.popular2 ? <img className="result-img" name="popular2" src={'./images/popular2.webp'} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img> : <img className="result-img" name="popular2" src={'./images/popular1.webp'} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>}
+            <div className="popular"><img className="result-img" src={'./France.jpeg'}></img>
               <div className="title">Paris, France</div></div>
-            <div className="popular"><img className="result-img" src={'./images/popular5.webp'}></img>
+            <div className="popular"><img className="result-img" src={'./Tokyo.jpeg'}></img>
               <div className="title">Tokyo, Japan</div></div>
           </div>
         </div>
@@ -79,15 +75,15 @@ export default class SearchResults extends Component {
             <div className="trending-searched">
               <h3 className="trend-h">Trending</h3>
               {trending.map(trend => (
-                <span className="trend"><img className="tiny-searched" src={'./images/TinySearch.png'}></img>{trend}</span>
+                <span className="trend">{trend}</span>
               ))}
             </div>
           </div>
           <div className="popular-products">
             <h3 className="popular-h">Search Results: {query}</h3>
             <div className="popular">
-              {this.state.image1 ? <img className="result-img" name="image1" src={results[0].image2} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img> 
-              : <img className="result-img" name="image1" src={results[0].image1} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>}
+              {this.state.image1 ? <img className="result-img" name="image1" src={results[0].image2} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>
+                : <img className="result-img" name="image1" src={results[0].image1} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>}
               <div className="title"> {results[0].title}</div></div>
             <div className="popular">
               {this.state.image2 ? <img className="result-img" name="image2" src={results[1].image2} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img> : <img className="result-img" name="image2" src={results[1].image1} onMouseOut={this.mouseOutImage} onMouseOver={this.mouseOverImage}></img>}
