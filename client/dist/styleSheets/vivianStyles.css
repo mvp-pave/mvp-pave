@@ -37,10 +37,23 @@ h2 {
 	top: 20px;
 }
 .email,
-.password {
+.password,
+.search-location,
+.firstName,
+.lastName,
+.profile_picture,
+.bio {
 	width: 265px;
 	height: 40px;
 	border: 1px solid lightgrey;
+	font-size: 22px;
+	border-radius: 10px;
+	padding: 11px;
+}
+.user-profile-text {
+	width: 265px;
+	height: 40px;
+	border: 1px solid black;
 	font-size: 22px;
 	border-radius: 10px;
 	padding: 11px;
@@ -51,11 +64,13 @@ h2 {
 	top: 8px;
 }
 .login-container,
-.search-location-container {
+.search-location-container,
+.update-profile-container {
 	padding-bottom: 10px;
 }
 .login-modal,
-.search-location-modal {
+.search-location-modal,
+.update-profile-modal {
 	padding: 20px;
 	position: relative;
 	left: 15px;
@@ -74,7 +89,8 @@ h2 {
 	bottom: 2px;
 }
 .log-txt,
-.loc-txt {
+.loc-txt,
+.prof-txt {
 	position: relative;
 	bottom: 7px;
 }

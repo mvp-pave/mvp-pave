@@ -5,9 +5,9 @@ let SearchLocation = () => {
   return (
     <div className="fullscreen-container">
       <div className="search-location-modal">
-      <form className="search-location">
+      <form className="search-location-form">
           <div className="search-location-container">
-            <input type="search-location" name="email" className="email" placeholder="Search Location"></input>
+            <input type="search-location" name="search-location" className="search-location" placeholder="Search Location"></input>
             <MdCancel className="icons" size={30} />
           </div>
           <div>

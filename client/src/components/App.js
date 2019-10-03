@@ -10,7 +10,10 @@ import SuggestedBottom from './SuggestedBottom.js';
 import { IoMdSearch } from 'react-icons/fa';
 import Login from './Login.js'
 import SearchLocation from './SearchLocation.js';
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+//
+import UpdateProfile from './UpdateProfile.js';
+//
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -73,6 +76,7 @@ class App extends Component {
             <div id="other-page-content">
               <Login />
               <SearchLocation />
+              <UpdateProfile />
             </div>
           </div>
           
