@@ -27,12 +27,11 @@ class FakeApp extends Component {
               Authorization: key
               
               // Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
-              // Authorization: `Bearer lmBnwwniaabQZhlU4EZCMRVPIGp7W8apNMNFzKrTTuKx2peqhcU0pI9wRLENTUm6eU0lxN46cfDLwLSmnBIPVrUVfahFmUQT4X34QUYSmP4ghYIA3_bf_sYkU9KTXXYx`
           },
           //option params passed to API call to retrieve only breakfast and lunch spots 
           params: {
               // categories: `${terms}`,
-              categories: `restaurants`,
+              categories: `restaurant`,
           }
           })
           .then((res) => {
