@@ -68,7 +68,7 @@ export default class App extends Component {
       case 'search':
         return (<div><Search clickHandler={this.clickHandler} /></div>);
       case 'login':
-        return (<div><Login returnToHomepage={this.returnToHomepage} changeCurrentUser={this.changeCurrentUser} /></div>);
+        return (<div><Login returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
       case 'createAccount':
         return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
     }
