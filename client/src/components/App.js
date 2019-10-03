@@ -53,24 +53,30 @@ class App extends Component {
         return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert}/></div>);
     }
     return (
-        <div>
-          <div id="full-topbar">
-            <h2>PAVÉ</h2>
-            <div ><IoMdSearch /></div>
-            <Topbar />
-            <div id="content">
-              {/* <TopBar /> */}
-              {/* <SiteHeader /> */}
-              {/* <MainNavigation /> */}
-              {/* <List /> */}
-              <SuggestedBottom />
-            </div>
-            <div id="other-page-content">
-              <Login />
-              <SearchLocation />
-            </div>
+      // <Router>
+      <div>
+        <div id="full-topbar">
+          <h2>PAVÉ</h2>
+          {/* <Link to="/search" >hi</Link> */}
+          <Topbar />
+          <div id="content">
+            {/* <TopBar /> */}
+            {/* <SiteHeader /> */}
+            {/* <MainNavigation /> */}
+            {/* <List /> */}
+            <SuggestedBottom />
+          </div>
+          <div id="other-page-content">
+            <Login />
+            <SearchLocation />
           </div>
         </div>
+
+        {/* <Switch>
+            <Route exact path='/search' render={(props) => <Search {...props} homeLocation={this.state.homeLocation} />}/>
+          </Switch> */}
+      </div>
+      // </Router>
     )
   }
 }
