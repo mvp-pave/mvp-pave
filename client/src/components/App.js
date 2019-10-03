@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+// import PromoHeader from './PromoHeader.js';
+// import SiteHeader from './SiteHeader.js';
+// import MainNavigation from './MainNavigation.js';
+// import '../styles/app.css';
+import TopBar from './TopBar.js';
 import Topbar from './TopBar.js';
 import Search from './Search.js';
 import List from './List.js';
@@ -6,7 +11,7 @@ import SuggestedBottom from './SuggestedBottom.js';
 import { IoMdSearch } from 'react-icons/fa';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,6 +63,9 @@ export default class App extends Component {
             <Link to="/search" >hi</Link>
             <Topbar />
             <div id="content">
+              <TopBar />
+              {/* <SiteHeader /> */}
+              {/* <MainNavigation /> */}
               <List />
               <SuggestedBottom />
             </div>
@@ -70,3 +78,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default App;
