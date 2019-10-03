@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import REACT_APP_YELP_API_KEY from '../../../config.js'
+// import REACT_APP_YELP_API_KEY from '../../../../config.js/index.js'
 import ListItem from './ListItem'
 
 class FakeApp extends Component {
