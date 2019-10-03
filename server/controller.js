@@ -36,8 +36,13 @@ let controller = {
       .catch((err) => res.status(400).send(err))
   },
   postUser: (req, res) => {
+<<<<<<< HEAD
+    let { ID, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts } = req.body;
+    postUser(ID, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts)
+=======
     let { ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts } = req.body;
     postUser(ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts)
+>>>>>>> 722ac0a167733655c90aa628475cba36006535f6
       .then(() => res.status(201).send('User Account Posted!'))
       .catch((err) => res.status(401).send(err))
   },
@@ -56,8 +61,8 @@ let controller = {
   },
   getUsers: (req, res) => {
     getAllUsers()
-    .then((data) => res.status(200).send(data))
-    .catch((err) => res.status(400).send(err))
+      .then((data) => res.status(200).send(data))
+      .catch((err) => res.status(400).send(err))
   },
   updateUserPast: (req, res) => {
     let { ID } = req.params;
@@ -90,9 +95,9 @@ let controller = {
   updateUserPass: (req, res) => {
     let { ID } = req.params;
     let { password } = req.body;
-    updateUserBio(ID, password)   
-    .then(() => res.status(200).send('User Password Updated!'))
-    .catch((err) => res.status(400).send(err))     
+    updateUserBio(ID, password)
+      .then(() => res.status(200).send('User Password Updated!'))
+      .catch((err) => res.status(400).send(err))
   },
   updateUserPic: (req, res) => {
     let { ID } = req.params;
@@ -100,6 +105,8 @@ let controller = {
     updateUserPic(ID, profile_picture)
       .then(() => res.status(200).send('User Pic Updated!'))
       .catch((err) => res.status(400).send(err))
+<<<<<<< HEAD
+=======
   },
 
   yelpRecs: (req, res) => {
@@ -121,6 +128,7 @@ let controller = {
 
 
 
+>>>>>>> 722ac0a167733655c90aa628475cba36006535f6
   }
 
 }

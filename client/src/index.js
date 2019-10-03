@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+<<<<<<< HEAD
+import App from './components/App.js';
+=======
 import FakeApp from './components/FakeApp.js';
 // import $ from 'jquery';
 // import List from './components/List.jsx';
@@ -33,5 +36,6 @@ import FakeApp from './components/FakeApp.js';
 //     </div>)
 //   }
 // }
+>>>>>>> 722ac0a167733655c90aa628475cba36006535f6
 
 ReactDOM.render(<FakeApp />, document.getElementById('app'));
