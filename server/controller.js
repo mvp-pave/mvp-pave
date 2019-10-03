@@ -17,9 +17,6 @@ const {
   updateUserPic
 } = require('../database/dbHelpers.js');
 
-const yelp = require('yelp-fusion');
-const apiKey = require('../config')
-
 let controller = {
   postRestaurant: (req, res) => {
     let { num_recommendations, who_recommended } = req.body;
@@ -36,8 +33,8 @@ let controller = {
       .catch((err) => res.status(400).send(err))
   },
   postUser: (req, res) => {
-    let { ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts } = req.body;
-    postUser(ID, username, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts)
+    let { ID, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts } = req.body;
+    postUser(ID, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts)
       .then(() => res.status(201).send('User Account Posted!'))
       .catch((err) => res.status(401).send(err))
   },
@@ -101,7 +98,6 @@ let controller = {
       .then(() => res.status(200).send('User Pic Updated!'))
       .catch((err) => res.status(400).send(err))
   }
-
 }
 
 module.exports = controller;
