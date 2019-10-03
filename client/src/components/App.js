@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 // import SiteHeader from './SiteHeader.js';
 // import MainNavigation from './MainNavigation.js';
 // import '../styles/app.css';
+import TopBar from './TopBar.js';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
   }
@@ -14,7 +15,7 @@ export default class App extends Component {
           {/* <PromoHeader /> */}
           <div id="full-topbar">
             <div id="content">
-
+              <TopBar />
               {/* <SiteHeader /> */}
               {/* <MainNavigation /> */}
           </div>
@@ -23,3 +24,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default App;
