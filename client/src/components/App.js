@@ -17,34 +17,21 @@ class App extends Component {
     super(props);
     this.state = {
       searchClicked: false,
-      homeLocation: false
+      homeLocation: false, 
+      currentUserEmail: false,
+      page: 'homepage',
     }
-    // this.setWrapperRef = this.setWrapperRef.bind(this);
-    // this.handleClickOutside = this.handleClickOutside.bind(this);
-    // this.handleClickInside = this.handleClickInside.bind(this);
+    this.handleClickInside = this.handleClickInside.bind(this);
+    this.handleCancelSearch = this.handleCancelSearch.bind(this);
   }
 
-  // componentDidMount() {
-  //   document.addEventListener('mousedown', this.handleClickOutside);
-  // }
+  handleClickInside() {
+    this.setState({ searchClicked: true });
+  }
 
-  // componentWillUnmount() {
-  //   document.removeEventListener('mousedown', this.handleClickOutside);
-  // }
-
-  // setWrapperRef(node) {
-  //   this.wrapperRef = node;
-  // }
-
-  // handleClickOutside(event) {
-  //   if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-  //     this.setState({ searchClicked: false }, () => this.setState({ query: '', location: '' }));
-  //   }
-  // }
-
-  // handleClickInside() {
-  //   this.setState({ searchClicked: true });
-  // }
+  handleCancelSearch() {
+    this.setState({ searchClicked: false });
+  }
 
   // mouseOut() {
   //   this.setState({ moused: false });
@@ -55,13 +42,21 @@ class App extends Component {
   // }
 
   render() {
-    //<IoMdSearch />
+    switch(this.state.page){
+      case 'homepage':
+        return (<div><Homepage clickHandler={this.clickHandler}/></div>);
+      case 'userprofile':
+        return (<div><UserProfile userAlert={this.state.userAlert}/></div>);
+      case 'login':
+        return (<div><Login loginHandler={this.loginHandler}/></div>);
+      case 'register':
+        return (<div><Registration registerHandler={this.registerHandler} userAlert={this.state.userAlert}/></div>);
+    }
     return (
-      // <Router>
         <div>
           <div id="full-topbar">
             <h2>PAVÉ</h2>
-            {/* <Link to="/search" >hi</Link> */}
+            <div ><IoMdSearch /></div>
             <Topbar />
             <div id="content">
               {/* <TopBar /> */}
@@ -75,12 +70,7 @@ class App extends Component {
               <SearchLocation />
             </div>
           </div>
-          
-          {/* <Switch>
-            <Route exact path='/search' render={(props) => <Search {...props} homeLocation={this.state.homeLocation} />}/>
-          </Switch> */}
         </div>
-      // </Router>
     )
   }
 }

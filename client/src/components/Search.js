@@ -15,7 +15,8 @@ export default class Search extends Component {
       searchClicked: false,
       results: [],
       suggestionOptions: [],
-      trending: []
+      trending: [],
+      loading: false
     }
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -82,7 +83,7 @@ export default class Search extends Component {
   getTrending() {
     let arr = [];
     let loc = this.state.location;
-    loc[0] = loc[0].toUpperCase();
+    loc[0] = loc[0].toLowerCase();
     for (var i = 0; i < trends.length; i++) {
       if (trends[i].includes(loc)) {
         arr.push(trends[i])
@@ -92,29 +93,34 @@ export default class Search extends Component {
     this.setState({ trending: arr }, () => this.getResults())
   }
 
-  getResults() {
-    axios.get('/search')
-      .then(response => {
-        let arr = [];
-        for (var i = 0; i < response.data.length; i++) {
-          if (response.data[i].title.includes(this.state.query) || response.data[i].color.includes(this.state.query)) {
-            arr.push(response.data[i])
-          }
-        }
-        if (arr.length !== 0) {
-          arr = Object.values(arr.reduce((acc, curr) => {
-            if (!acc[curr.image1]) {
-              acc[curr.image1] = curr;
-            }
-            return acc;
-          }, {})
-          );
-          arr = arr.slice(0, 3)
-          this.setState({ results: arr })
-        }
+  getRestaurants() {
+    let key = REACT_APP_YELP_API_KEY()
+    // this.setState({ loading: true }) 
+    axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
+      //required authorization format from API 
+
+      headers: {
+        //to get the API from the .env file use process.env.{variable name}
+        Authorization: key
+
+        // Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
+      },
+      //option params passed to API call to retrieve only breakfast and lunch spots 
+      params: {
+        // categories: `${terms}`,
+        categories: this.state.query,
+      }
+    })
+      .then((res) => {
+        console.log(res.data.businesses)
+        //change the state of App to reflect on the result we are given from the API
+        //at the same time, setting the loading state to false 
+        // this.setState({ results: res.data.businesses, loading: false })
       })
-      .catch(error => {
-        console.log(error);
+      .catch((err) => {
+        //fire the errorState message if there is no information return from the API
+        console.log(err)
+        // this.setState({ errorState: `Sorry we couldn't find information related to the location you search, do you want to try something else?`, loading: false })
       })
   }
 
