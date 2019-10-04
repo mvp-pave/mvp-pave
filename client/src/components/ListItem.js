@@ -3,22 +3,18 @@ import axios from 'axios';
 
 
 
- const ListItem = ({ storeInfo, id }) => {
-   console.log("mother butthole2", id)
+ const ListItem = ({ storeInfo, id, getIdHandleClick, getRestaurant }) => {  
 
-  function handleClickDiv(e){
-    e.preventDefault();
-    console.log('you clicked the div')
-  }
+  console.log("pcLI", storeInfo.id);
 
    return (
-    <div>
-      <div onClick={handleClickDiv}> 
-        <div>{storeInfo.name}</div>
-        <div>{storeInfo.rating}</div>
-        <div>{storeInfo.review_count}</div>
-        <div>{storeInfo.location.city}</div>
-        <img src={storeInfo.image_url} alt=""/>
+    <div className="listItemContainer">
+      <div onClick={(e) => getIdHandleClick(e, storeInfo.id)} className="listItemContainer2"> 
+        <div className="listItemName">{storeInfo.name}</div>
+        <div className="listItemRating">{storeInfo.rating}</div>
+        <div className="listItemReviews">{storeInfo.review_count}</div>
+        <div className="listItemCity">{storeInfo.location.city}</div>
+        <img src={storeInfo.image_url} alt="" className="listItemImg"/>
       </div>
     </div>
   )
