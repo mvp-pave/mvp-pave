@@ -71,17 +71,27 @@
 
 .firstName,
 .lastName,
-.profile_picture,
+.profile_picture {
+  width: 265px;
+  height: 20px;
+  border: 1px solid lightgrey;
+  font-size: 14px;
+  padding: 11px;
+  border-radius: 10px;
+}
+
 .bio {
   width: 265px;
-  height: 40px;
+  height: 70px;
   border: 1px solid lightgrey;
-  font-size: 22px;
+  font-size: 14px;
   padding: 11px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .update-profile-container {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   padding-top: 10px;
   position: relative;
   bottom: 120px;
@@ -95,6 +105,7 @@
   background: transparent;
   position: relative;
   bottom: 120px;
+  border-radius: 10px;
 }
 
 .prof-txt {
