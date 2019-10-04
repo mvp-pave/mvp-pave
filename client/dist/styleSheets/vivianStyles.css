@@ -61,11 +61,10 @@ h2 {
 	position: absolute;
 	z-index: 25;
 	background-color: white;
-	left: 40px;
-	width: 380px;
+	width: 355px;
 	height: 200px;
 	border: 1px solid lightgrey;
-
+	top: 26.1%;
 }
 
 .email,
@@ -75,7 +74,7 @@ h2 {
 	height: 40px;
 	border: 1px solid lightgrey;
 	font-size: 22px;
-	/* border-radius: 10px; */
+	border-radius: 10px;
 	padding: 11px;
 }
 
@@ -86,8 +85,8 @@ h2 {
 }
 .icons-search {
 	position: relative;
-	right: 35px;
-	top: 7px;
+	right: -80%;
+	top: -45px;
 }
 .icons-close-container {
 	display: flex;
@@ -102,15 +101,14 @@ h2 {
 	padding-top: 10px
 }
 
-.search-location-container {
-	left: 25px;
-}
-
 .login-modal,
 .search-location-modal {
 	padding: 20px;
 	position: relative;
 	left: 15px;
+}
+.search-location-modal {
+	left: 0px;
 }
 
 .logging,
@@ -126,7 +124,6 @@ h2 {
 .searching-location {
 	border-radius: 10px;
 	background: transparent;
-	margin-top: 20px;
 }
 
 .reme {

@@ -22,7 +22,8 @@ export default class App extends Component {
       page: 'homepage',
       category: 'restaurant',
       results: [],
-      info: []
+      info: [],
+      profileIconClick: false
     }
     this.clickHandler = this.clickHandler.bind(this);
     this.changeHomeLocation = this.changeHomeLocation.bind(this);
@@ -30,6 +31,7 @@ export default class App extends Component {
     this.getRestaurants = this.getRestaurants.bind(this)
     this.returnToHomepage = this.returnToHomepage.bind(this);
     this.getStore = this.getStore.bind(this);
+    this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
   }
 
   componentDidMount() {
@@ -117,6 +119,12 @@ export default class App extends Component {
       })
   }
 
+  handleProfileIconClick(){
+    this.setState({
+      profileIconClick: !this.state.profileIconClick
+    })
+  }
+
   render() {
     switch (this.state.page) {
       case 'homepage':
@@ -125,24 +133,21 @@ export default class App extends Component {
             <div id="fulltopbar">
               <h2 className="app-title">PAVÉ</h2>
               <IoMdSearch size={40} className='search' id="searchButton" onClick={this.clickHandler} />
-              <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler}
-                changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}
-                homeLocation={this.state.homeLocation} />
+              <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler} 
+              changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser} 
+              homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
+              profileIconClick={this.state.profileIconClick}/>
               <div id="content">
                 <List homeLocation={this.state.homeLocation} results={this.state.results} />
-                <SuggestedBottom changeCategory={this.changeCategory} changeHomeLocation={this.changeHomeLocation} />
+                <SuggestedBottom changeHomeLocation={this.changeHomeLocation} 
+                homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
+                profileIconClick={this.state.profileIconClick}/>
               </div>
-              {/* <div id="other-page-content">
-                <SearchLocation clickHandler={this.clickHandler} />
-              </div> */}
             </div>
-
             {/* update profile which works on click of Top Bar */}
             {/* should be inside top bar */}
           </div>
         )
-      // case 'userProfile':
-      //   return (<div><UserProfile /></div>);
       case 'search':
         return (<div><Search clickHandler={this.clickHandler} /></div>);
       case 'login':
