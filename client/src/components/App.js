@@ -4,10 +4,12 @@ import TopBar from './TopBar.js';
 // import SearchLocation from './SearchLocation.js';
 import Login from './Login.js'
 import CreateAccount from './CreateAccount.js'
-// import List from './List.js';
 import SuggestedBottom from './SuggestedBottom.js';
-
+import List from './List.js'
 import UpdateProfile from './UpdateProfile.js'
+
+import REACT_APP_YELP_API_KEY from '../../../config.js'
+import axios from 'axios';
 
 import { IoMdSearch } from 'react-icons/io';
 
@@ -18,13 +20,29 @@ export default class App extends Component {
       homeLocation: false,
       currentUser: false,
       page: 'homepage',
+      category: 'restaurant',
+      results: [],
+      info: [],
       profileIconClick: false
     }
     this.clickHandler = this.clickHandler.bind(this);
     this.changeHomeLocation = this.changeHomeLocation.bind(this);
     this.changeCurrentUser = this.changeCurrentUser.bind(this);
+    this.getRestaurants = this.getRestaurants.bind(this)
     this.returnToHomepage = this.returnToHomepage.bind(this);
+    this.getStore = this.getStore.bind(this);
     this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
+  }
+
+  componentDidMount() {
+    if (!this.state.homeLocation) {
+      let ids = ["YRMHyCvqMz_lLgpqjNj_tw", "5i_RyzNnkaof6M64oZqxQA", "oVoj_A1FExfvI_7UbAdQgQ", "2h89smIl2aXxa2DyxSIFmg", "bVkavwJ8OgU4yPiUMoEOPg"]
+      for (var i = 0; i < ids.length; i++) {
+        this.getStore(ids[i])
+      }
+    } else {
+      this.getRestaurants();
+    }
   }
 
   clickHandler(e) {
@@ -44,8 +62,61 @@ export default class App extends Component {
     this.setState({ homeLocation: true });
   }
 
+  changeCategory(event) {
+    this.setState({ category: event.target.name });
+  }
+
   changeCurrentUser(user) {
     this.setState({ currentUser: user }, () => console.log("changeCurrentUser", this.state));
+  }
+
+  getRestaurants() {
+    if (this.state.homeLocation) {
+      let key = REACT_APP_YELP_API_KEY()
+      this.setState({ loading: true })
+      axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.homeLocation}`, {
+        //required authorization format from API 
+        headers: {
+          Authorization: key
+        },
+        params: {
+          categories: this.state.category,
+          limit: 8
+        }
+      })
+        .then((res) => {
+          console.log(res.data.businesses)
+          this.setState({ results: res.data.businesses })
+        })
+        .catch((err) => {
+          console.log('fix the broke', err)
+        })
+    }
+  }
+
+  getStore(id) {
+    let key = REACT_APP_YELP_API_KEY()
+    this.setState({ loading: true })
+    axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/${id}`, {
+      headers: {
+        Authorization: key
+      },
+      // params: {
+      //     categories: `restaurant`,
+      //     limit: 5
+      // }
+    })
+      .then((res) => {
+        let arr = this.state.results;
+        arr.push(res.data)
+
+        console.log(res.data)
+        this.setState({ results: arr }, () => console.log(this.state))
+      })
+      .catch((err) => {
+        console.log(err)
+        // this.setState({ errorState: `Sorry we couldn't find information related to the location you search, do you want to try something else?`, loading: false })
+      })
   }
 
   handleProfileIconClick(){
@@ -67,22 +138,16 @@ export default class App extends Component {
               homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
               profileIconClick={this.state.profileIconClick}/>
               <div id="content">
-                {/* <List homeLocation={this.state.homeLocation} /> */}
+                <List homeLocation={this.state.homeLocation} results={this.state.results} />
                 <SuggestedBottom changeHomeLocation={this.changeHomeLocation} 
                 homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
                 profileIconClick={this.state.profileIconClick}/>
               </div>
-              {/* <div id="other-page-content">
-                <SearchLocation clickHandler={this.clickHandler} />
-              </div> */}
             </div>
-
             {/* update profile which works on click of Top Bar */}
             {/* should be inside top bar */}
           </div>
         )
-      // case 'userProfile':
-      //   return (<div><UserProfile /></div>);
       case 'search':
         return (<div><Search clickHandler={this.clickHandler} /></div>);
       case 'login':
@@ -91,6 +156,6 @@ export default class App extends Component {
         return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
       case 'profile':
         return (<div><UpdateProfile clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
-      }
+    }
   }
 }

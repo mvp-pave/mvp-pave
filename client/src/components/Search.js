@@ -25,6 +25,11 @@ export default class Search extends Component {
     this.suggestionClick = this.suggestionClick.bind(this);
     this.suggestionChange = this.suggestionChange.bind(this);
     this.getResults = this.getResults.bind(this);
+    this.clearFields = this.clearFields.bind(this);
+  }
+
+  clearFields() {
+    this.setState({ query: "", location: "" });
   }
 
   handleQueryChange(event) {
@@ -118,7 +123,8 @@ export default class Search extends Component {
               </div>
               <button type="submit" id="hidden-search-button"></button>
             </form>
-            <div className="homepage" onClick={this.props.clickHandler} >Cancel</div>
+            <span className="homepage" onClick={this.props.clickHandler} >Cancel</span>
+            <span onClick={this.clearFields} >Clear</span>
           </div>
 
           <SearchResults destinationClick={this.destinationClick} suggestionClick={this.suggestionClick} query={this.state.query} location={this.state.location} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
