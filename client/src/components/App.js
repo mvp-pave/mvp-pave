@@ -7,6 +7,8 @@ import CreateAccount from './CreateAccount.js'
 import List from './List.js';
 import SuggestedBottom from './SuggestedBottom.js';
 
+import UpdateProfile from './UpdateProfile.js'
+
 import { IoMdSearch } from 'react-icons/io';
 
 export default class App extends Component {
@@ -61,6 +63,11 @@ export default class App extends Component {
                 <SearchLocation clickHandler={this.clickHandler} />
               </div> */}
             </div>
+
+            {/* update profile which works on click of Top Bar */}
+            {/* should be inside top bar */}
+
+            <UpdateProfile />
           </div>
         )
       // case 'userProfile':
