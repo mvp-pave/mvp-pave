@@ -27,7 +27,7 @@ export default class TopBar extends Component {
       <div>
             <div className='columns'>
               <div className='column'><MdHome size={30}/></div>
-              <div className='column'><MdPerson size={30}/></div>
+              <div className='column'><MdPerson size={30} className="profile" onClick={this.props.clickHandler}/></div>
               <div className='column'><IoMdHeart size={30}/></div>
               <div className='column'><MdLocationOn size={30}/></div>
               <div className='column' onClick={this.handleBurgerClick}>
