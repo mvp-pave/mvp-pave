@@ -9,9 +9,12 @@ export default class UpdateProfile extends Component {
       firstName: '',
       lastName: '',
       profile_picture: '',
-      bio: ''
+      bio: '',
+      file: null
     }
     this.getUserProfile = this.getUserProfile.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+
   }
   getUserProfile() {
     // axios.get('/pave/user/:email')
@@ -28,13 +31,26 @@ export default class UpdateProfile extends Component {
   componentDidMount() {
     // this.getUserProfile()
   }
+
+  handleChange(event) {
+    this.setState({
+      file: URL.createObjectURL(event.target.files[0])
+    })
+  }
+
   render() {
     return (
       <div className="fullscreen-container">
         <div className="update-profile-modal">
           <form className="update-profile">
-            <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage} /></div>
-            <h2 className="update-title">Update User Profile</h2>
+            <div><IoIosArrowBack className="gooBack" onClick={this.props.returnToHomepage} /></div>
+            <div className="update-profile-container">
+              <div>
+                {this.state.file ? <img className="profile-picture" src={this.state.file}></img> : <img className="profile-picture" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"></img>}
+              </div>
+              <label>Profile Picture:</label>
+              <input type="file" onChange={this.handleChange} name="profile_picture" className="profile_picture"></input>
+            </div>
             <div className="update-profile-container">
               <label>First Name:</label>
               <input type="text" name="firstName" className="firstName"></input>
@@ -42,10 +58,6 @@ export default class UpdateProfile extends Component {
             <div className="update-profile-container">
               <label>Last Name:</label>
               <input type="text" name="lastName" className="lastName"></input>
-            </div>
-            <div className="update-profile-container">
-              <label>Profile Picture:</label>
-              <input type="file" name="profile_picture" className="profile_picture"></input>
             </div>
             <div className="update-profile-container">
               <label>Bio:</label><br />
