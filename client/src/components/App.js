@@ -54,7 +54,9 @@ export default class App extends Component {
             <div id="full-topbar">
               <h2 className="app-title">PAVÉ</h2>
               <IoMdSearch size={40} className='search' id="searchButton" onClick={this.clickHandler} />
-              <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler} changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser} />
+              <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler} 
+              changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser} 
+              homeLocation={this.state.homeLocation}/>
               <div id="content">
                 {/* <List homeLocation={this.state.homeLocation} /> */}
                 <SuggestedBottom changeHomeLocation={this.changeHomeLocation} />

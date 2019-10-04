@@ -53,9 +53,24 @@ h2 {
 	position: relative;
 	top: 20px;
 }
+.search-location-form {
+	position: absolute;
+	left: 40px;
+}
+.search-location-container {
+	position: absolute;
+	z-index: 25;
+	background-color: white;
+	left: 40px;
+	width: 380px;
+	height: 200px;
+	border: 1px solid lightgrey;
+
+}
 
 .email,
-.password {
+.password,
+.search-location {
 	width: 265px;
 	height: 40px;
 	border: 1px solid lightgrey;
@@ -69,11 +84,26 @@ h2 {
 	right: 45px;
 	top: 8px;
 }
-
+.icons-search {
+	position: relative;
+	right: 35px;
+	top: 7px;
+}
+.icons-close-container {
+	display: flex;
+	justify-content: space-between;
+}
+.close {
+	margin-left: 91%;
+}
 .login-container,
 .search-location-container {
 	padding-bottom: 10px;
 	padding-top: 10px
+}
+
+.search-location-container {
+	left: 25px;
 }
 
 .login-modal,
@@ -90,7 +120,13 @@ h2 {
 	font-size: 22px;
 	/* border-radius: 10px; */
 	padding: 11px;
+	/* background: transparent; */
+}
+
+.searching-location {
+	border-radius: 10px;
 	background: transparent;
+	margin-top: 20px;
 }
 
 .reme {
