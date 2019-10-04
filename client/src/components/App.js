@@ -7,6 +7,8 @@ import CreateAccount from './CreateAccount.js'
 import List from './List.js';
 import SuggestedBottom from './SuggestedBottom.js';
 
+import UpdateProfile from './UpdateProfile.js'
+
 import { IoMdSearch } from 'react-icons/io';
 
 export default class App extends Component {
@@ -50,9 +52,11 @@ export default class App extends Component {
         return (
           <div>
             <div id="full-topbar">
-              <h2>PAVÉ</h2>
+              <h2 className="app-title">PAVÉ</h2>
               <IoMdSearch size={40} className='search' id="searchButton" onClick={this.clickHandler} />
-              <TopBar clickHandler={this.clickHandler} changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser} />
+              <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler} 
+              changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser} 
+              homeLocation={this.state.homeLocation}/>
               <div id="content">
                 {/* <List homeLocation={this.state.homeLocation} /> */}
                 <SuggestedBottom changeHomeLocation={this.changeHomeLocation} />
@@ -61,6 +65,9 @@ export default class App extends Component {
                 <SearchLocation clickHandler={this.clickHandler} />
               </div> */}
             </div>
+
+            {/* update profile which works on click of Top Bar */}
+            {/* should be inside top bar */}
           </div>
         )
       // case 'userProfile':
@@ -70,7 +77,9 @@ export default class App extends Component {
       case 'login':
         return (<div><Login returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
       case 'createAccount':
-        return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
-    }
+        return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
+      case 'profile':
+        return (<div><UpdateProfile clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
+      }
   }
 }

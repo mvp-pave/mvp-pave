@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { GoMail } from "react-icons/go";
-import { IoIosLock } from "react-icons/io";
+import { IoIosLock, IoIosArrowBack } from "react-icons/io";
 import axios from 'axios';
 import Facebook from './Facebook.js'
 
@@ -59,7 +59,18 @@ export default class Login extends Component {
             <div>
             </div>
             <form className="login" onSubmit={this.getAll}>
-              {this.state.emailError && <div className="err">
+
+              <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage}/></div>
+              
+                <Facebook className="fb" changeCurrentUser={this.props.changeCurrentUser} returnToHomepage={this.props.returnToHomepage} />
+                <div className="borderer">
+                  <span className="border-before"></span>
+                  <span className="or">or</span>
+                  <span className="border-after"></span>
+                </div>
+
+                {/* Error messages: */}
+                {this.state.emailError && <div className="err">
                 <div className="errors">
                   <span></span>
                   <span>There isn't an account associated with this email address. Please try another email or sign up!</span>
@@ -72,16 +83,6 @@ export default class Login extends Component {
                 </div>
               </div>}
 
-              {/* REROUTE TO HOMEPAGE IF LOGIN IN IS CORRECT
-              REROUTE TO SIGN UP PAGE ON CLICK */}
-              
-                <Facebook className="fb" changeCurrentUser={this.props.changeCurrentUser} returnToHomepage={this.props.returnToHomepage} />
-
-                <div className="borderer">
-                  <span className="border-before"></span>
-                  <span className="or">or</span>
-                  <span className="border-after"></span>
-                </div>
                 <div className="login-container">
                   <input type="email" name="email" className="email" placeholder="Email Address" required onChange={this.handleChange}></input>
                   <GoMail className="icons" size={30} />
