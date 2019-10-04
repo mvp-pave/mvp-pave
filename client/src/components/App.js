@@ -4,7 +4,7 @@ import TopBar from './TopBar.js';
 // import SearchLocation from './SearchLocation.js';
 import Login from './Login.js'
 import CreateAccount from './CreateAccount.js'
-import List from './List.js';
+// import List from './List.js';
 import SuggestedBottom from './SuggestedBottom.js';
 
 import UpdateProfile from './UpdateProfile.js'
@@ -51,7 +51,7 @@ export default class App extends Component {
       case 'homepage':
         return (
           <div>
-            <div id="full-topbar">
+            <div id="fulltopbar">
               <h2 className="app-title">PAVÉ</h2>
               <IoMdSearch size={40} className='search' id="searchButton" onClick={this.clickHandler} />
               <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler} 

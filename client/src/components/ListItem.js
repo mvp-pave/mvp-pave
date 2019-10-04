@@ -3,15 +3,15 @@ import axios from 'axios';
 
 
 
- const ListItem = ({ storeInfo, id }) => {
-   console.log("mother butthole2", id)
-   return (
+const ListItem = ({ storeInfo, id }) => {
+  console.log("mother butthole2", id)
+  return (
     <div>
       <div>{storeInfo.name}</div>
-      <img src={storeInfo.image_url} alt=""/>
+      <img src={storeInfo.image_url} alt="" />
     </div>
-   )
- };
+  )
+};
 
 
- export default ListItem;
+export default ListItem;

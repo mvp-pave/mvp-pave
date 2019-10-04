@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchResults from './SearchResults.js';
+import REACT_APP_YELP_API_KEY from '../../../config.js'
+
 
 const suggestions = ["mexican", "thai", "chinese", "taiwanese", "italian", "cambodian", "moroccan", "soul food", "indian", "vietnamese", "american", "cajun", "french", "japanese", "spanish", "greek", "mediterranean", "korean", "seafood", "vegan", "vegetarian", "tapas", "cuban"];
-const trends = ["Tokyo, Japan", "Paris, France", "Los Angeles, CA", "New York, NY", "Rome, Italy"];
 
 export default class Search extends Component {
   constructor(props) {
@@ -14,63 +15,63 @@ export default class Search extends Component {
       moused: false,
       results: [],
       suggestionOptions: [],
-      trending: [],
-      loading: false
+      loading: false,
+      queryClickCount: 0,
+      locationClickCount: 0,
     }
-    // this.setWrapperRef = this.setWrapperRef.bind(this);
-    // this.handleClickOutside = this.handleClickOutside.bind(this);
-    // this.handleClickInside = this.handleClickInside.bind(this);
-    // this.mouseOut = this.mouseOut.bind(this);
-    // this.mouseOver = this.mouseOver.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    // this.suggestionChange = this.suggestionChange.bind(this);
-    // this.getTrending = this.getTrending.bind(this);
-    // this.getResults = this.getResults.bind(this);
+    this.handleQueryChange = this.handleQueryChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.destinationClick = this.destinationClick.bind(this);
+    this.suggestionClick = this.suggestionClick.bind(this);
+    this.suggestionChange = this.suggestionChange.bind(this);
+    this.getResults = this.getResults.bind(this);
   }
 
-  handleChange(event) {
+  handleQueryChange(event) {
     this.setState({ query: event.target.value }, () => this.suggestionChange());
   }
 
-  suggestionClick() {
-    this.setState({ query: event.target.name });
+  handleLocationChange(event) {
+    this.setState({ location: event.target.value });
   }
 
-  destinationClick() {
-    this.setState({ location: event.target.name });
+  suggestionClick(query) {
+    let count = this.state.queryClickCount;
+    count++;
+    if (count => 1 && this.state.locationClickCount >= 1) {
+      this.setState({ queryClickCount: 0, locationClickCount: 0 });
+      this.setState({ query }, () => this.getResults());
+    } else {
+      this.setState({ queryClickCount: count });
+      this.setState({ query });
+    }
+  }
+
+  destinationClick(location) {
+    let count = this.state.locationClickCount;
+    count++;
+    if (count => 1 && this.state.queryClickCount >= 1) {
+      this.setState({ locationClickCount: 0, queryClickCount: 0 });
+      this.setState({ location }, () => this.getResults());
+    } else {
+      this.setState({ locationClickCount: count });
+      this.setState({ location });
+    }
   }
 
   suggestionChange() {
     let arr = [];
     for (var i = 0; i < suggestions.length; i++) {
-      if (!suggestions[i].includes(' ')) {
-        if (suggestions[i].slice(0, this.state.query.length) === this.state.query) {
-          arr.push(suggestions[i])
-        }
-      } else {
-        if (suggestions[i].includes(this.state.query)) {
-          arr.push(suggestions[i])
-        }
+      if (suggestions[i].includes(this.state.query)) {
+        arr.push(suggestions[i])
       }
     }
     arr = arr.slice(0, 5)
-    this.setState({ suggestionOptions: arr }, () => this.getTrending())
-  }
-
-  getTrending() {
-    let arr = [];
-    let loc = this.state.location;
-    loc[0] = loc[0].toLowerCase();
-    for (var i = 0; i < trends.length; i++) {
-      if (trends[i].toLowerCase().includes(loc)) {
-        arr.push(trends[i])
-      }
-    }
-    arr = arr.slice(0, 5)
-    this.setState({ trending: arr })
+    this.setState({ suggestionOptions: arr })
   }
 
   getResults() {
+    event.preventDefault;
     let key = REACT_APP_YELP_API_KEY()
     // this.setState({ loading: true }) 
     axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
@@ -103,18 +104,19 @@ export default class Search extends Component {
 
   render() {
     return (
-      <div className="allSearch">
+      <div className="allSearch" id="full-topbar">
         <div className="search-container" >
           <div className="search-wrapper">
-            <form action="/action_page.php" onSubmit={this.getResults}>
+            <form onSubmit={this.getResults}>
               <div className="search-container">
                 <label className="search-labels">Find:</label>
-                <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
+                <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleQueryChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
               </div>
               <div className="search-container">
                 <label className="search-labels">Near:</label>
-                <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search-loc" ></input>
+                <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleLocationChange} type="text" placeholder="Enter a Location" className="search-loc" ></input>
               </div>
+              <button type="submit" id="hidden-search-button"></button>
             </form>
             <div className="homepage" onClick={this.props.clickHandler} >Cancel</div>
           </div>
@@ -122,6 +124,7 @@ export default class Search extends Component {
           <SearchResults destinationClick={this.destinationClick} suggestionClick={this.suggestionClick} query={this.state.query} location={this.state.location} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
         </div>
       </div>
+
     )
   }
 }
