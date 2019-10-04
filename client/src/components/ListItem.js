@@ -21,8 +21,8 @@ import axios from 'axios';
         <img src={storeInfo.image_url} alt=""/>
       </div>
     </div>
-   )
- };
+  )
+};
 
 
- export default ListItem;
+export default ListItem;

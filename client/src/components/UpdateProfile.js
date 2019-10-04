@@ -13,7 +13,7 @@ export default class UpdateProfile extends Component {
     }
     this.getUserProfile = this.getUserProfile.bind(this);
   }
-  getUserProfile(){
+  getUserProfile() {
     // axios.get('/pave/user/:email')
     // .then(({ data }) => {
     //   this.setState({
@@ -25,7 +25,7 @@ export default class UpdateProfile extends Component {
     // })
     // .catch((err) => console.log('get user by email failed', err))
   }
-  componentDidMount(){
+  componentDidMount() {
     // this.getUserProfile()
   }
   render() {
@@ -33,22 +33,26 @@ export default class UpdateProfile extends Component {
       <div className="fullscreen-container">
         <div className="update-profile-modal">
           <form className="update-profile">
-            <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage}/></div>
-            <div className="title">Update User Profile</div>
+            <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage} /></div>
+            <h2 className="update-title">Update User Profile</h2>
             <div className="update-profile-container">
-              <input type="firstName" name="firstName" className="firstName" placeholder="First Name"></input>
+              <label>First Name:</label>
+              <input type="text" name="firstName" className="firstName"></input>
             </div>
             <div className="update-profile-container">
-              <input type="lastName" name="lastName" className="lastName" placeholder="Last Name"></input>
+              <label>Last Name:</label>
+              <input type="text" name="lastName" className="lastName"></input>
             </div>
             <div className="update-profile-container">
-              <input type="profile_picture" name="profile_picture" className="profile_picture" placeholder="Profile Picture"></input>
+              <label>Profile Picture:</label>
+              <input type="file" name="profile_picture" className="profile_picture"></input>
             </div>
             <div className="update-profile-container">
-              <input type="bio" name="bio" className="bio" placeholder="Bio"></input>
+              <label>Bio:</label><br />
+              <input type="text" name="bio" className="bio" ></input>
             </div>
             <div>
-              <button className="updaing-profile"><span className="prof-txt">Update Profile</span></button>
+              <button className="updating-profile"><span className="prof-txt">Update Profile</span></button>
             </div>
           </form>
         </div>

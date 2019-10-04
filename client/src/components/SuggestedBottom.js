@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+// import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import SearchLocation from './SearchLocation.js';
 
 
 export default class SuggestedBottom extends Component {
@@ -9,6 +10,13 @@ export default class SuggestedBottom extends Component {
   }
 
   render() {
+    let { handleProfileIconClick, profileIconClick, homeLocation } = this.props;
+    let locationPopup;
+    if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
+      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick}/>;
+    } else {
+      locationPopup = <div></div>
+    }
     return (
       <div>
         <div className="sug-main-title">PAVÉ THE WAY</div>
@@ -20,25 +28,25 @@ export default class SuggestedBottom extends Component {
           </div>
           <div className="all-imgs">
             <div className="img-container">
-              <img className="img-sugg" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"></img>
+              <img className="img-sugg" src="./images/food.jpeg" onClick={handleProfileIconClick}></img>
               <div className="title-container">
                 <div className="sugg-title">Food</div>
               </div>
             </div>
             <div className="img-container">
-              <img className="img-sugg" src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"></img>
+              <img className="img-sugg" src="./images/drinks.jpeg" onClick={handleProfileIconClick}></img>
               <div className="title-container">
                 <div className="sugg-title">Drinks</div>
               </div>
             </div>
             <div className="img-container">
-              <img className="img-sugg" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"></img>
+              <img className="img-sugg" src="./images/experiences.jpeg"></img>
               <div className="title-container">
                 <div className="sugg-title">Experiences</div>
               </div>
             </div>
             <div className="img-container">
-              <img className="img-sugg" src="https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"></img>
+              <img className="img-sugg" src="./images/connect.jpeg"></img>
               <div className="title-container">
                 <div className="sugg-title">Connections</div>
               </div>
@@ -50,6 +58,7 @@ export default class SuggestedBottom extends Component {
             </div> */}
           </div>
         </div>
+        {locationPopup}
       </div >
     )
   }
