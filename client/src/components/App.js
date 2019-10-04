@@ -155,7 +155,8 @@ export default class App extends Component {
       case 'createAccount':
         return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
       case 'profile':
-        return (<div><UpdateProfile clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
+        return (<div><UpdateProfile currentUser={this.state.currentUser} clickHandler={this.clickHandler} 
+                changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
     }
   }
 }
