@@ -128,10 +128,10 @@ h2 {
 	padding: 11px;
 	/* background: transparent; */
 	background: #fff;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 17px;
-  /* line-height: 1.43; */
-  color: black;
+	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+	font-size: 17px;
+	/* line-height: 1.43; */
+	color: black;
 }
 
 .searching-location {
@@ -265,7 +265,7 @@ h2 {
 }
 
 .kep-login-facebook.metro {
-	/* border-radius: 10px; */
+	border-radius: 10px !important;
 	width: 290px;
 	height: 60px;
 }
