@@ -86,12 +86,52 @@ html {
 }
 
 .trend {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    line-height: 1.43;
+    color: #484848;
     display: flex;
     position: relative;
-    left: 50px;
+    left: -5px;
     bottom: 10px;
     padding-right: 70px;
+    border-radius: 30px;
     padding-bottom: 10px;
+    flex-flow: column-reverse;
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    align-items: center;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: calc(100vw - 40px);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.trend:before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    background: url(/static/2.36.0/images/global/icons/icon-search.svg);
+    background-repeat: no-repeat;
+}
+
+.popular-h {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 17px;
+    line-height: 1.43;
+    color: #484848;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 .popular-products {
@@ -101,12 +141,12 @@ html {
 
 /* // This applies from 0px to 600px */
 body {
-  background: #fff;
+    background: #fff;
 }
 
 /* // This applies from 600px onwards */
 @media (min-width: 600px) {
-  body {
-    background: green;
-  }
+    body {
+        background: green;
+    }
 }
