@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchResults from './SearchResults.js';
+import REACT_APP_YELP_API_KEY from '../../../config.js'
+
 
 const suggestions = ["mexican", "thai", "chinese", "taiwanese", "italian", "cambodian", "moroccan", "soul food", "indian", "vietnamese", "american", "cajun", "french", "japanese", "spanish", "greek", "mediterranean", "korean", "seafood", "vegan", "vegetarian", "tapas", "cuban"];
 const trends = ["Tokyo, Japan", "Paris, France", "Los Angeles, CA", "New York, NY", "Rome, Italy"];
@@ -22,14 +24,20 @@ export default class Search extends Component {
     // this.handleClickInside = this.handleClickInside.bind(this);
     // this.mouseOut = this.mouseOut.bind(this);
     // this.mouseOver = this.mouseOver.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    // this.suggestionChange = this.suggestionChange.bind(this);
-    // this.getTrending = this.getTrending.bind(this);
-    // this.getResults = this.getResults.bind(this);
+    this.handleQueryChange = this.handleQueryChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.destinationClick = this.destinationClick.bind(this);
+    this.suggestionClick = this.suggestionClick.bind(this);
+    this.suggestionChange = this.suggestionChange.bind(this);
+    this.getTrending = this.getTrending.bind(this);
+    this.getResults = this.getResults.bind(this);
   }
 
-  handleChange(event) {
+  handleQueryChange(event) {
     this.setState({ query: event.target.value }, () => this.suggestionChange());
+  }
+  handleLocationChange(event) {
+    this.setState({ location: event.target.value }, () => this.getTrending());
   }
 
   suggestionClick() {
@@ -43,31 +51,24 @@ export default class Search extends Component {
   suggestionChange() {
     let arr = [];
     for (var i = 0; i < suggestions.length; i++) {
-      if (!suggestions[i].includes(' ')) {
-        if (suggestions[i].slice(0, this.state.query.length) === this.state.query) {
-          arr.push(suggestions[i])
-        }
-      } else {
-        if (suggestions[i].includes(this.state.query)) {
-          arr.push(suggestions[i])
-        }
+      if (suggestions[i].includes(this.state.query)) {
+        arr.push(suggestions[i])
       }
     }
     arr = arr.slice(0, 5)
-    this.setState({ suggestionOptions: arr }, () => this.getTrending())
+    this.setState({ suggestionOptions: arr })
   }
 
   getTrending() {
     let arr = [];
-    let loc = this.state.location;
-    loc[0] = loc[0].toLowerCase();
+    let loc = this.state.location.toLowerCase;
     for (var i = 0; i < trends.length; i++) {
       if (trends[i].toLowerCase().includes(loc)) {
         arr.push(trends[i])
       }
     }
     arr = arr.slice(0, 5)
-    this.setState({ trending: arr })
+    this.setState({ trending: arr }, () => console.log("trending", this.state))
   }
 
   getResults() {
@@ -108,9 +109,9 @@ export default class Search extends Component {
           <div className="search-wrapper">
             <form action="/action_page.php" onSubmit={this.getResults}>
               <label>Find</label>
-              <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search" ></input>
+              <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleQueryChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search" ></input>
               <label>Near</label>
-              <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search" ></input>
+              <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleLocationChange} type="text" placeholder="Enter a Location" className="search" ></input>
             </form>
             <div className="homepage" onClick={this.props.clickHandler} >Cancel</div>
           </div>
