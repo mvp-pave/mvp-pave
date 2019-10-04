@@ -117,7 +117,7 @@ export default class Search extends Component {
                 {/* <label className="search-labels">Find:</label> */}
                 <span className="search-goBack" ><IoIosArrowBack size={20} onClick={this.props.returnToHomepage} /></span>
 
-                <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleQueryChange} type="text" placeholder="     Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
+                <input tabIndex="1" name="query" id="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleQueryChange} type="text" placeholder="Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
               </div>
               <div className="search-container">
                 {/* <label className="search-labels">Near:</label> */}
