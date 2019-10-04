@@ -66,8 +66,6 @@ export default class App extends Component {
 
             {/* update profile which works on click of Top Bar */}
             {/* should be inside top bar */}
-
-            <UpdateProfile />
           </div>
         )
       // case 'userProfile':
@@ -78,6 +76,8 @@ export default class App extends Component {
         return (<div><Login returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
       case 'createAccount':
         return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
-    }
+      case 'profile':
+        return (<div><UpdateProfile clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
+      }
   }
 }

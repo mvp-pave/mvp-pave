@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { IoIosArrowBack } from "react-icons/io";
 
 export default class UpdateProfile extends Component {
   constructor(props) {
@@ -32,6 +33,7 @@ export default class UpdateProfile extends Component {
       <div className="fullscreen-container">
         <div className="update-profile-modal">
           <form className="update-profile">
+            <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage}/></div>
             <div className="title">Update User Profile</div>
             <div className="update-profile-container">
               <input type="firstName" name="firstName" className="firstName" placeholder="First Name"></input>
