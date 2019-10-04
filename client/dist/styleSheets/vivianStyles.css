@@ -119,6 +119,11 @@ h2 {
 	/* border-radius: 10px; */
 	padding: 11px;
 	/* background: transparent; */
+	background: #fff;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 17px;
+  /* line-height: 1.43; */
+  color: black;
 }
 
 .searching-location {
@@ -131,10 +136,13 @@ h2 {
 	bottom: 2px;
 }
 
-.log-txt,
-.loc-txt {
+.log-txt {
 	position: relative;
 	bottom: 7px;
+}
+.loc-txt {
+	position: relative;
+	bottom: 2px;
 }
 
 .borderer {
