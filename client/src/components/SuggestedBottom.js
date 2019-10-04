@@ -11,7 +11,7 @@ export default class SuggestedBottom extends Component {
   render() {
     return (
       <div>
-        <div className="sug-main-title">PAVÉ THE WAY</div>
+        <div className="sug-main-title">PAVÉ YOUR WAY</div>
         <div className="container-suggested-bottom">
           <div className="arrow-container">
             {/* <div>
@@ -26,7 +26,7 @@ export default class SuggestedBottom extends Component {
               </div>
             </div>
             <div className="img-container">
-              <img className="img-sugg" src="./images/drinks.jpeg"></img>
+              <img className="img-sugg" src="./images/drinks.jpeg" name="bars" onClick={() => this.props.changeCategory} ></img>
               <div className="title-container">
                 <div className="sugg-title">Drinks</div>
               </div>
