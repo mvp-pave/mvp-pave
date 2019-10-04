@@ -59,7 +59,13 @@ export default class Login extends Component {
             <div>
             </div>
             <form className="login" onSubmit={this.getAll}>
-              {this.state.emailError && <div className="err">
+
+              {/* REROUTE TO HOMEPAGE IF LOGIN IN IS CORRECT
+              REROUTE TO SIGN UP PAGE ON CLICK */}
+              
+                <Facebook className="fb" changeCurrentUser={this.props.changeCurrentUser} returnToHomepage={this.props.returnToHomepage} />
+
+                {this.state.emailError && <div className="err">
                 <div className="errors">
                   <span></span>
                   <span>There isn't an account associated with this email address. Please try another email or sign up!</span>
@@ -71,11 +77,6 @@ export default class Login extends Component {
                   <span>The password you entered is incorrect. Please, try again.</span>
                 </div>
               </div>}
-
-              {/* REROUTE TO HOMEPAGE IF LOGIN IN IS CORRECT
-              REROUTE TO SIGN UP PAGE ON CLICK */}
-              
-                <Facebook className="fb" changeCurrentUser={this.props.changeCurrentUser} returnToHomepage={this.props.returnToHomepage} />
 
                 <div className="borderer">
                   <span className="border-before"></span>

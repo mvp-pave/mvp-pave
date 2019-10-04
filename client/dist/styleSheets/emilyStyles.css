@@ -1,0 +1,9 @@
+#searchButton {
+    position: relative;
+    left: 300px;
+    bottom: 80px;
+}
+
+.app-title {
+    padding-bottom: 0;
+}
