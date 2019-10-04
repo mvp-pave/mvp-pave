@@ -58,8 +58,8 @@ export default class App extends Component {
     }, () => console.log("return to homepage", this.state))
   }
 
-  changeHomeLocation() {
-    this.setState({ homeLocation: true });
+  changeHomeLocation(location) {
+    this.setState({ homeLocation: location }, () => console.log('change home location', location));
   }
 
   changeCategory(event) {
@@ -85,7 +85,7 @@ export default class App extends Component {
         }
       })
         .then((res) => {
-          console.log(res.data.businesses)
+          // console.log(res.data.businesses)
           this.setState({ results: res.data.businesses })
         })
         .catch((err) => {

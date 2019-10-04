@@ -9,10 +9,10 @@ export default class SuggestedBottom extends Component {
   }
 
   render() {
-    let { handleProfileIconClick, profileIconClick, homeLocation } = this.props;
+    let { handleProfileIconClick, profileIconClick, homeLocation, changeHomeLocation } = this.props;
     let locationPopup;
     if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
-      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick}/>;
+      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick} changeHomeLocation={changeHomeLocation}/>;
     } else {
       locationPopup = <div></div>
     }

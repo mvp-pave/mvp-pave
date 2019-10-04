@@ -4,11 +4,8 @@ import axios from 'axios';
 
 
  const ListItem = ({ storeInfo, id }) => {
-   console.log("mother butthole2", id)
-
   function handleClickDiv(e){
     e.preventDefault();
-    console.log('you clicked the div')
   }
 
    return (
