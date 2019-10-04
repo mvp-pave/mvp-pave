@@ -40,26 +40,26 @@ export default class SearchResults extends Component {
   }
 
   render() {
-    let { suggestionOptions, results, query, trending } = this.props
+    let { suggestionOptions, results, query, location, trending, suggestionClick, destinationClick } = this.props
     if (query.length === 0) {
       return (
         <div className="suggestions-box">
           <div className="trending">
             <h3 className="trend-h">Trending</h3>
-            <span className="trend">Japanese</span>
-            <span className="trend">Mexican</span>
-            <span className="trend">Korean</span>
-            <span className="trend">Mediterranean</span>
-            <span className="trend">Chinese</span>
-            <span className="trend">Thai</span>
+            <span className="trend" name="Japanese" onClick={suggestionClick} >Japanese</span>
+            <span className="trend" name="Mexican" onClick={suggestionClick} >Mexican</span>
+            <span className="trend" name="Korean" onClick={suggestionClick}  >Korean</span>
+            <span className="trend" name="Mediterranean" onClick={suggestionClick} >Mediterranean</span>
+            <span className="trend" name="Chinese" onClick={suggestionClick} >Chinese</span>
+            <span className="trend" name="Thai" onClick={suggestionClick} >Thai</span>
           </div>
           <div className="popular-products">
             <h3 className="popular-h">Popular Destinations</h3>
-            <div className="popular"><img className="result-img" src={'./NYC.jpeg'}></img>
+            <div className="popular" onClick={destinationClick} name="New York" ><img className="result-img" src={'./NYC.jpeg'}></img>
               <div className="title"></div>New York, NY</div>
-            <div className="popular"><img className="result-img" src={'./France.jpeg'}></img>
+            <div className="popular" onClick={destinationClick} name="Paris" ><img className="result-img" src={'./France.jpeg'}></img>
               <div className="title">Paris, France</div></div>
-            <div className="popular"><img className="result-img" src={'./Tokyo.jpeg'}></img>
+            <div className="popular" onClick={destinationClick} name="Tokyo" ><img className="result-img" src={'./Tokyo.jpeg'}></img>
               <div className="title">Tokyo, Japan</div></div>
           </div>
         </div>

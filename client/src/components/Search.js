@@ -22,62 +22,40 @@ export default class Search extends Component {
     // this.handleClickInside = this.handleClickInside.bind(this);
     // this.mouseOut = this.mouseOut.bind(this);
     // this.mouseOver = this.mouseOver.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     // this.suggestionChange = this.suggestionChange.bind(this);
     // this.getTrending = this.getTrending.bind(this);
     // this.getResults = this.getResults.bind(this);
   }
 
-  // handleClickInside() {
-  //   this.setState({ searchClicked: true });
-  // }
+  handleChange(event) {
+    this.setState({ query: event.target.value }, () => this.suggestionChange());
+  }
 
-  // handleCancelSearch() {
-  //   this.setState({ searchClicked: false });
-  // }
+  suggestionClick() {
+    this.setState({ query: event.target.name });
+  }
 
-  // // componentDidMount() {
-  // //   document.addEventListener('mousedown', this.handleClickOutside);
-  // // }
+  destinationClick() {
+    this.setState({ location: event.target.name });
+  }
 
-  // // componentWillUnmount() {
-  // //   document.removeEventListener('mousedown', this.handleClickOutside);
-  // // }
-
-  // // setWrapperRef(node) {
-  // //   this.wrapperRef = node;
-  // // }
-
-  // handleClickOutside(event) {
-  //   if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-  //     this.setState({ searchClicked: false }, () => this.setState({ query: '' }));
-  //   }
-  // }
-
-  // handleClickInside() {
-  //   this.setState({ searchClicked: true });
-  // }
-
-  // handleChange(event) {
-  //   this.setState({ query: event.target.value }, () => this.suggestionChange());
-  // }
-
-  // suggestionChange() {
-  //   let arr = [];
-  //   for (var i = 0; i < suggestions.length; i++) {
-  //     if (!suggestions[i].includes(' ')) {
-  //       if (suggestions[i].slice(0, this.state.query.length) === this.state.query) {
-  //         arr.push(suggestions[i])
-  //       }
-  //     } else {
-  //       if (suggestions[i].includes(this.state.query)) {
-  //         arr.push(suggestions[i])
-  //       }
-  //     }
-  //   }
-  //   arr = arr.slice(0, 5)
-  //   this.setState({ suggestionOptions: arr }, () => this.getTrending())
-  // }
+  suggestionChange() {
+    let arr = [];
+    for (var i = 0; i < suggestions.length; i++) {
+      if (!suggestions[i].includes(' ')) {
+        if (suggestions[i].slice(0, this.state.query.length) === this.state.query) {
+          arr.push(suggestions[i])
+        }
+      } else {
+        if (suggestions[i].includes(this.state.query)) {
+          arr.push(suggestions[i])
+        }
+      }
+    }
+    arr = arr.slice(0, 5)
+    this.setState({ suggestionOptions: arr }, () => this.getTrending())
+  }
 
   getTrending() {
     let arr = [];
@@ -137,7 +115,7 @@ export default class Search extends Component {
             <div className="homepage" onClick={this.props.clickHandler} >Cancel</div>
           </div>
 
-          <SearchResults query={this.state.query} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
+          <SearchResults destinationClick={this.destinationClick} suggestionClick={this.suggestionClick} query={this.state.query} location={this.state.location} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
         </div>
       </div>
     )
