@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+// import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import SearchLocation from './SearchLocation.js';
 
 
 export default class SuggestedBottom extends Component {
@@ -9,6 +10,13 @@ export default class SuggestedBottom extends Component {
   }
 
   render() {
+    let { handleProfileIconClick, profileIconClick, homeLocation } = this.props;
+    let locationPopup;
+    if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
+      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick}/>;
+    } else {
+      locationPopup = <div></div>
+    }
     return (
       <div>
         <div className="sug-main-title">PAVÉ THE WAY</div>
@@ -20,13 +28,13 @@ export default class SuggestedBottom extends Component {
           </div>
           <div className="all-imgs">
             <div className="img-container">
-              <img className="img-sugg" src="./images/food.jpeg"></img>
+              <img className="img-sugg" src="./images/food.jpeg" onClick={handleProfileIconClick}></img>
               <div className="title-container">
                 <div className="sugg-title">Food</div>
               </div>
             </div>
             <div className="img-container">
-              <img className="img-sugg" src="./images/drinks.jpeg"></img>
+              <img className="img-sugg" src="./images/drinks.jpeg" onClick={handleProfileIconClick}></img>
               <div className="title-container">
                 <div className="sugg-title">Drinks</div>
               </div>
@@ -50,6 +58,7 @@ export default class SuggestedBottom extends Component {
             </div> */}
           </div>
         </div>
+        {locationPopup}
       </div >
     )
   }
