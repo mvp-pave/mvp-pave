@@ -1,15 +1,68 @@
+html {
+    width: 100%;
+}
+
 #searchButton {
     position: relative;
     left: 300px;
     bottom: 80px;
 }
 
-/* .columns {
+.result-img {
+    width: 250px;
+    height: 300px;
     position: relative;
-    bottom: 70px;
+    left: 20px;
 }
 
-.content {
+.popular {
+    padding-bottom: 20px;
+}
+
+.pop-title {
     position: relative;
-    bottom: 80px;
-} */
+    left: 90px
+}
+
+.allSearch {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+
+.search-labels {
+    padding-right: 10px;
+    font-size: 20px;
+    font-weight: bold
+}
+
+.search-container {
+    padding-bottom: 10px;
+}
+
+.search-loc {
+    width: 200px;
+    height: 10px;
+    border: 1px solid lightgrey;
+    font-size: 15px;
+    padding: 11px;
+}
+
+.trendings {
+    display: inline-block;
+    position: relative;
+}
+
+.trend {
+    display: flex;
+    position: relative;
+    left: 50px;
+    bottom: 10px;
+    padding-right: 70px;
+    padding-bottom: 10px;
+}
+
+.popular-products {
+    position: relative;
+    bottom: 30px;
+}

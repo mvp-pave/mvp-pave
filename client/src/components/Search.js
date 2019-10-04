@@ -103,14 +103,18 @@ export default class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className="allSearch">
         <div className="search-container" >
           <div className="search-wrapper">
             <form action="/action_page.php" onSubmit={this.getResults}>
-              <label>Find</label>
-              <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search" ></input>
-              <label>Near</label>
-              <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search" ></input>
+              <div className="search-container">
+                <label className="search-labels">Find:</label>
+                <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
+              </div>
+              <div className="search-container">
+                <label className="search-labels">Near:</label>
+                <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search-loc" ></input>
+              </div>
             </form>
             <div className="homepage" onClick={this.props.clickHandler} >Cancel</div>
           </div>
