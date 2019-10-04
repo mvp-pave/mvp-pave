@@ -143,6 +143,11 @@ h2 {
 	left: 100px;
 }
 
+.creatingAccount {
+	position: relative;
+	left: 90px;
+}
+
 .err {
 	padding: 10px;
 }
