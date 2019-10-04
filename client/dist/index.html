@@ -29,6 +29,18 @@
         navbar.classList.remove("sticky");
       }
     }
+    window.onscroll = function () { myFunc() };
+
+var search = document.getElementById("search-topbar");
+var sticky = search.offsetTop;
+
+function myFunc() {
+  if (window.pageYOffset >= sticky) {
+    search.classList.add("sticky")
+  } else {
+    search.classList.remove("sticky");
+  }
+}
   </script> -->
 
 
