@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 
 export default class SuggestedBottom extends Component {
   constructor(props) {
