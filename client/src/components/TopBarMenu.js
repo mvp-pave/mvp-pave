@@ -16,7 +16,7 @@ let TopBarMenu = (props) => {
         <div className='menu-list'>
           <p onClick={props.clickHandler} className='login' >Sign In</p>
           <p onClick={props.clickHandler} className='createAccount' >Sign Up</p>
-          <p>Settings</p>
+          <p className="setting">Settings</p>
         </div>
       </div>
     )
