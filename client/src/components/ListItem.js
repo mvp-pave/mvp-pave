@@ -6,14 +6,14 @@ import axios from 'axios';
  const ListItem = ({ storeInfo, id }) => {
    console.log("mother butthole2", id)
 
-  function handleClick(e){
+  function handleClickDiv(e){
     e.preventDefault();
-    console.log('you clicked me', this.storeInfo.id)
+    console.log('you clicked the div')
   }
 
    return (
     <div>
-      <div onClick={handleClick}> 
+      <div onClick={handleClickDiv}> 
         <div>{storeInfo.name}</div>
         <div>{storeInfo.rating}</div>
         <div>{storeInfo.review_count}</div>

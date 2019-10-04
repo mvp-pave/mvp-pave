@@ -12,6 +12,7 @@ class List extends Component {
     }
     this.getRestaurants = this.getRestaurants.bind(this)
     // this.getStore = this.getStore.bind(this)
+    this.handleClickModal = this.handleClickModal.bind(this)
 
   }
   componentDidMount() {
@@ -29,7 +30,7 @@ class List extends Component {
           },
           params: {
               categories: `restaurant`,
-              limit: 8
+              limit: 12
           }
           })
           .then((res) => {
@@ -65,6 +66,12 @@ class List extends Component {
   //         })
   // }
   
+  handleClickModal(e){
+    e.preventDefault();
+    console.log("you clicked the button")
+  }
+
+
   render() {
     if (this.state.results.length) {
       return (
@@ -77,6 +84,7 @@ class List extends Component {
               <ListItem storeInfo={storeInfo} key={index} id={storeInfo.id}/>
             ))}
           </div>
+          <button onClick={this.handleClickModal}>Show More</button>
         </div>
       )
     } else {
