@@ -58,7 +58,7 @@ export default class Login extends Component {
           <div className="login-modal">
             <div>
             </div>
-            <form className="login" onSubmit={this.getAll}>
+            <form className="log-in" onSubmit={this.getAll}>
 
               <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage}/></div>
               

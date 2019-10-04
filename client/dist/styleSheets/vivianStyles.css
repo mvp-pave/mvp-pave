@@ -53,10 +53,12 @@ h2 {
 	position: relative;
 	top: 20px;
 }
+
 .search-location-form {
 	position: absolute;
 	left: 40px;
 }
+
 .search-location-container {
 	position: absolute;
 	z-index: 25;
@@ -83,18 +85,22 @@ h2 {
 	right: 45px;
 	top: 8px;
 }
+
 .icons-search {
 	position: relative;
 	right: -80%;
 	top: -45px;
 }
+
 .icons-close-container {
 	display: flex;
 	justify-content: space-between;
 }
+
 .close {
 	margin-left: 91%;
 }
+
 .login-container,
 .search-location-container {
 	padding-bottom: 10px;
@@ -107,6 +113,7 @@ h2 {
 	position: relative;
 	left: 15px;
 }
+
 .search-location-modal {
 	left: 0px;
 }
@@ -259,4 +266,146 @@ h2 {
 	height: 50px;
 	right: 30px;
 	bottom: 30px;
+}
+
+.goingBack {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	right: 30px;
+	bottom: 30px;
+}
+
+/* Responsiveness for login */
+@media screen and (min-width:700px) {
+	.fullscreen-container {
+		position: fixed;
+		bottom: 0;
+		top: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
+
+	.log-in {
+		width: 320px;
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.login-modal {
+		background: #fff;
+		position: absolute;
+		left: 160px;
+		top: 120px;
+		width: 400px;
+		height: 620px;
+	}
+
+	.goBack {
+		position: relative;
+		right: 210px;
+		bottom: 130px;
+	}
+}
+
+@media screen and (min-width:1200px) {
+	.fullscreen-container {
+		position: fixed;
+		bottom: 0;
+		top: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
+
+	.log-in {
+		width: 320px;
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.login-modal {
+		background: #fff;
+		position: absolute;
+		left: 660px;
+		top: 120px;
+		width: 400px;
+		height: 620px;
+	}
+
+	.goBack {
+		position: relative;
+		right: 710px;
+		bottom: 130px;
+	}
+}
+
+/* Responsiveness for signup */
+@media screen and (min-width:700px) {
+	.fullscreen-container {
+		position: fixed;
+		bottom: 0;
+		top: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
+
+	.signup {
+		width: 320px;
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.signup-modal {
+		background: #fff;
+		position: absolute;
+		left: 160px;
+		top: 120px;
+		width: 400px;
+		height: 620px;
+	}
+
+	.goingBack {
+		position: relative;
+		right: 160px;
+		bottom: 110px;
+	}
+}
+
+@media screen and (min-width:1200px) {
+	.fullscreen-container {
+		position: fixed;
+		bottom: 0;
+		top: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
+
+	.log-in {
+		width: 320px;
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.signup-modal {
+		background: #fff;
+		position: absolute;
+		left: 660px;
+		top: 120px;
+		width: 400px;
+		height: 620px;
+	}
+
+	.goingBack {
+		position: relative;
+		right: 660px;
+		bottom: 130px;
+	}
 }
