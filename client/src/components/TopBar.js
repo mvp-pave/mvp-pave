@@ -32,10 +32,10 @@ export default class TopBar extends Component {
     } else {
       menu = <div></div>
     }
-    let { homeLocation, handleProfileIconClick, profileIconClick } = this.props;
+    let { homeLocation, handleProfileIconClick, profileIconClick, changeHomeLocation } = this.props;
     let locationPopup;
     if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
-      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick}/>;
+      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick} changeHomeLocation={changeHomeLocation}/>;
     } else {
       locationPopup = <div></div>
     }
