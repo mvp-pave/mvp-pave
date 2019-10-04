@@ -46,21 +46,25 @@ export default class SearchResults extends Component {
         <div className="suggestions-box">
           <div className="trending">
             <h3 className="trend-h">Trending</h3>
-            <span className="trend" name="Japanese" onClick={suggestionClick} >Japanese</span>
-            <span className="trend" name="Mexican" onClick={suggestionClick} >Mexican</span>
-            <span className="trend" name="Korean" onClick={suggestionClick}  >Korean</span>
-            <span className="trend" name="Mediterranean" onClick={suggestionClick} >Mediterranean</span>
-            <span className="trend" name="Chinese" onClick={suggestionClick} >Chinese</span>
-            <span className="trend" name="Thai" onClick={suggestionClick} >Thai</span>
+            <div className="trendings">
+              <span className="trend" name="Japanese" onClick={suggestionClick} >Japanese</span>
+              <span className="trend" name="Mexican" onClick={suggestionClick} >Mexican</span>
+              <span className="trend" name="Korean" onClick={suggestionClick}  >Korean</span>
+            </div>
+            <div className="trendings">
+              <span className="trend" name="Mediterranean" onClick={suggestionClick} >Mediterranean</span>
+              <span className="trend" name="Chinese" onClick={suggestionClick} >Chinese</span>
+              <span className="trend" name="Thai" onClick={suggestionClick} >Thai</span>
+            </div>
           </div>
           <div className="popular-products">
             <h3 className="popular-h">Popular Destinations</h3>
             <div className="popular" onClick={destinationClick} name="New York" ><img className="result-img" src={'./NYC.jpeg'}></img>
-              <div className="title"></div>New York, NY</div>
+              <div className="pop-title">New York, NY</div></div>
             <div className="popular" onClick={destinationClick} name="Paris" ><img className="result-img" src={'./France.jpeg'}></img>
-              <div className="title">Paris, France</div></div>
+              <div className="pop-title">Paris, France</div></div>
             <div className="popular" onClick={destinationClick} name="Tokyo" ><img className="result-img" src={'./Tokyo.jpeg'}></img>
-              <div className="title">Tokyo, Japan</div></div>
+              <div className="pop-title">Tokyo, Japan</div></div>
           </div>
         </div>
       )

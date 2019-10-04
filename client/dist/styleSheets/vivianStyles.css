@@ -1,21 +1,25 @@
 /* suggestedbottom styles */
-/* .container-suggested-bottom {
+.container-suggested-bottom {
 	display: flex;
 	position: relative;
 	bottom: 60px;
-} */
+}
 
-img {
+.img-sugg {
 	height: 150px;
 	width: 150px;
-	/* display: block;
-  position: relative; */
 	left: 70px;
-	border-radius: 20px;
+	padding-left: 20px;
+}
+
+.all-imgs {
+	overflow: overlay;
+	display: flex;
 }
 
 .img-container {
 	float: left;
+	width: 400px;
 }
 
 .sug-img {
@@ -27,43 +31,16 @@ img {
 	/* border-radius: 20px; */
 }
 
-/* .sug-title {
+.sug-main-title {
 	font-size: 40px;
 	text-align: center;
 	position: relative;
 	bottom: 60px;
-} */
-
-.arrow-container {
-	display: flex;
-	flex-direction: column;
-	top: 25%;
-	/* justify-content: center; */
-	width: 100px;
 }
 
-.arrow-back,
-.arrow-forward {
-	/* justify-content: center; */
-	width: 50px;
+.sugg-title {
+	padding-left: 20px;
 }
-
-/* .title {
-	position: relative;
-	width: 50px;
-	height: 20px;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-	left: 70px;
-	bottom: 40px;
-	background: white;
-	font-size: 20px;
-	text-align: center;
-	padding-top: 16px !important;
-	padding-left: 16px !important;
-	padding-right: 136px !important;
-	padding-bottom: 16px;
-} */
 
 h2 {
 	font-size: 40px;
@@ -76,9 +53,24 @@ h2 {
 	position: relative;
 	top: 20px;
 }
+.search-location-form {
+	position: absolute;
+	left: 40px;
+}
+.search-location-container {
+	position: absolute;
+	z-index: 25;
+	background-color: white;
+	left: 40px;
+	width: 380px;
+	height: 200px;
+	border: 1px solid lightgrey;
+
+}
 
 .email,
-.password {
+.password,
+.search-location {
 	width: 265px;
 	height: 40px;
 	border: 1px solid lightgrey;
@@ -92,11 +84,26 @@ h2 {
 	right: 45px;
 	top: 8px;
 }
-
+.icons-search {
+	position: relative;
+	right: 35px;
+	top: 7px;
+}
+.icons-close-container {
+	display: flex;
+	justify-content: space-between;
+}
+.close {
+	margin-left: 91%;
+}
 .login-container,
 .search-location-container {
 	padding-bottom: 10px;
 	padding-top: 10px
+}
+
+.search-location-container {
+	left: 25px;
 }
 
 .login-modal,
@@ -113,7 +120,13 @@ h2 {
 	font-size: 22px;
 	/* border-radius: 10px; */
 	padding: 11px;
+	/* background: transparent; */
+}
+
+.searching-location {
+	border-radius: 10px;
 	background: transparent;
+	margin-top: 20px;
 }
 
 .reme {
@@ -164,6 +177,11 @@ h2 {
 .create {
 	position: relative;
 	left: 100px;
+}
+
+.creatingAccount {
+	position: relative;
+	left: 90px;
 }
 
 .err {
