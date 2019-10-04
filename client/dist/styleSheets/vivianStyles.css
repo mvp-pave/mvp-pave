@@ -2,13 +2,14 @@
 .container-suggested-bottom {
 	display: flex;
 }
+
 img {
-  height: 150px;
-  width: 150px;
-  /* display: block;
+	height: 150px;
+	width: 150px;
+	/* display: block;
   position: relative; */
-  left: 70px;
-  border-radius: 20px;
+	left: 70px;
+	border-radius: 20px;
 }
 
 .img-container {
@@ -30,7 +31,7 @@ img {
 }
 
 .arrow-container {
-  display: flex;
+	display: flex;
 	flex-direction: column;
 	top: 25%;
 	/* justify-content: center; */
@@ -231,4 +232,12 @@ h2 {
 	/* border-radius: 10px; */
 	width: 290px;
 	height: 60px;
+}
+
+.goBack {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	right: 30px;
+	bottom: 30px;
 }
