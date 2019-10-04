@@ -1,3 +1,7 @@
+html {
+    width: 100%;
+}
+
 #searchButton {
     position: relative;
     left: 300px;
