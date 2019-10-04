@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { GoMail } from "react-icons/go";
-import { IoIosLock } from "react-icons/io";
+import { IoIosLock, IoIosArrowBack } from "react-icons/io";
 import { MdPersonOutline } from "react-icons/md";
 import axios from 'axios';
 
@@ -47,16 +47,11 @@ export default class App extends Component {
   }
 
   render() {
-    console.log('E –––>', this.state.email)
-    console.log('P –––>', this.state.password)
-    console.log('F –––>', this.state.firstName)
-    console.log('L –––>', this.state.lastName)
     return (
       <div>
         <div className="fullscreen-container">
           <div className="signup-modal">
-            <div>
-            </div>
+            <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage} /></div>
             <form className="signup" onSubmit={this.newUser}>
               <div className="signup-container">
                 <input type="email" name="email" className="email" placeholder="Email Address" required onChange={this.handleChange}></input>
