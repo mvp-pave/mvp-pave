@@ -51,7 +51,7 @@ export default class App extends Component {
       <div>
         <div className="fullscreen-container">
           <div className="signup-modal">
-            <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage} /></div>
+            <div><IoIosArrowBack className="goingBack" onClick={this.props.returnToHomepage} /></div>
             <form className="signup" onSubmit={this.newUser}>
               <div className="signup-container">
                 <input type="email" name="email" className="email" placeholder="Email Address" required onChange={this.handleChange}></input>
