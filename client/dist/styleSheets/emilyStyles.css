@@ -45,6 +45,7 @@ html {
     margin-left: 80%;
     top: -20px;
 }
+
 #clear:hover {
     cursor: pointer;
     color: #0073bb;
@@ -58,10 +59,10 @@ html {
 
 .search-container {
     padding-bottom: 10px;
+    margin-left: -1%;
 }
 
 .search-loc {
-    width: 295px;
     height: 30px;
     border: 1px solid lightgrey;
     padding: 11px;
@@ -71,12 +72,22 @@ html {
     font-size: 17px;
     line-height: 1.43;
     color: #484848;
+    padding-left: 30px;
+    width: 280px;
+}
+
+#query {
+    padding-left: 30px;
+}
+
+#location {
+    padding-right: 23px;
 }
 
 #search-button {
     padding: 14px;
     position: absolute;
-    right: 19px;
+    right: 30px;
     color: #484848;
 }
 
@@ -86,12 +97,51 @@ html {
 }
 
 .trend {
-    display: flex;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    line-height: 1.43;
+    color: #484848;
     position: relative;
-    left: 50px;
-    bottom: 10px;
-    padding-right: 70px;
+    bottom: 18px;
+    border-radius: 30px;
     padding-bottom: 10px;
+    flex-flow: column-reverse;
+    list-style: none;
+    margin: 6px;
+    right: 9px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    align-items: center;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: calc(100vw - 40px);
+    text-decoration: none;
+}
+
+.trend:hover {
+    color: #484848;
+    cursor: pointer;
+}
+
+.trend:before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    background: url(/static/2.36.0/images/global/icons/icon-search.svg);
+    background-repeat: no-repeat;
+}
+
+.popular-h {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    color: #484848;
+    font-weight: 400 !important;
+    letter-spacing: 1.2px !important;
+    padding-bottom: 2px;
 }
 
 .popular-products {
@@ -101,12 +151,12 @@ html {
 
 /* // This applies from 0px to 600px */
 body {
-  background: #fff;
+    background: #fff;
 }
 
 /* // This applies from 600px onwards */
 @media (min-width: 600px) {
-  body {
-    background: green;
-  }
+    body {
+        background: fff;
+    }
 }

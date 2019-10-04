@@ -14,7 +14,9 @@ const {
   updateUserBio,
   // updateUserPost,
   updateUserPass,
-  updateUserPic
+  updateUserPic,
+  getUserProfileInfo,
+  updateUserProfileInfo
 } = require('../database/dbHelpers.js');
 
 let controller = {
@@ -96,6 +98,18 @@ let controller = {
     let { profile_picture } = req.body;
     updateUserPic(ID, profile_picture)
       .then(() => res.status(200).send('User Pic Updated!'))
+      .catch((err) => res.status(400).send(err))
+  },
+  getUserProfileInfo: (req, res) => {
+    let { email } = req.body;
+    getUserProfileInfo(email)
+      .then((data) => res.status(200).send(data))
+      .catch((err) => res.status(400).send(err))
+  },
+  updateUserProfileInfo: (req, res) => {
+    let { email, profile_picture, firstName, lastName, bio } = req.body;
+    updateUserProfileInfo(email, profile_picture, firstName, lastName, bio)
+      .then(() => res.status(200).send('User Profile Updated!'))
       .catch((err) => res.status(400).send(err))
   }
 }

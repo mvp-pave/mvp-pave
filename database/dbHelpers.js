@@ -84,6 +84,16 @@ const updateUserPic = (ID, profile_picture) => {
   return User.findOneAndUpdate({ ID }, { profile_picture })
 };
 
+const getUserProfileInfo = (email) => {
+  return User.findOne({ email })
+}
+
+const updateUserProfileInfo = (email, profile_picture, firstName, lastName, bio) => {
+  return User.findOneAndUpdate({ email }, {
+    profile_picture, firstName, lastName, bio
+  })
+}
+
 module.exports = {
   postRestaurant,
   updateRestaurant,
@@ -100,5 +110,7 @@ module.exports = {
   updateUserBio,
   // updateUserPost,
   updateUserPass,
-  updateUserPic
+  updateUserPic,
+  getUserProfileInfo,
+  updateUserProfileInfo
 }

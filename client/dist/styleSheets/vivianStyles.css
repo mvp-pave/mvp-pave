@@ -9,7 +9,8 @@
 	height: 150px;
 	width: 150px;
 	left: 70px;
-	padding-left: 20px;
+	border-radius: 20px;
+	margin-right: 20px;
 }
 
 .all-imgs {
@@ -53,10 +54,12 @@ h2 {
 	position: relative;
 	top: 20px;
 }
+
 .search-location-form {
 	position: absolute;
 	left: 40px;
 }
+
 .search-location-container {
 	position: absolute;
 	z-index: 25;
@@ -69,7 +72,8 @@ h2 {
 
 .email,
 .password,
-.search-location {
+.search-location,
+.logging {
 	width: 265px;
 	height: 40px;
 	border: 1px solid lightgrey;
@@ -83,18 +87,22 @@ h2 {
 	right: 45px;
 	top: 8px;
 }
+
 .icons-search {
 	position: relative;
 	right: -80%;
 	top: -45px;
 }
+
 .icons-close-container {
 	display: flex;
 	justify-content: space-between;
 }
+
 .close {
 	margin-left: 91%;
 }
+
 .login-container,
 .search-location-container {
 	padding-bottom: 10px;
@@ -107,6 +115,7 @@ h2 {
 	position: relative;
 	left: 15px;
 }
+
 .search-location-modal {
 	left: 0px;
 }
@@ -119,6 +128,11 @@ h2 {
 	/* border-radius: 10px; */
 	padding: 11px;
 	/* background: transparent; */
+	background: #fff;
+	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+	font-size: 17px;
+	/* line-height: 1.43; */
+	color: black;
 }
 
 .searching-location {
@@ -134,7 +148,7 @@ h2 {
 .log-txt,
 .loc-txt {
 	position: relative;
-	bottom: 7px;
+	bottom: 2px;
 }
 
 .borderer {
@@ -178,7 +192,7 @@ h2 {
 
 .creatingAccount {
 	position: relative;
-	left: 90px;
+	left: 78px;
 }
 
 .err {
@@ -206,7 +220,7 @@ h2 {
 	height: 40px;
 	border: 1px solid lightgrey;
 	font-size: 22px;
-	/* border-radius: 10px; */
+	border-radius: 10px;
 	padding: 11px;
 }
 
@@ -235,6 +249,10 @@ h2 {
 	background: transparent;
 }
 
+.signup-text {
+	width: 280px;
+	text-align: center;
+}
 
 .sup-txt {
 	position: relative;
@@ -248,7 +266,7 @@ h2 {
 }
 
 .kep-login-facebook.metro {
-	/* border-radius: 10px; */
+	border-radius: 10px !important;
 	width: 290px;
 	height: 60px;
 }
@@ -259,4 +277,146 @@ h2 {
 	height: 50px;
 	right: 30px;
 	bottom: 30px;
+}
+
+.goingBack {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	right: 30px;
+	bottom: 30px;
+}
+
+/* Responsiveness for login */
+@media screen and (min-width:700px) {
+	.fullscreen-container {
+		position: fixed;
+		bottom: 0;
+		top: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
+
+	.log-in {
+		width: 320px;
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.login-modal {
+		background: #fff;
+		position: absolute;
+		left: 160px;
+		top: 120px;
+		width: 400px;
+		height: 620px;
+	}
+
+	.goBack {
+		position: relative;
+		right: 210px;
+		bottom: 130px;
+	}
+}
+
+@media screen and (min-width:1200px) {
+	.fullscreen-container {
+		position: fixed;
+		bottom: 0;
+		top: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
+
+	.log-in {
+		width: 320px;
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.login-modal {
+		background: #fff;
+		position: absolute;
+		left: 660px;
+		top: 120px;
+		width: 400px;
+		height: 620px;
+	}
+
+	.goBack {
+		position: relative;
+		right: 710px;
+		bottom: 130px;
+	}
+}
+
+/* Responsiveness for signup */
+@media screen and (min-width:700px) {
+	.fullscreen-container {
+		position: fixed;
+		bottom: 0;
+		top: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
+
+	.signup {
+		width: 320px;
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.signup-modal {
+		background: #fff;
+		position: absolute;
+		left: 160px;
+		top: 120px;
+		width: 400px;
+		height: 620px;
+	}
+
+	.goingBack {
+		position: relative;
+		right: 160px;
+		bottom: 110px;
+	}
+}
+
+@media screen and (min-width:1200px) {
+	.fullscreen-container {
+		position: fixed;
+		bottom: 0;
+		top: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
+
+	.log-in {
+		width: 320px;
+		padding-left: 50px;
+		padding-top: 20px;
+	}
+
+	.signup-modal {
+		background: #fff;
+		position: absolute;
+		left: 660px;
+		top: 120px;
+		width: 400px;
+		height: 620px;
+	}
+
+	.goingBack {
+		position: relative;
+		right: 660px;
+		bottom: 130px;
+	}
 }
