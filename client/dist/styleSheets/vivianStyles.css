@@ -112,6 +112,7 @@ h2 {
 	padding: 20px;
 	position: relative;
 	left: 15px;
+	max-width: 699px;
 }
 
 .search-location-modal {
@@ -123,9 +124,7 @@ h2 {
 	width: 290px;
 	height: 40px;
 	font-size: 22px;
-	/* border-radius: 10px; */
 	padding: 11px;
-	/* background: transparent; */
 }
 
 .searching-location {
