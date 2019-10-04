@@ -70,7 +70,7 @@ export default class App extends Component {
                 <IoIosLock className="icons" size={30} />
               </div>
               <div>
-                <p>By clicking Sign up or Continue with, I agree to Pavé's <u>Terms of Service</u>, <u>Payments Term of Service</u>, <u>Privacy Policy</u>, and <u>Nondiscrimination Policy</u></p>
+                <p className="signup-text">By clicking Sign up or Continue with, I agree to Pavé's <u>Terms of Service</u>, <u>Payments Term of Service</u>, <u>Privacy Policy</u>, and <u>Nondiscrimination Policy</u></p>
                 <button className="signing"><span className="sup-txt">Sign Up</span></button>
               </div>
             </form>
