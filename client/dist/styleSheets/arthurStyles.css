@@ -49,3 +49,32 @@
   border-radius: 10px;
   padding: 11px;
 }
+
+
+/* Update Profile */
+.fullscreen-container {
+  position: relative;
+  top: 20px;
+}
+
+.update-profile-modal {
+  padding: 20px;
+  position: relative;
+  left: 15px;
+}
+
+.firstName,
+.lastName,
+.profile_picture,
+.bio {
+  width: 265px;
+  height: 40px;
+  border: 1px solid lightgrey;
+  font-size: 22px;
+  padding: 11px;
+}
+
+.update-profile-container {
+  padding-bottom: 10px;
+  padding-top: 10px
+}
