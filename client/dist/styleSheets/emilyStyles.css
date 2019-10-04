@@ -29,6 +29,26 @@ html {
     padding-top: 20px;
 }
 
+.search-goBack {
+    color: #484848;
+    position: absolute;
+    padding: 10px;
+    top: 35px;
+}
+
+#clear {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+    position: relative;
+    margin-left: 80%;
+    top: -20px;
+}
+#clear:hover {
+    cursor: pointer;
+    color: #0073bb;
+}
 
 .search-labels {
     padding-right: 10px;
@@ -41,11 +61,23 @@ html {
 }
 
 .search-loc {
-    width: 200px;
-    height: 10px;
+    width: 295px;
+    height: 30px;
     border: 1px solid lightgrey;
-    font-size: 15px;
     padding: 11px;
+    border-radius: 10px;
+    background: #fff;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 17px;
+    line-height: 1.43;
+    color: #484848;
+}
+
+#search-button {
+    padding: 14px;
+    position: absolute;
+    right: 19px;
+    color: #484848;
 }
 
 .trendings {
@@ -65,4 +97,16 @@ html {
 .popular-products {
     position: relative;
     bottom: 30px;
+}
+
+/* // This applies from 0px to 600px */
+body {
+  background: #fff;
+}
+
+/* // This applies from 600px onwards */
+@media (min-width: 600px) {
+  body {
+    background: green;
+  }
 }
