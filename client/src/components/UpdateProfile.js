@@ -13,23 +13,24 @@ export default class UpdateProfile extends Component {
       file: null
     }
     this.getUserProfile = this.getUserProfile.bind(this);
-    this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.updateCurrentUserProfile = this.updateCurrentUserProfile.bind(this);
 
   }
   getUserProfile() {
-    // axios.get('/pave/user/:email')
-    // .then(({ data }) => {
-    //   this.setState({
-    //     firstName: data.firstName,
-    //     lastName: data.lastName,
-    //     profile_picture: data.profile_picture,
-    //     bio: data.bio
-    //   }, () => console.log('fName lName profPic bio', this.state.firstName, this.state.lastName, this.state.profile_picture, this.state.bio))
-    // })
-    // .catch((err) => console.log('get user by email failed', err))
+    axios.get('/pave/user/:email')
+    .then(({ data }) => {
+      this.setState({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        profile_picture: data.profile_picture,
+        bio: data.bio
+      }, () => console.log('fName lName profPic bio', this.state.firstName, this.state.lastName, this.state.profile_picture, this.state.bio))
+    })
+    .catch((err) => console.log('get user by email failed', err))
   }
-  componentDidMount() {
-    // this.getUserProfile()
+  updateCurrentUserProfile(){
+    axios.put('/pave/user/:email')
   }
 
   handleChange(event) {
