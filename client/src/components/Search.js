@@ -12,54 +12,32 @@ export default class Search extends Component {
       query: '',
       location: '',
       moused: false,
-      searchClicked: false,
       results: [],
       suggestionOptions: [],
-      trending: []
+      trending: [],
+      loading: false
     }
-    this.setWrapperRef = this.setWrapperRef.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-    this.handleClickInside = this.handleClickInside.bind(this);
-    this.mouseOut = this.mouseOut.bind(this);
-    this.mouseOver = this.mouseOver.bind(this);
+    // this.setWrapperRef = this.setWrapperRef.bind(this);
+    // this.handleClickOutside = this.handleClickOutside.bind(this);
+    // this.handleClickInside = this.handleClickInside.bind(this);
+    // this.mouseOut = this.mouseOut.bind(this);
+    // this.mouseOver = this.mouseOver.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.suggestionChange = this.suggestionChange.bind(this);
-    this.getTrending = this.getTrending.bind(this);
-    this.getResults = this.getResults.bind(this);
-  }
-
-  componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside);
-  }
-
-  setWrapperRef(node) {
-    this.wrapperRef = node;
-  }
-
-  handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({ searchClicked: false }, () => this.setState({ query: '' }));
-    }
-  }
-
-  handleClickInside() {
-    this.setState({ searchClicked: true });
-  }
-
-  mouseOut() {
-    this.setState({ moused: false });
-  }
-
-  mouseOver() {
-    this.setState({ moused: true });
+    // this.suggestionChange = this.suggestionChange.bind(this);
+    // this.getTrending = this.getTrending.bind(this);
+    // this.getResults = this.getResults.bind(this);
   }
 
   handleChange(event) {
     this.setState({ query: event.target.value }, () => this.suggestionChange());
+  }
+
+  suggestionClick() {
+    this.setState({ query: event.target.name });
+  }
+
+  destinationClick() {
+    this.setState({ location: event.target.name });
   }
 
   suggestionChange() {
@@ -82,39 +60,44 @@ export default class Search extends Component {
   getTrending() {
     let arr = [];
     let loc = this.state.location;
-    loc[0] = loc[0].toUpperCase();
+    loc[0] = loc[0].toLowerCase();
     for (var i = 0; i < trends.length; i++) {
-      if (trends[i].includes(loc)) {
+      if (trends[i].toLowerCase().includes(loc)) {
         arr.push(trends[i])
       }
     }
     arr = arr.slice(0, 5)
-    this.setState({ trending: arr }, () => this.getResults())
+    this.setState({ trending: arr })
   }
 
   getResults() {
-    axios.get('/search')
-      .then(response => {
-        let arr = [];
-        for (var i = 0; i < response.data.length; i++) {
-          if (response.data[i].title.includes(this.state.query) || response.data[i].color.includes(this.state.query)) {
-            arr.push(response.data[i])
-          }
-        }
-        if (arr.length !== 0) {
-          arr = Object.values(arr.reduce((acc, curr) => {
-            if (!acc[curr.image1]) {
-              acc[curr.image1] = curr;
-            }
-            return acc;
-          }, {})
-          );
-          arr = arr.slice(0, 3)
-          this.setState({ results: arr })
-        }
+    let key = REACT_APP_YELP_API_KEY()
+    // this.setState({ loading: true }) 
+    axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
+      //required authorization format from API 
+
+      headers: {
+        //to get the API from the .env file use process.env.{variable name}
+        Authorization: key
+
+        // Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
+      },
+      //option params passed to API call to retrieve only breakfast and lunch spots 
+      params: {
+        // categories: `${terms}`,
+        categories: this.state.query,
+      }
+    })
+      .then((res) => {
+        console.log(res.data.businesses)
+        //change the state of App to reflect on the result we are given from the API
+        //at the same time, setting the loading state to false 
+        this.setState({ results: res.data.businesses, loading: false })
       })
-      .catch(error => {
-        console.log(error);
+      .catch((err) => {
+        //fire the errorState message if there is no information return from the API
+        console.log(err)
+        // this.setState({ errorState: `Sorry we couldn't find information related to the location you search, do you want to try something else?`, loading: false })
       })
   }
 
@@ -122,19 +105,18 @@ export default class Search extends Component {
     return (
       <div>
         <div className="search-container" >
-            <div className="search-wrapper">
-          <form action="/action_page.php" >
-              <span onMouseOut={this.mouseOut} onMouseOver={this.mouseOver}>
-                {this.state.moused ? <img src={'./images/HoverSearch.png'}></img> : <img src={'./images/Search.png'}></img>}
-              </span>
+          <div className="search-wrapper">
+            <form action="/action_page.php" onSubmit={this.getResults}>
               <label>Find</label>
               <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search" ></input>
               <label>Near</label>
-            <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search" ></input>
-          </form>
+              <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleChange} type="text" placeholder="Enter a Location" className="search" ></input>
+            </form>
+            <div className="homepage" onClick={this.props.clickHandler} >Cancel</div>
+          </div>
+
+          <SearchResults destinationClick={this.destinationClick} suggestionClick={this.suggestionClick} query={this.state.query} location={this.state.location} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
         </div>
-        <SearchResults searchClicked={this.state.searchClicked} query={this.state.query} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
-      </div>
       </div>
     )
   }

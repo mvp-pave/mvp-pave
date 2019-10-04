@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { GoMail } from "react-icons/go";
-import { IoIosLock } from "react-icons/io";
+import { IoIosLock, IoIosArrowBack } from "react-icons/io";
 import { MdPersonOutline } from "react-icons/md";
 import axios from 'axios';
 
@@ -15,6 +15,18 @@ export default class App extends Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.newUser = this.newUser.bind(this);
+    this.getAll = this.getAll.bind(this);
+  }
+
+  componentDidMount() {
+    this.getAll();
+  }
+
+  getAll() {
+    axios
+      .get('/pave/user')
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error))
   }
 
   handleChange(event) {
@@ -39,8 +51,7 @@ export default class App extends Component {
       <div>
         <div className="fullscreen-container">
           <div className="signup-modal">
-            <div>
-            </div>
+            <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage} /></div>
             <form className="signup" onSubmit={this.newUser}>
               <div className="signup-container">
                 <input type="email" name="email" className="email" placeholder="Email Address" required onChange={this.handleChange}></input>

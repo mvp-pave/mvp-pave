@@ -33,8 +33,8 @@ let controller = {
       .catch((err) => res.status(400).send(err))
   },
   postUser: (req, res) => {
-    let { ID, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts } = req.body;
-    postUser(ID, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts)
+    let { ID, email, password, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts } = req.body;
+    postUser(ID, email, password, firstName, lastName, profile_picture, bio, recommendations, past_visited, follows, followed_by, posts)
       .then(() => res.status(201).send('User Account Posted!'))
       .catch((err) => res.status(401).send(err))
   },

@@ -1,88 +1,83 @@
 import React, { Component } from 'react';
-// import PromoHeader from './PromoHeader.js';
-// import SiteHeader from './SiteHeader.js';
-// import MainNavigation from './MainNavigation.js';
-// import '../styles/app.css';
-import Topbar from './TopBar.js';
 import Search from './Search.js';
+import TopBar from './TopBar.js';
+// import SearchLocation from './SearchLocation.js';
+import Login from './Login.js'
+import CreateAccount from './CreateAccount.js'
 import List from './List.js';
 import SuggestedBottom from './SuggestedBottom.js';
-import { IoMdSearch } from 'react-icons/fa';
-import Login from './Login.js'
-import SearchLocation from './SearchLocation.js';
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-class App extends Component {
+import UpdateProfile from './UpdateProfile.js'
+
+import { IoMdSearch } from 'react-icons/io';
+
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchClicked: false,
-      homeLocation: false
+      homeLocation: false,
+      currentUser: false,
+      page: 'homepage',
     }
-    // this.setWrapperRef = this.setWrapperRef.bind(this);
-    // this.handleClickOutside = this.handleClickOutside.bind(this);
-    // this.handleClickInside = this.handleClickInside.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
+    this.changeHomeLocation = this.changeHomeLocation.bind(this);
+    this.changeCurrentUser = this.changeCurrentUser.bind(this);
+    this.returnToHomepage = this.returnToHomepage.bind(this);
   }
 
-  // componentDidMount() {
-  //   document.addEventListener('mousedown', this.handleClickOutside);
-  // }
+  clickHandler(e) {
+    let name = e.target.getAttribute("class");
+    this.setState({
+      page: name
+    }, () => console.log(this.state))
+  }
 
-  // componentWillUnmount() {
-  //   document.removeEventListener('mousedown', this.handleClickOutside);
-  // }
+  returnToHomepage() {
+    this.setState({
+      page: 'homepage'
+    }, () => console.log("return to homepage", this.state))
+  }
 
-  // setWrapperRef(node) {
-  //   this.wrapperRef = node;
-  // }
+  changeHomeLocation() {
+    this.setState({ homeLocation: true });
+  }
 
-  // handleClickOutside(event) {
-  //   if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-  //     this.setState({ searchClicked: false }, () => this.setState({ query: '', location: '' }));
-  //   }
-  // }
-
-  // handleClickInside() {
-  //   this.setState({ searchClicked: true });
-  // }
-
-  // mouseOut() {
-  //   this.setState({ moused: false });
-  // }
-
-  // mouseOver() {
-  //   this.setState({ moused: true });
-  // }
+  changeCurrentUser(user) {
+    this.setState({ currentUser: user }, () => console.log("changeCurrentUser", this.state));
+  }
 
   render() {
-    //<IoMdSearch />
-    return (
-      // <Router>
-        <div>
-          <div id="full-topbar">
-            <h2>PAVÉ</h2>
-            {/* <Link to="/search" >hi</Link> */}
-            <Topbar />
-            <div id="content">
-              {/* <TopBar /> */}
-              {/* <SiteHeader /> */}
-              {/* <MainNavigation /> */}
-              {/* <List /> */}
-              <SuggestedBottom />
+    switch (this.state.page) {
+      case 'homepage':
+        return (
+          <div>
+            <div id="full-topbar">
+              <h2 className="app-title">PAVÉ</h2>
+              <IoMdSearch size={40} className='search' id="searchButton" onClick={this.clickHandler} />
+              <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler} changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser} />
+              <div id="content">
+                {/* <List homeLocation={this.state.homeLocation} /> */}
+                <SuggestedBottom changeHomeLocation={this.changeHomeLocation} />
+              </div>
+              {/* <div id="other-page-content">
+                <SearchLocation clickHandler={this.clickHandler} />
+              </div> */}
             </div>
-            <div id="other-page-content">
-              <Login />
-              <SearchLocation />
-            </div>
+
+            {/* update profile which works on click of Top Bar */}
+            {/* should be inside top bar */}
           </div>
-          
-          {/* <Switch>
-            <Route exact path='/search' render={(props) => <Search {...props} homeLocation={this.state.homeLocation} />}/>
-          </Switch> */}
-        </div>
-      // </Router>
-    )
+        )
+      // case 'userProfile':
+      //   return (<div><UserProfile /></div>);
+      case 'search':
+        return (<div><Search clickHandler={this.clickHandler} /></div>);
+      case 'login':
+        return (<div><Login returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
+      case 'createAccount':
+        return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
+      case 'profile':
+        return (<div><UpdateProfile clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
+      }
   }
 }
-
-export default App;
