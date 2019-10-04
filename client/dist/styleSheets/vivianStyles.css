@@ -1,9 +1,9 @@
 /* suggestedbottom styles */
-.container-suggested-bottom {
+/* .container-suggested-bottom {
 	display: flex;
 	position: relative;
 	bottom: 60px;
-}
+} */
 
 img {
 	height: 150px;
@@ -27,12 +27,12 @@ img {
 	/* border-radius: 20px; */
 }
 
-.sug-title {
+/* .sug-title {
 	font-size: 40px;
 	text-align: center;
 	position: relative;
 	bottom: 60px;
-}
+} */
 
 .arrow-container {
 	display: flex;
