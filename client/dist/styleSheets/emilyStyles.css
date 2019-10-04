@@ -45,6 +45,7 @@ html {
     margin-left: 80%;
     top: -20px;
 }
+
 #clear:hover {
     cursor: pointer;
     color: #0073bb;
@@ -62,7 +63,6 @@ html {
 }
 
 .search-loc {
-    width: 90%;
     height: 30px;
     border: 1px solid lightgrey;
     padding: 11px;
@@ -72,11 +72,14 @@ html {
     font-size: 17px;
     line-height: 1.43;
     color: #484848;
+    padding-left: 30px;
+    width: 280px;
 }
 
 #query {
     padding-left: 30px;
 }
+
 #location {
     padding-right: 23px;
 }
@@ -84,7 +87,7 @@ html {
 #search-button {
     padding: 14px;
     position: absolute;
-    right: 19px;
+    right: 30px;
     color: #484848;
 }
 
