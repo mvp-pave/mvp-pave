@@ -76,7 +76,9 @@
 
 .update-profile-container {
   padding-bottom: 10px;
-  padding-top: 10px
+  padding-top: 10px;
+  position: relative;
+  bottom: 120px;
 }
 
 .updating-profile {
@@ -85,9 +87,16 @@
   font-size: 22px;
   padding: 11px;
   background: transparent;
+  position: relative;
+  bottom: 120px;
 }
 
 .prof-txt {
   position: relative;
   bottom: 7px;
+}
+
+.update-title {
+  position: relative;
+  bottom: 80px;
 }

@@ -34,7 +34,7 @@ export default class UpdateProfile extends Component {
         <div className="update-profile-modal">
           <form className="update-profile">
             <div><IoIosArrowBack className="goBack" onClick={this.props.returnToHomepage} /></div>
-            <h2>Update User Profile</h2>
+            <h2 className="update-title">Update User Profile</h2>
             <div className="update-profile-container">
               <label>First Name:</label>
               <input type="text" name="firstName" className="firstName"></input>
