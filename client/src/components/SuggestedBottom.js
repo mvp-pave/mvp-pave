@@ -10,7 +10,7 @@ export default class SuggestedBottom extends Component {
     return (
       <div>
       <div className="container">
-        <h2>PAVÉ THE WAY</h2>
+        <h2 className="sug-title">PAVÉ THE WAY</h2>
         <div className="img-container">
           <img className="sug-img" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"></img>
           <div className="title">Food</div>
