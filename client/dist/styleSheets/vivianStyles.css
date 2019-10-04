@@ -5,13 +5,11 @@
 	bottom: 60px;
 }
 
-img {
+.img-sugg {
 	height: 150px;
 	width: 150px;
-	/* display: block;
-  position: relative; */
 	left: 70px;
-	border-radius: 20px;
+	padding-left: 20px;
 }
 
 .all-imgs {
@@ -21,6 +19,7 @@ img {
 
 .img-container {
 	float: left;
+	width: 400px;
 }
 
 .sug-img {
@@ -32,43 +31,16 @@ img {
 	/* border-radius: 20px; */
 }
 
-.sug-title {
+.sug-main-title {
 	font-size: 40px;
 	text-align: center;
 	position: relative;
 	bottom: 60px;
 }
 
-.arrow-container {
-	display: flex;
-	flex-direction: column;
-	top: 25%;
-	/* justify-content: center; */
-	width: 100px;
+.sugg-title {
+	padding-left: 20px;
 }
-
-.arrow-back,
-.arrow-forward {
-	/* justify-content: center; */
-	width: 50px;
-}
-
-/* .title {
-	position: relative;
-	width: 50px;
-	height: 20px;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-	left: 70px;
-	bottom: 40px;
-	background: white;
-	font-size: 20px;
-	text-align: center;
-	padding-top: 16px !important;
-	padding-left: 16px !important;
-	padding-right: 136px !important;
-	padding-bottom: 16px;
-} */
 
 h2 {
 	font-size: 40px;
