@@ -10,21 +10,21 @@ export default class TopBar extends Component {
     super(props);
     this.state = {
       burgerClick: false,
-      profileIconClick: false
+      // profileIconClick: false
     }
     this.handleBurgerClick = this.handleBurgerClick.bind(this);
-    this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
+    // this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
   }
   handleBurgerClick() {
     this.setState({
       burgerClick: !this.state.burgerClick
     }, () => console.log('burgerClick', this.state.burgerClick))
   }
-  handleProfileIconClick(){
-    this.setState({
-      profileIconClick: !this.state.profileIconClick
-    })
-  }
+  // handleProfileIconClick(){
+  //   this.setState({
+  //     profileIconClick: !this.state.profileIconClick
+  //   })
+  // }
   render() {
     let menu;
     if (this.state.burgerClick) {
@@ -32,10 +32,10 @@ export default class TopBar extends Component {
     } else {
       menu = <div></div>
     }
-    let { homeLocation } = this.props;
+    let { homeLocation, handleProfileIconClick, profileIconClick } = this.props;
     let locationPopup;
-    if ((homeLocation === false && this.state.profileIconClick) || (homeLocation !== false && this.state.profileIconClick)) {
-      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={this.handleProfileIconClick}/>;
+    if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
+      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick}/>;
     } else {
       locationPopup = <div></div>
     }
@@ -45,7 +45,7 @@ export default class TopBar extends Component {
           <div className='column'><MdHome size={30} /></div>
           <div className='column'><MdPerson size={30} className="profile" onClick={this.props.clickHandler} /></div>
           <div className='column'><IoMdHeart size={30} /></div>
-          <div className='column'><MdLocationOn size={30} onClick={this.handleProfileIconClick}/></div>
+          <div className='column'><MdLocationOn size={30} onClick={handleProfileIconClick}/></div>
           <div className='column' onClick={this.handleBurgerClick}>
             <div className='bar1'></div>
             <div className='bar2'></div>

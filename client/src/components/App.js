@@ -18,11 +18,13 @@ export default class App extends Component {
       homeLocation: false,
       currentUser: false,
       page: 'homepage',
+      profileIconClick: false
     }
     this.clickHandler = this.clickHandler.bind(this);
     this.changeHomeLocation = this.changeHomeLocation.bind(this);
     this.changeCurrentUser = this.changeCurrentUser.bind(this);
     this.returnToHomepage = this.returnToHomepage.bind(this);
+    this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
   }
 
   clickHandler(e) {
@@ -46,6 +48,12 @@ export default class App extends Component {
     this.setState({ currentUser: user }, () => console.log("changeCurrentUser", this.state));
   }
 
+  handleProfileIconClick(){
+    this.setState({
+      profileIconClick: !this.state.profileIconClick
+    })
+  }
+
   render() {
     switch (this.state.page) {
       case 'homepage':
@@ -56,10 +64,13 @@ export default class App extends Component {
               <IoMdSearch size={40} className='search' id="searchButton" onClick={this.clickHandler} />
               <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler} 
               changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser} 
-              homeLocation={this.state.homeLocation}/>
+              homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
+              profileIconClick={this.state.profileIconClick}/>
               <div id="content">
                 {/* <List homeLocation={this.state.homeLocation} /> */}
-                <SuggestedBottom changeHomeLocation={this.changeHomeLocation} />
+                <SuggestedBottom changeHomeLocation={this.changeHomeLocation} 
+                homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
+                profileIconClick={this.state.profileIconClick}/>
               </div>
               {/* <div id="other-page-content">
                 <SearchLocation clickHandler={this.clickHandler} />

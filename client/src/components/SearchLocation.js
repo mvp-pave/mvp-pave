@@ -2,6 +2,7 @@ import React from 'react';
 import { MdCancel } from "react-icons/md";
 
 let SearchLocation = ({ handleProfileIconClick }) => {
+  console.log('handleProfileIconClick', handleProfileIconClick)
   return (
     <div className="search-location-container">
       <div className="icons-close-container">
