@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import SearchResults from './SearchResults.js';
 import REACT_APP_YELP_API_KEY from '../../../config.js'
-
+import { IoIosSearch, IoIosArrowBack } from "react-icons/io";
 
 const suggestions = ["mexican", "thai", "chinese", "taiwanese", "italian", "cambodian", "moroccan", "soul food", "indian", "vietnamese", "american", "cajun", "french", "japanese", "spanish", "greek", "mediterranean", "korean", "seafood", "vegan", "vegetarian", "tapas", "cuban"];
 
@@ -75,8 +75,8 @@ export default class Search extends Component {
     this.setState({ suggestionOptions: arr })
   }
 
-  getResults() {
-    event.preventDefault;
+  getResults(event) {
+    event.preventDefault();
     let key = REACT_APP_YELP_API_KEY()
     // this.setState({ loading: true }) 
     axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
@@ -114,17 +114,20 @@ export default class Search extends Component {
           <div className="search-wrapper">
             <form onSubmit={this.getResults}>
               <div className="search-container">
-                <label className="search-labels">Find:</label>
-                <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleQueryChange} type="text" placeholder="Mediterranean, Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
+                {/* <label className="search-labels">Find:</label> */}
+                <span className="search-goBack" ><IoIosArrowBack size={20} onClick={this.props.returnToHomepage} /></span>
+
+                <input tabIndex="1" name="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleQueryChange} type="text" placeholder="     Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
               </div>
               <div className="search-container">
-                <label className="search-labels">Near:</label>
+                {/* <label className="search-labels">Near:</label> */}
                 <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleLocationChange} type="text" placeholder="Enter a Location" className="search-loc" ></input>
+                <span id="search-button" ><IoIosSearch size={30} onClick={this.getResults} /></span>
               </div>
               <button type="submit" id="hidden-search-button"></button>
             </form>
-            <span className="homepage" onClick={this.props.clickHandler} >Cancel</span>
-            <span onClick={this.clearFields} >Clear</span>
+            {/* <span className="homepage" onClick={this.props.clickHandler} >Cancel</span> */}
+            <span onClick={this.clearFields} id="clear">Clear</span>
           </div>
 
           <SearchResults destinationClick={this.destinationClick} suggestionClick={this.suggestionClick} query={this.state.query} location={this.state.location} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />

@@ -119,7 +119,7 @@ export default class App extends Component {
       })
   }
 
-  handleProfileIconClick(){
+  handleProfileIconClick() {
     this.setState({
       profileIconClick: !this.state.profileIconClick
     })
@@ -132,16 +132,16 @@ export default class App extends Component {
           <div>
             <div id="fulltopbar">
               <h2 className="app-title">PAVÉ</h2>
-              <IoMdSearch size={40} className='search' id="searchButton" onClick={this.clickHandler} />
-              <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler} 
-              changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser} 
-              homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-              profileIconClick={this.state.profileIconClick}/>
+              <IoMdSearch size={30} className='search' id="searchButton" onClick={this.clickHandler} />
+              <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler}
+                changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}
+                homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
+                profileIconClick={this.state.profileIconClick} />
               <div id="content">
                 <List homeLocation={this.state.homeLocation} results={this.state.results} />
-                <SuggestedBottom changeHomeLocation={this.changeHomeLocation} 
-                homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-                profileIconClick={this.state.profileIconClick}/>
+                <SuggestedBottom changeHomeLocation={this.changeHomeLocation}
+                  homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
+                  profileIconClick={this.state.profileIconClick} />
               </div>
             </div>
             {/* update profile which works on click of Top Bar */}
@@ -149,7 +149,7 @@ export default class App extends Component {
           </div>
         )
       case 'search':
-        return (<div><Search clickHandler={this.clickHandler} /></div>);
+        return (<div><Search returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} /></div>);
       case 'login':
         return (<div><Login returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
       case 'createAccount':
