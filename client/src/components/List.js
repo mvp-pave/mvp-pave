@@ -64,7 +64,6 @@ class List extends Component {
     } else {
       return (
         <div>
-          loading... please wait...
         </div>
       )
     }
