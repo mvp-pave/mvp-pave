@@ -444,3 +444,6 @@ h2 {
 		bottom: 130px;
 	}
 }
+* {
+	background-color: rgb(255, 255, 255);
+}

@@ -5,11 +5,13 @@ import SearchLocation from './SearchLocation.js';
 export default class SuggestedBottom extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+
+    }
   }
 
   render() {
-    let { handleProfileIconClick, profileIconClick, homeLocation, changeHomeLocation } = this.props;
+    let { handleProfileIconClick, profileIconClick, homeLocation, changeHomeLocation, changeCategory } = this.props;
     let locationPopup;
     if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
       locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick} changeHomeLocation={changeHomeLocation} />;
@@ -27,13 +29,19 @@ export default class SuggestedBottom extends Component {
           </div>
           <div className="all-imgs-home">
             <div className="img-container">
-              <img className="img-sugg" src="./images/food.jpeg" onClick={handleProfileIconClick}></img>
+              <img className="img-sugg" src="./images/food.jpeg" onClick={handleProfileIconClick} name="restaurants" onClick={changeCategory} ></img>
               <div className="title-container">
                 <div className="sugg-title">Food</div>
               </div>
             </div>
             <div className="img-container">
-              <img className="img-sugg" src="./images/drinks.jpeg" onClick={handleProfileIconClick} name="bars" onClick={() => this.props.changeCategory} ></img>
+              <img className="img-sugg" src="./images/dessert.jpeg" onClick={handleProfileIconClick} name="dessert" onClick={changeCategory} ></img>
+              <div className="title-container">
+                <div className="sugg-title">Dessert</div>
+              </div>
+            </div>
+            <div className="img-container">
+              <img className="img-sugg" src="./images/drinks.jpeg" onClick={handleProfileIconClick} name="bars" onClick={changeCategory} ></img>
               <div className="title-container">
                 <div className="sugg-title">Drinks</div>
               </div>

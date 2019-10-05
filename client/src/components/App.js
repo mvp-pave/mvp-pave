@@ -32,6 +32,8 @@ export default class App extends Component {
     this.returnToHomepage = this.returnToHomepage.bind(this);
     this.getStore = this.getStore.bind(this);
     this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
+    this.logoutCurrentUser = this.logoutCurrentUser.bind(this);
+
   }
 
   componentDidMount() {
@@ -63,11 +65,15 @@ export default class App extends Component {
   }
 
   changeCategory(event) {
-    this.setState({ category: event.target.name });
+    this.setState({ category: event.target.name }, () => this.getRestaurants());
   }
 
   changeCurrentUser(user) {
     this.setState({ currentUser: user }, () => console.log("changeCurrentUser", this.state));
+  }
+
+  logoutCurrentUser() {
+    this.setState({ currentUser: false }, () => console.log("logoutCurrentUser", this.state));
   }
 
   getRestaurants() {
@@ -130,13 +136,14 @@ export default class App extends Component {
       case 'homepage':
         return (
           <div>
-            <div id="fulltopbar">
-              <h2 className="app-title">PAVÉ</h2>
+            <div id="full-topbar">
+              <img className="app-title" src={"../images/brand.png"}></img>
               <IoMdSearch size={30} className='search' id="searchButton" onClick={this.clickHandler} />
+              <br></br>
               <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler}
                 changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}
                 homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-                profileIconClick={this.state.profileIconClick} />
+                profileIconClick={this.state.profileIconClick} logoutCurrentUser={this.logoutCurrentUser} />
               <div id="content">
                 <List homeLocation={this.state.homeLocation} results={this.state.results} />
                 <SuggestedBottom changeHomeLocation={this.changeHomeLocation}
