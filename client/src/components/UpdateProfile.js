@@ -18,7 +18,7 @@ export default class UpdateProfile extends Component {
 
   }
   getUserProfile() {
-    axios.get('/pave/user/:email')
+    axios.get('/pave/user/')
     .then(({ data }) => {
       this.setState({
         firstName: data.firstName,
@@ -29,6 +29,7 @@ export default class UpdateProfile extends Component {
     })
     .catch((err) => console.log('get user by email failed', err))
   }
+  
   updateCurrentUserProfile(){
     axios.put('/pave/user/:email')
   }
