@@ -40,6 +40,9 @@ export default class UpdateProfile extends Component {
     .then(() => {
       this.getUserProfile();
     })
+    .then(() => {
+      document.getElementById('bio-text').value = '';
+    })
     .catch((err) => console.log('update Current User Profile failed', err))
   }
 

@@ -17,7 +17,7 @@
 	overflow: overlay;
 	display: flex;
 	position: relative;
-	bottom: 120px;
+	bottom: 97px;
 }
 
 .all-imgs {
@@ -49,8 +49,7 @@
 	font-size: 40px;
 	text-align: center;
 	position: relative;
-	bottom: 190px;
-
+	bottom: 162px;
 }
 
 .title-container {
@@ -169,6 +168,10 @@ h2 {
 .login-container {
 	padding-bottom: 10px;
 	padding-top: 10px
+}
+
+.search-location-container {
+	padding-top: 5px;
 }
 
 .login-modal,

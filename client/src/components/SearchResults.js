@@ -103,7 +103,7 @@ export default class SearchResults extends Component {
         <div className="suggestions-box-searched">
           <div id="results-container full-topbar">
             {suggestionOptions.map(suggest => (
-              <p className="suggestion" onClick={() => suggestionClick(suggest)}>{suggest} </p>
+              <div className="suggestion" onClick={() => suggestionClick(suggest)}>{suggest} </div>
             ))}
             {/* <div className="trending-searched">
                 {trending.map(trend => (

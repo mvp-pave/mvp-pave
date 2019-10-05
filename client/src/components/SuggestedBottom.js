@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import SearchLocation from './SearchLocation.js';
+// import SearchLocation from './SearchLocation.js';
 
 export default class SuggestedBottom extends Component {
   constructor(props) {
@@ -12,12 +12,12 @@ export default class SuggestedBottom extends Component {
 
   render() {
     let { handleProfileIconClick, profileIconClick, homeLocation, changeHomeLocation, changeCategory } = this.props;
-    let locationPopup;
-    if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
-      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick} changeHomeLocation={changeHomeLocation} />;
-    } else {
-      locationPopup = <div></div>
-    }
+    // let locationPopup;
+    // if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
+    //   locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick} changeHomeLocation={changeHomeLocation} />;
+    // } else {
+    //   locationPopup = <div></div>
+    // }
     return (
       <div>
         <div className="sug-main-title">PAVÉ YOUR WAY</div>
@@ -65,7 +65,7 @@ export default class SuggestedBottom extends Component {
             </div> */}
           </div>
         </div>
-        {locationPopup}
+        {/* {locationPopup} */}
       </div >
     )
   }
