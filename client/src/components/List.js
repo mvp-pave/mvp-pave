@@ -25,7 +25,7 @@ class List extends Component {
     // console.log("you clicked the button", id)
     this.setState({
       getId: id,
-      clickedRestaurant: !this.state.clickedRestaurant
+      clickedRestaurant: true
     }, () => this.getRestaurant(id))
   }
 
