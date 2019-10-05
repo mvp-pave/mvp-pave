@@ -45,8 +45,6 @@ class List extends Component {
       })
   }
 
-
-
   render() {
     if (this.props.results.length > 0) {
       return (

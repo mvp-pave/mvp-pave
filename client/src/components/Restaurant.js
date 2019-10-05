@@ -18,7 +18,6 @@ if (info) {
 } else {
   return (
     <div>
-      still loading... please wait...
     </div>
   )
 }

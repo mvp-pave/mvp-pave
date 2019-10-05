@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { IoIosStar } from "react-icons/io";
 
 
 
-const ListItem = ({ storeInfo, id, getIdHandleClick, getRestaurant }) => {
+const ListItem = ({ storeInfo, id, getIdHandleClick }) => {
 
   console.log("pcLI", storeInfo.id);
 
