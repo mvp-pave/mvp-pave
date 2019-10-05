@@ -18,7 +18,8 @@ export default class UpdateProfile extends Component {
 
   }
   getUserProfile() {
-    axios.get('/pave/user/')
+    let email = this.props.currentUser;
+    axios.get(`/pave/profile/${email}`)
     .then(({ data }) => {
       this.setState({
         firstName: data.firstName,
@@ -31,7 +32,8 @@ export default class UpdateProfile extends Component {
   }
   
   updateCurrentUserProfile(){
-    axios.put('/pave/user/:email')
+    let email = this.props.currentUser;
+    axios.put(`/pave/profile/${email}`)
   }
 
   handleChange(event) {
@@ -40,12 +42,28 @@ export default class UpdateProfile extends Component {
     })
   }
 
+  componentDidMount(){
+    this.getUserProfile();
+  }
   render() {
+    let greeting;
+    if (this.state.firstName.length !== 0){
+      greeting = `Hello ${this.state.firstName[0].toUpperCase()}${this.state.firstName.slice(1)} ${this.state.lastName[0].toUpperCase()}${this.state.lastName.slice(1)}!`
+    } else {
+      greeting = '';
+    }
+    console.log('what is current user', this.props.currentUser)
+    console.log('what is bio', this.state.bio)
     return (
       <div className="fullscreen-container">
         <div className="update-profile-modal">
           <form className="update-profile">
             <div><IoIosArrowBack className="gooBack" onClick={this.props.returnToHomepage} /></div>
+            <div className="update-profile-container">
+              <div className="greeting">
+                {greeting}
+              </div>
+            </div>
             <div className="update-profile-container">
               <div>
                 {this.state.file ? <img className="profile-picture" src={this.state.file}></img> : <img className="profile-picture" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"></img>}
@@ -54,16 +72,12 @@ export default class UpdateProfile extends Component {
               <input type="file" onChange={this.handleChange} name="profile_picture" className="profile_picture"></input>
             </div>
             <div className="update-profile-container">
-              <label>First Name:</label>
-              <input type="text" name="firstName" className="firstName"></input>
+              <label>Current Bio:</label><br />
+                <div className="update-text">{this.state.bio}</div>              
             </div>
             <div className="update-profile-container">
-              <label>Last Name:</label>
-              <input type="text" name="lastName" className="lastName"></input>
-            </div>
-            <div className="update-profile-container">
-              <label>Bio:</label><br />
-              <input type="text" name="bio" className="bio" ></input>
+              <label>Enter Updated Bio:</label><br />
+              <textarea type="text" name="bio" className="bio"></textarea>
             </div>
             <div>
               <button className="updating-profile"><span className="prof-txt">Update Profile</span></button>
