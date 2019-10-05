@@ -59,7 +59,7 @@ export default class App extends Component {
   }
 
   changeHomeLocation(location) {
-    this.setState({ homeLocation: location }, () => console.log('change home location', location));
+    this.setState({ homeLocation: location }, () => this.getRestaurants());
   }
 
   changeCategory(event) {
@@ -155,8 +155,8 @@ export default class App extends Component {
       case 'createAccount':
         return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
       case 'profile':
-        return (<div><UpdateProfile currentUser={this.state.currentUser} clickHandler={this.clickHandler} 
-                changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
+        return (<div><UpdateProfile currentUser={this.state.currentUser} clickHandler={this.clickHandler}
+          changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
     }
   }
 }
