@@ -1,5 +1,5 @@
 let REACT_APP_YELP_API_KEY = function () {
-  return 'Bearer yN_rdAnzk7-agSRBHfbZlEoMRgj4wYUXJQ6gf_Qkf1r4aIVqTSFcYRcJ6xYJy1m5jKyLKOpP_KbNIw2eWHN9KFl_fpxDrztxQJtNLEbsTuCu3xACil__UHUu7iaWXXYx'
+  return 'Bearer 882QWyWZVzS7L-IkqUMZIgnzJIVZX7kkRwZ5W7UxLkM9vDiNR8vBcMGbpDwmg8LFx2FSrUiwJavc6w670i1Tea4PeTc5twtLoU0c2U2-oUoD3p9fPNRCsBiZeCSYXXYx'
 }
 
 module.exports = REACT_APP_YELP_API_KEY;
