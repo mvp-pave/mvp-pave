@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { IoIosStar } from "react-icons/io";
 
 
 
- const ListItem = ({ storeInfo, id, getIdHandleClick, getRestaurant }) => {  
+const ListItem = ({ storeInfo, id, getIdHandleClick, getRestaurant }) => {
 
   console.log("pcLI", storeInfo.id);
 
-   return (
-    <div className="listItemContainer">
-      <div onClick={(e) => getIdHandleClick(e, storeInfo.id)} className="listItemContainer2"> 
+  return (
+    <div onClick={(e) => getIdHandleClick(e, storeInfo.id)} className="listItemContainer">
+      <img src={storeInfo.image_url} alt="" className="listItemImg" />
+      <div className="listInfo">
+        <div className="listItemRating"><IoIosStar className="star-img" size={12} color={"red"} />{storeInfo.rating} <span className="listItemReviews">{` (${storeInfo.review_count})`}</span></div>
         <div className="listItemName">{storeInfo.name}</div>
-        <div className="listItemRating">{storeInfo.rating} <span className="listItemReviews">{` (${storeInfo.review_count})`}</span></div>
         <div className="listItemCity">{storeInfo.location.city}</div>
-        <img src={storeInfo.image_url} alt="" className="listItemImg"/>
       </div>
     </div>
   )
