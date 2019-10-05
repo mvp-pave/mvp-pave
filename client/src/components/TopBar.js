@@ -22,11 +22,11 @@ export default class TopBar extends Component {
       burgerClick: !this.state.burgerClick
     }, () => console.log('burgerClick', this.state.burgerClick))
   }
-  // handleProfileIconClick(){
-  //   this.setState({
-  //     profileIconClick: !this.state.profileIconClick
-  //   })
-  // }
+  handleProfileIconClick() {
+    this.setState({
+      profileIconClick: !this.state.profileIconClick
+    })
+  }
   render() {
     let menu;
     if (this.state.burgerClick) {
@@ -45,9 +45,9 @@ export default class TopBar extends Component {
     return (
       <div>
         <div className='columns'>
-          <div className='column'><img src={'./images/profile.png'} className="profile" 
-          // onClick={this.props.clickHandler} 
-          onClick={profileClickHandler}
+          <div className='column'><img src={'./images/profile.png'} className="profile"
+            // onClick={this.props.clickHandler} 
+            onClick={profileClickHandler}
           ></img></div>
           <div className='column'><img src={'./images/heart.png'} ></img></div>
           <div className='column'><img src={'./images/compass.png'} onClick={handleProfileIconClick} ></img></div>

@@ -61,6 +61,10 @@ export default class App extends Component {
       this.setState({
         page: name
       })
+    } else {
+      this.setState({
+        page: "login"
+      })
     }
   }
 
