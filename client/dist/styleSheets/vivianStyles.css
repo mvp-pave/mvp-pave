@@ -46,15 +46,15 @@
 }
 
 .sug-main-title {
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 18px;
-  line-height: 1.43;
-  color: #484848;
+	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+	font-size: 18px;
+	line-height: 1.43;
+	color: #484848;
 	text-align: left;
 	background: green;
-  bottom: 127px;
-  left: 10px;
-  position: relative;
+	bottom: 127px;
+	left: 10px;
+	position: relative;
 }
 
 .title-container {
@@ -145,10 +145,10 @@ h2 {
 	border-radius: 10px;
 	padding: 11px;
 	background: #fff;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-size: 20px;
-  line-height: 1.43;
-  color: #484848;
+	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+	font-size: 20px;
+	line-height: 1.43;
+	color: #484848;
 }
 
 .icons {
@@ -176,7 +176,9 @@ h2 {
 
 .login-container {
 	padding-bottom: 10px;
-	padding-top: 10px
+	padding-top: 10px;
+	position: relative;
+	bottom: 33px;
 }
 
 .search-location-container {
@@ -199,14 +201,16 @@ h2 {
 	width: 290px;
 	height: 40px;
 	font-size: 22px;
-	/* border-radius: 10px; */
 	padding: 11px;
-	/* background: transparent; */
 	background: #fff;
 	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 	font-size: 17px;
-	/* line-height: 1.43; */
 	color: black;
+}
+
+.logging {
+	position: relative;
+	bottom: 27px;
 }
 
 .searching-location {
@@ -216,7 +220,7 @@ h2 {
 
 .reme {
 	position: relative;
-	bottom: 2px;
+	bottom: 3px;
 }
 
 .log-txt,
@@ -228,6 +232,9 @@ h2 {
 .borderer {
 	padding: 10px;
 	padding-bottom: 30px;
+	position: relative;
+	bottom: 40px;
+	right: 15px;
 }
 
 .border-before {
@@ -251,12 +258,15 @@ h2 {
 .new-acc,
 .forgot {
 	position: relative;
-	top: 10px;
+	bottom: 21px;
+	font-size: small;
+	z-index: 100;
 }
 
 .remember {
 	position: relative;
-	bottom: 5px;
+	bottom: 35px;
+	font-size: small;
 }
 
 .create {
@@ -266,7 +276,7 @@ h2 {
 
 #creatingAccount {
 	position: relative;
-	left: 78px;
+	left: 115px;
 }
 
 .err {
@@ -293,9 +303,10 @@ h2 {
 	width: 265px;
 	height: 40px;
 	border: 1px solid lightgrey;
-	font-size: 22px;
+	font-size: 18px;
 	border-radius: 10px;
 	padding: 11px;
+	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .icons {
@@ -317,15 +328,21 @@ h2 {
 .signing {
 	width: 290px;
 	height: 40px;
-	font-size: 22px;
+	font-size: 21px;
 	border-radius: 10px;
 	padding: 11px;
 	background: transparent;
+	border: 1px solid #bfbfbf;
+	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .signup-text {
-  width: 280px;
-  text-align: left;
+	width: 280px;
+	text-align: left;
+	margin-left: 14px;
+	padding-bottom: 10px;
+	font-size: x-small;
+	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .sup-txt {
@@ -337,28 +354,32 @@ h2 {
 	border-bottom: 1px solid lightgrey;
 	padding: 10px;
 	width: 284px;
+	position: relative;
+	bottom: 30px;
 }
 
 .kep-login-facebook.metro {
 	border-radius: 10px !important;
 	width: 290px;
 	height: 60px;
+	position: relative;
+	bottom: 43px;
 }
 
 .fb-icon {
 	position: relative;
-	top: 47px;
+	top: 6px;
 	background: transparent;
 	left: 24px;
-
+	z-index: 100;
 }
 
 .goBack {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  right: 30px;
-  bottom: 30px;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	right: 30px;
+	bottom: 30px;
 }
 
 .goingBack {
