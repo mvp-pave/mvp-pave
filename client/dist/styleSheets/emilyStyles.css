@@ -4,11 +4,12 @@ html {
 
 #searchButton {
     position: relative;
-    left: 276px;
-    bottom: 109px;
-    background: #E5E5E1;
+    background: #fafafa;
     border-radius: 20px;
     padding: 4px;
+    height: 36px;
+    bottom: 56px;
+    left: 307px;
 }
 
 #mailButton {
