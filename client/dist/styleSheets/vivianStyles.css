@@ -23,11 +23,17 @@
 .all-imgs {
 	overflow: overlay;
 	display: flex;
+	left: -8px;
+  position: relative;
 }
 
 .img-container {
 	float: left;
 	width: 400px;
+	float: left;
+  position: relative;
+  left: 10px;
+  width: 400px;
 }
 
 .sug-img {

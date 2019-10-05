@@ -12,6 +12,7 @@ import REACT_APP_YELP_API_KEY from '../../../config.js'
 import axios from 'axios';
 
 import { IoMdSearch } from 'react-icons/io';
+import { MdMailOutline } from "react-icons/md";
 
 export default class App extends Component {
   constructor(props) {
@@ -74,6 +75,7 @@ export default class App extends Component {
 
   logoutCurrentUser() {
     this.setState({ currentUser: false }, () => console.log("logoutCurrentUser", this.state));
+    location.reload();
   }
 
   getRestaurants() {
@@ -138,8 +140,10 @@ export default class App extends Component {
           <div>
             <div id="full-topbar">
               {/* <img className="app-title" src={"../images/brand.png"}></img> */}
-              <h2>PAVÉ</h2>
+              <h2 className="app-title">PAVÉ</h2>
               <IoMdSearch size={30} className='search' id="searchButton" onClick={this.clickHandler} />
+              <MdMailOutline size={30} className='mail' id="mailButton" onClick={this.clickHandler} />
+
               <br></br>
               <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler}
                 changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}

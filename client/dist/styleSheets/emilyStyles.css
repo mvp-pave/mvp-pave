@@ -4,8 +4,20 @@ html {
 
 #searchButton {
     position: relative;
-    left: 300px;
-    bottom: 80px;
+    left: 276px;
+    bottom: 109px;
+    background: #ccc;
+    border-radius: 20px;
+    padding: 4px;
+}
+
+#mailButton {
+    position: relative;
+    left: 280px;
+    bottom: 110px;
+    background: #ccc;
+    border-radius: 20px;
+    padding: 4px;
 }
 
 .result-img {
@@ -48,13 +60,9 @@ html {
     color: #484848;
     position: relative;
     margin-left: 80%;
-    top: -20px;
+    top: -5px;
 }
 
-#clear:hover {
-    cursor: pointer;
-    color: #0073bb;
-}
 
 .search-labels {
     padding-right: 10px;
@@ -89,9 +97,7 @@ html {
     padding-right: 23px;
 }
 
-.app-title {
-    position: relative;
-}
+
 
 #search-button {
     padding: 14px;
@@ -125,10 +131,16 @@ html {
     margin-right: 10px;
     text-overflow: ellipsis;
     display: inline-block;
-    max-width: calc(100vw - 40px);
-    text-decoration: none;
+    top: 1px;
 }
-
+.app-title {
+    font-family: "Times New Roman", Times, serif;
+    padding-bottom: 10px;
+    letter-spacing: 25px;
+    position: relative;
+    left: 20px;
+    text-align: left;
+}
 .trend:hover {
     color: #484848;
     cursor: pointer;
@@ -149,8 +161,8 @@ html {
     display: block;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     color: #484848;
-    font-weight: 400 !important;
-    letter-spacing: 1.2px !important;
+    font-weight: 400;
+    letter-spacing: 1.2px;
     padding-bottom: 2px;
 }
 
