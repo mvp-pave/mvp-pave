@@ -5,7 +5,7 @@ let TopBarMenu = (props) => {
     return (
       <div className='menu'>
         <div className='menu-list'>
-          <p onClick={() => props.changeCurrentUser(false)} onClick={props.clickHandler} className='homepage' >Sign Out</p>
+          <p onClick={props.logoutCurrentUser} onClick={props.clickHandler} className='homepage' >Sign Out</p>
           <p>Settings</p>
         </div>
       </div>

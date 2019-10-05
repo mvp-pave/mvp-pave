@@ -4,7 +4,7 @@ import SearchResults from './SearchResults.js';
 import REACT_APP_YELP_API_KEY from '../../../config.js'
 import { IoIosSearch, IoIosArrowBack } from "react-icons/io";
 
-const suggestions = ["mexican", "thai", "chinese", "taiwanese", "italian", "cambodian", "moroccan", "soul food", "indian", "vietnamese", "american", "cajun", "french", "japanese", "spanish", "greek", "mediterranean", "korean", "seafood", "vegan", "vegetarian", "tapas", "cuban"];
+const suggestions = ["cajun", "chinese", "cantonese", "cuban", "coffee", "cambodian"];
 
 export default class Search extends Component {
   constructor(props) {
