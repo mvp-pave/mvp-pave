@@ -139,10 +139,10 @@ export default class App extends Component {
         return (
           <div>
             <div id="full-topbar">
-              {/* <img className="app-title" src={"../images/brand.png"}></img> */}
+              {/* <img className="app-title" src={"../images/brand1.png"}></img> */}
               <h2 className="app-title">PAVÉ</h2>
-              <IoMdSearch size={30} className='search' id="searchButton" onClick={this.clickHandler} />
-              <MdMailOutline size={30} className='mail' id="mailButton" onClick={this.clickHandler} />
+              <IoMdSearch size={28} className='search' id="searchButton" onClick={this.clickHandler} />
+              <MdMailOutline size={28} className='mail' id="mailButton" onClick={this.clickHandler} />
 
               <br></br>
               <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler}
