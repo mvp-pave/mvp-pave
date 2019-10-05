@@ -55,19 +55,19 @@ export default class App extends Component {
             <form className="signup" onSubmit={this.newUser}>
               <div className="signup-container">
                 <input type="email" name="email" className="email" placeholder="Email Address" required onChange={this.handleChange}></input>
-                <GoMail className="icons" size={30} />
+                <GoMail color={'#bfbfbf'} className="icons" size={30} />
               </div>
               <div className="signup-container">
                 <input type="text" name="firstName" className="first" placeholder="First Name" required onChange={this.handleChange}></input>
-                <MdPersonOutline className="icons" size={30} />
+                <MdPersonOutline color={'#bfbfbf'} className="icons" size={30} />
               </div>
               <div className="signup-container">
                 <input type="text" name="lastName" className="last" placeholder="Last Name" required onChange={this.handleChange}></input>
-                <MdPersonOutline className="icons" size={30} />
+                <MdPersonOutline color={'#bfbfbf'} className="icons" size={30} />
               </div>
               <div className="signup-container">
                 <input type="password" name="password" className="password" placeholder="Password" required onChange={this.handleChange}></input>
-                <IoIosLock className="icons" size={30} />
+                <IoIosLock color={'#bfbfbf'} className="icons" size={30} />
               </div>
               <div>
                 <p className="signup-text">By clicking Sign up or Continue with, I agree to Pavé's <u>Terms of Service</u>, <u>Payments Term of Service</u>, <u>Privacy Policy</u>, and <u>Nondiscrimination Policy</u></p>
