@@ -4,7 +4,7 @@
   justify-content: center;
   display: flex;
   /* top: 60px; */
-  
+
 }
 
 p {
@@ -47,7 +47,7 @@ p {
 }
 
 .login {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .bar1,
@@ -123,6 +123,7 @@ p {
   padding: 11px;
   border-radius: 10px;
 }
+
 #X {
   position: relative;
   right: 6px;
