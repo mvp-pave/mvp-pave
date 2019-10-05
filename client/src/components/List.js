@@ -50,7 +50,7 @@ class List extends Component {
 
   likeHandleClick(e) {
     this.setState({
-      clickedHeart : true
+      clickedHeart : !this.state.clickedHeart
     })
   }
 
