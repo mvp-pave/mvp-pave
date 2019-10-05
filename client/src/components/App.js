@@ -75,7 +75,6 @@ export default class App extends Component {
   }
 
   changeHomeLocation(location) {
-    console.log('change home location', location)
     this.setState({ homeLocation: location }, () => this.getRestaurants());
   }
 
@@ -107,7 +106,6 @@ export default class App extends Component {
         }
       })
         .then((res) => {
-          // console.log(res.data.businesses)
           this.setState({ results: res.data.businesses })
         })
         .catch((err) => {

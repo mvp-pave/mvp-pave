@@ -15,14 +15,19 @@
   bottom: 127px;
   left: 10px;
   position: relative;
+  border-bottom: 1px solid #ccc;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  padding-bottom: 2px;
 }
 
 .listInfo {
   position: relative;
-  bottom: 40px;
-  top: -28px;
-  background: white;
-  opacity: 0.6;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 15px;
+  line-height: 1.43;
+  bottom: -9px;
+  color: #484848;
 }
 
 .listStores {
@@ -34,14 +39,41 @@
 
 .listItemRating {
   position: absolute;
-  left: 235px;
-  bottom: 37px;
+  left: 246px;
+  justify-self: left;
+  bottom: 82px;
+  font-size: small;
   z-index: 1000;
 }
 
 .listItemReviews {
-  color: #383838;
+  color: #bfbfbf;
   z-index: 100;
+}
+
+.reccommended {
+  font-size: smaller;
+  position: relative;
+  text-align: left;
+  left: -6px;
+  bottom: 23px;
+  border-radius: 15px;
+  padding: 5px;
+  color: #808080;
+  width: fit-content;
+  border: 1px solid #ffbb99;
+  z-index: 100;
+  background: transparent;
+}
+
+.listItemPrice {
+  position: relative;
+  text-align: right;
+  right: 32px;
+  bottom: 98px;
+  color: #808080;
+  z-index: 100;
+  background: transparent;
 }
 
 .listItemName {
@@ -49,21 +81,28 @@
   bottom: 19px;
   font-weight: bold;
   z-index: 100;
-  padding-left: 5px;
+  font-size: larger;
+}
+
+.each-list-item {
+  position: relative;
 }
 
 .listItemCity {
   position: relative;
   bottom: 20px;
-  padding-left: 5px;
   z-index: 100;
+  font-weight: 100;
 }
 
 
 .listItemImg {
   object-fit: cover;
   width: 320px;
+  top: 0px;
   height: 180px;
+  padding-bottom: 0;
+  margin-bottom: 18px;
   border-radius: 8px;
   position: relative;
   right: 5px;

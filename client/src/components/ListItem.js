@@ -11,9 +11,11 @@ const ListItem = ({ storeInfo, id, getIdHandleClick }) => {
     <div onClick={(e) => getIdHandleClick(e, storeInfo.id)} className="listItemContainer">
       <img src={storeInfo.image_url} alt="" className="listItemImg" />
       <div className="listInfo">
+        <div className="reccommended">Recommended By</div>
         <div className="listItemRating"><IoIosStar className="star-img" size={12} color={"red"} />{storeInfo.rating} <span className="listItemReviews">{` (${storeInfo.review_count})`}</span></div>
+        <div className="listItemCity">{storeInfo.location.city.toUpperCase()}</div>
         <div className="listItemName">{storeInfo.name}</div>
-        <div className="listItemCity">{storeInfo.location.city}</div>
+        <div className="listItemPrice">{storeInfo.price}</div>
       </div>
     </div>
   )

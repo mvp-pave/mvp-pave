@@ -67,7 +67,7 @@ class List extends Component {
           <h2 className="list-title">Places to eat around the world</h2>
           <div className="listStores">
             {this.props.results.map((storeInfo, index) => (
-              <ListItem storeInfo={storeInfo} key={index} id={storeInfo.id} getIdHandleClick={this.getIdHandleClick} />
+              <ListItem className="each-list-item" storeInfo={storeInfo} key={index} id={storeInfo.id} getIdHandleClick={this.getIdHandleClick} />
             ))}
           </div>
           <div className="listMainStore">
