@@ -35,6 +35,7 @@ export default class TopBar extends Component {
       menu = <div></div>
     }
     let { homeLocation, handleProfileIconClick, profileIconClick, changeHomeLocation } = this.props;
+    let { profileClickHandler } = this.props;
     let locationPopup;
     if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
       locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick} changeHomeLocation={changeHomeLocation} />;
@@ -44,7 +45,10 @@ export default class TopBar extends Component {
     return (
       <div>
         <div className='columns'>
-          <div className='column'><img src={'./images/profile.png'} className="profile" onClick={this.props.clickHandler} ></img></div>
+          <div className='column'><img src={'./images/profile.png'} className="profile" 
+          // onClick={this.props.clickHandler} 
+          onClick={profileClickHandler}
+          ></img></div>
           <div className='column'><img src={'./images/heart.png'} ></img></div>
           <div className='column'><img src={'./images/compass.png'} onClick={handleProfileIconClick} ></img></div>
           {/* <div className='column'><GoHome size={28} /></div>

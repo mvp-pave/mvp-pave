@@ -34,7 +34,7 @@ export default class App extends Component {
     this.getStore = this.getStore.bind(this);
     this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
     this.logoutCurrentUser = this.logoutCurrentUser.bind(this);
-
+    this.profileClickHandler = this.profileClickHandler.bind(this);
   }
 
   componentDidMount() {
@@ -53,6 +53,15 @@ export default class App extends Component {
     this.setState({
       page: name
     }, () => console.log(this.state))
+  }
+
+  profileClickHandler(e){
+    let name = e.target.getAttribute("class");
+    if (this.state.currentUser){
+      this.setState({
+        page: name
+      })
+    }
   }
 
   returnToHomepage() {
@@ -148,7 +157,8 @@ export default class App extends Component {
               <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler}
                 changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}
                 homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-                profileIconClick={this.state.profileIconClick} logoutCurrentUser={this.logoutCurrentUser} />
+                profileIconClick={this.state.profileIconClick} logoutCurrentUser={this.logoutCurrentUser} 
+                returnToHomepage={this.returnToHomepage} profileClickHandler={this.profileClickHandler}/>
           <p className="border-line-home" ></p>              
               <div id="content">
                 <List homeLocation={this.state.homeLocation} results={this.state.results} />
