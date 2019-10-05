@@ -11,9 +11,42 @@
   bottom: 100px;
 }
 
+.listInfo {
+  position: relative;
+  bottom: 40px;
+  background: white;
+  opacity: 0.6;
+}
+
 .listStores {
   position: relative;
   bottom: 130px;
+  margin-left: 5px;
+  padding-left: 20px;
+}
+
+.listItemRating {
+  position: relative;
+  left: 240px;
+  z-index: 100;
+}
+
+.listItemReviews {
+  color: #383838;
+  z-index: 100;
+}
+
+.listItemName {
+  position: relative;
+  bottom: 20px;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.listItemCity {
+  position: relative;
+  bottom: 20px;
+  z-index: 100;
 }
 
 
