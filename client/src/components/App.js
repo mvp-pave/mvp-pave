@@ -52,7 +52,7 @@ export default class App extends Component {
     let name = e.target.getAttribute("class");
     this.setState({
       page: name
-    }, () => console.log(this.state))
+    })
   }
 
   profileClickHandler(e){
@@ -71,7 +71,7 @@ export default class App extends Component {
   returnToHomepage() {
     this.setState({
       page: 'homepage'
-    }, () => console.log("return to homepage", this.state))
+    })
   }
 
   changeHomeLocation(location) {
@@ -84,11 +84,11 @@ export default class App extends Component {
   }
 
   changeCurrentUser(user) {
-    this.setState({ currentUser: user }, () => console.log("changeCurrentUser", this.state));
+    this.setState({ currentUser: user });
   }
 
   logoutCurrentUser() {
-    this.setState({ currentUser: false }, () => console.log("logoutCurrentUser", this.state));
+    this.setState({ currentUser: false });
     location.reload();
   }
 
@@ -131,9 +131,7 @@ export default class App extends Component {
       .then((res) => {
         let arr = this.state.results;
         arr.push(res.data)
-
-        console.log(res.data)
-        this.setState({ results: arr }, () => console.log(this.state))
+        this.setState({ results: arr })
       })
       .catch((err) => {
         console.log(err)

@@ -13,13 +13,14 @@ export default class Facebook extends Component {
       picture: ''
     }
     this.responseFacebook = this.responseFacebook.bind(this);
-    this.componentClicked = this.componentClicked.bind(this);
+    // this.componentClicked = this.componentClicked.bind(this);
     this.getUsers = this.getUsers.bind(this);
     this.postUser = this.postUser.bind(this);
   }
 
   responseFacebook(response) {
     console.log(response);
+    event.preventDefault();
     let newName = response.name.split(' ');
     this.setState({
       isLoggedIn: true,
@@ -27,10 +28,14 @@ export default class Facebook extends Component {
       firstName: newName[0],
       lastName: newName[1],
       email: response.email
-    }, () => this.getUsers())
+    }, () => {
+      console.log("FACEBOOK", this.state)
+      this.getUsers()
+    })
   }
 
   getUsers() {
+    event.preventDefault();
     axios
       .get('/pave/user')
       .then((response) => {
@@ -52,6 +57,7 @@ export default class Facebook extends Component {
   }
 
   postUser() {
+    event.preventDefault();
     axios
       .post('/pave/user', {
         email: this.state.email,
@@ -60,15 +66,15 @@ export default class Facebook extends Component {
         picture: this.state.picture
       })
       .then((response) => {
-        this.props.changeCurrentUser(this.state.email)
-        this.props.returnToHomepage()
+        this.props.changeCurrentUser(this.state.email);
+        this.props.returnToHomepage();
       })
       .catch((error) => console.log(error))
   }
 
-  componentClicked() {
-    console.log('CLICKED')
-  }
+  // componentClicked() {
+  //   console.log('CLICKED')
+  // }
 
   render() {
     let fbContent;
