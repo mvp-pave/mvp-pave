@@ -26,8 +26,9 @@
 }
 
 .listItemRating {
-  position: relative;
-  left: 240px;
+  position: absolute;
+  left: 245px;
+  bottom: 37px;
   z-index: 1000;
 }
 
@@ -38,7 +39,7 @@
 
 .listItemName {
   position: relative;
-  bottom: 20px;
+  bottom: 19px;
   font-weight: bold;
   z-index: 100;
 }
