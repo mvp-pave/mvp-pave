@@ -34,7 +34,7 @@ export default class SearchLocation extends Component {
   }
   submitSearchLocation() {
     e.preventDefault();
-    console.log('value of input', e.target.value)
+    console.log(e.target.value)
     this.props.handleProfileIconClick();
     this.props.changeHomeLocation(e.target.value)
   }
