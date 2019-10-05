@@ -61,7 +61,7 @@ export default class TopBar extends Component {
             <div className='bar3'></div>
           </div>
         </div>
-        <p className="border" ></p>
+        {/* <p className="border-line" ></p> */}
         {locationPopup}
         {menu}
       </div>

@@ -18,7 +18,7 @@ p {
   height: 1px;
   position: relative;
   background: #ccc;
-  right: 30px;
+  right: 33px;
   width: 100%;
 }
 
@@ -26,10 +26,11 @@ p {
   height: 1px;
   position: relative;
   background: #ccc;
-  right: 30px;
-  width: 110%;
+  right: 80px;
+  width: 220%;
   margin: 0;
-  bottom: 120px;
+  bottom: 69px;
+  z-index: 10;
 }
 
 #content {

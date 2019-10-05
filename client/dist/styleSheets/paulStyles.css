@@ -7,8 +7,14 @@
 } */
 
 .list-title {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  font-size: 18px;
+  line-height: 1.43;
+  color: #484848;
+  text-align: left;
+  bottom: 127px;
+  left: 10px;
   position: relative;
-  bottom: 100px;
 }
 
 .listInfo {
@@ -28,7 +34,7 @@
 
 .listItemRating {
   position: absolute;
-  left: 245px;
+  left: 235px;
   bottom: 37px;
   z-index: 1000;
 }

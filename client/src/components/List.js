@@ -11,10 +11,13 @@ class List extends Component {
       getId: "",
       info: "",
       clickedHeart: false,
+      clickedRestaurant: false,
+
     }
     this.getIdHandleClick = this.getIdHandleClick.bind(this);
     this.getRestaurant = this.getRestaurant.bind(this);
     this.likeHandleClick = this.likeHandleClick.bind(this);
+    this.closeModalClick = this.closeModalClick.bind(this);
   }
 
   getIdHandleClick(e, id) {
@@ -22,6 +25,7 @@ class List extends Component {
     // console.log("you clicked the button", id)
     this.setState({
       getId: id,
+      clickedRestaurant: true
     }, () => this.getRestaurant(id))
   }
 
@@ -46,7 +50,13 @@ class List extends Component {
 
   likeHandleClick(e) {
     this.setState({
-      clickedHeart : !this.state.clickedHeart
+      clickedHeart : true
+    })
+  }
+
+  closeModalClick(e) {
+    this.setState({
+      clickedRestaurant: false
     })
   }
 
@@ -61,7 +71,8 @@ class List extends Component {
             ))}
           </div>
           <div className="listMainStore">
-            <Restaurant info={this.state.info} clickedHeart={this.state.clickedHeart} likeHandleClick={this.likeHandleClick}/>
+            {this.state.clickedRestaurant ? <Restaurant info={this.state.info} clickedHeart={this.state.clickedHeart} 
+            likeHandleClick={this.likeHandleClick}  closeModalClick={this.closeModalClick} className="restaurantMain"/> : <div className="restaurantNone"></div>}
           </div>
           {/* <button onClick={this.handleClickModal}>Show More</button> */}
         </div>

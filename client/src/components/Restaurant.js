@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import {MdPhone, MdLocationOn} from 'react-icons/md';
 import {IoIosHeartEmpty, IoIosHeart} from 'react-icons/io'
 
-const Restaurant = ({info, likeHandleClick, clickedHeart}) => {
+const Restaurant = ({info, likeHandleClick, clickedHeart, closeModalClick}) => {
 
   if (info) {
     return (
       <div className="restContainer">
-        <span className="closeModal">X</span>
+        <span className="closeModal" onClick={(e) => closeModalClick(e)}>X</span>
         <div className="restName">{info.name} <span onClick={(e) => likeHandleClick(e)} > {clickedHeart ? <IoIosHeart className="likedIcon" color={"red"}/> : <IoIosHeartEmpty className="likedIcon"/>} </span></div>
         <img src={info.photos[2]} alt="" className="restPics"/>
         <div className="restAddress"><MdLocationOn className="locationIconRest"/>{info.location.address1}<span className="restCity">{`, ${info.location.city}`}</span></div>

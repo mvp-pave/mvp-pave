@@ -62,7 +62,7 @@ export default class App extends Component {
                 <MdPersonOutline className="icons" size={30} />
               </div>
               <div className="signup-container">
-                <input type="text" name="lastName" className="last" placeholder="LastName" required onChange={this.handleChange}></input>
+                <input type="text" name="lastName" className="last" placeholder="Last Name" required onChange={this.handleChange}></input>
                 <MdPersonOutline className="icons" size={30} />
               </div>
               <div className="signup-container">
