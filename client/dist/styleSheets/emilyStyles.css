@@ -160,9 +160,9 @@ html {
 }
 
 /* // This applies from 0px to 600px */
-body {
+/* body {
     background: #fff;
-}
+} */
 
 /* // This applies from 600px onwards */
 @media (min-width: 700px) {
