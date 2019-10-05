@@ -10,18 +10,18 @@ class List extends Component {
     this.state = {
       getId: "",
       info: "",
-      clickedPic: false,
+      clickedHeart: false,
     }
     this.getIdHandleClick = this.getIdHandleClick.bind(this);
     this.getRestaurant = this.getRestaurant.bind(this);
+    this.likeHandleClick = this.likeHandleClick.bind(this);
   }
 
   getIdHandleClick(e, id) {
     e.preventDefault();
-    console.log("you clicked the button", id)
+    // console.log("you clicked the button", id)
     this.setState({
       getId: id,
-      clickedPic: true
     }, () => this.getRestaurant(id))
   }
 
@@ -36,13 +36,18 @@ class List extends Component {
       .then((res) => {
         this.setState({
           info: res.data,
-          clickedPic: false
         })
-        console.log("getRestaurant works", res.data)
+        // console.log("getRestaurant works", res.data)
       })
       .catch((err) => {
         console.log("getRestaurant broke", err)
       })
+  }
+
+  likeHandleClick(e) {
+    this.setState({
+      clickedHeart : !this.state.clickedHeart
+    })
   }
 
   render() {
@@ -56,9 +61,9 @@ class List extends Component {
             ))}
           </div>
           <div className="listMainStore">
-            <Restaurant info={this.state.info} />
+            <Restaurant info={this.state.info} clickedHeart={this.state.clickedHeart} likeHandleClick={this.likeHandleClick}/>
           </div>
-          <button onClick={this.handleClickModal}>Show More</button>
+          {/* <button onClick={this.handleClickModal}>Show More</button> */}
         </div>
       )
     } else {
