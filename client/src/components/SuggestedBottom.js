@@ -12,7 +12,7 @@ export default class SuggestedBottom extends Component {
     let { handleProfileIconClick, profileIconClick, homeLocation, changeHomeLocation } = this.props;
     let locationPopup;
     if ((homeLocation === false && profileIconClick) || (homeLocation !== false && profileIconClick)) {
-      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick} changeHomeLocation={changeHomeLocation}/>;
+      locationPopup = <SearchLocation className='search-location' handleProfileIconClick={handleProfileIconClick} changeHomeLocation={changeHomeLocation} />;
     } else {
       locationPopup = <div></div>
     }
@@ -25,7 +25,7 @@ export default class SuggestedBottom extends Component {
               <IoIosArrowBack className="arrow-back" size={50} />
             </div> */}
           </div>
-          <div className="all-imgs">
+          <div className="all-imgs-home">
             <div className="img-container">
               <img className="img-sugg" src="./images/food.jpeg" onClick={handleProfileIconClick}></img>
               <div className="title-container">
