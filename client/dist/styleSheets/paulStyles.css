@@ -1,0 +1,18 @@
+/* @media only screen and (max-width: 812px) {
+  body {
+    .listContainer {
+      background: orange;
+    }
+  }
+} */
+
+
+.listItemImg {  object-fit: cover;  width: 320px;  height: 180px;}
+.listItemImg {
+  border-radius: 10px;
+}
+
+.restPics {  object-fit: cover;  width: 320px;  height: 180px;}
+.restPics {
+  border-radius: 10px;
+}

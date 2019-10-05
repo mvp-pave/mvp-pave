@@ -11,8 +11,7 @@ import axios from 'axios';
     <div className="listItemContainer">
       <div onClick={(e) => getIdHandleClick(e, storeInfo.id)} className="listItemContainer2"> 
         <div className="listItemName">{storeInfo.name}</div>
-        <div className="listItemRating">{storeInfo.rating}</div>
-        <div className="listItemReviews">{storeInfo.review_count}</div>
+        <div className="listItemRating">{storeInfo.rating} <span className="listItemReviews">{` (${storeInfo.review_count})`}</span></div>
         <div className="listItemCity">{storeInfo.location.city}</div>
         <img src={storeInfo.image_url} alt="" className="listItemImg"/>
       </div>
