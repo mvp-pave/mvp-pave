@@ -141,7 +141,7 @@ export default class App extends Component {
             <div id="full-topbar">
               <img className="app-title" src={"../images/brand10.png"}></img>
               {/* <h2 className="app-title">PAVÉ</h2> */}
-              <div><img src={'./images/search.png'}  className='search' id="searchButton" onClick={this.clickHandler} ></img></div>
+              <div><FaSistrix size={30} color={'#d9d9d9'} className='search' id="searchButton" onClick={this.clickHandler} /></div>
               {/* <MdMailOutline size={28} className='mail' id="mailButton" onClick={this.clickHandler} /> */}
 
               <br></br>
@@ -149,13 +149,13 @@ export default class App extends Component {
                 changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}
                 homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
                 profileIconClick={this.state.profileIconClick} logoutCurrentUser={this.logoutCurrentUser} />
-          <p className="border-line-home" ></p>              
-              <div id="content">
-                <List homeLocation={this.state.homeLocation} results={this.state.results} />
-                <SuggestedBottom changeHomeLocation={this.changeHomeLocation}
-                  homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-                  profileIconClick={this.state.profileIconClick} />
-              </div>
+            </div>
+            <p className="border-line-home" ></p>
+            <div id="content">
+              <SuggestedBottom changeHomeLocation={this.changeHomeLocation}
+                homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
+                profileIconClick={this.state.profileIconClick} />
+              <List homeLocation={this.state.homeLocation} results={this.state.results} />
             </div>
             {/* update profile which works on click of Top Bar */}
             {/* should be inside top bar */}
