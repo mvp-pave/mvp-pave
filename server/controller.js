@@ -101,14 +101,16 @@ let controller = {
       .catch((err) => res.status(400).send(err))
   },
   getUserProfileInfo: (req, res) => {
-    let { email } = req.body;
+    let { email } = req.params;
     getUserProfileInfo(email)
       .then((data) => res.status(200).send(data))
       .catch((err) => res.status(400).send(err))
   },
   updateUserProfileInfo: (req, res) => {
-    let { email, profile_picture, firstName, lastName, bio } = req.body;
-    updateUserProfileInfo(email, profile_picture, firstName, lastName, bio)
+    let { email } = req.params;
+    console.log('what is email', email)
+    let { profile_picture, bio } = req.body;
+    updateUserProfileInfo(email, profile_picture, bio)
       .then(() => res.status(200).send('User Profile Updated!'))
       .catch((err) => res.status(400).send(err))
   }

@@ -88,9 +88,9 @@ const getUserProfileInfo = (email) => {
   return User.findOne({ email })
 }
 
-const updateUserProfileInfo = (email, profile_picture, firstName, lastName, bio) => {
+const updateUserProfileInfo = (email, profile_picture, bio) => {
   return User.findOneAndUpdate({ email }, {
-    profile_picture, firstName, lastName, bio
+    profile_picture, bio
   })
 }
 

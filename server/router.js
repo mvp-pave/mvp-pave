@@ -55,7 +55,7 @@ router
   .route('/pic/:ID')
     .put(updateUserPic)
 router
-  .route('/profile')
+  .route('/profile/:email')
     .get(getUserProfileInfo)
     .put(updateUserProfileInfo)
 
