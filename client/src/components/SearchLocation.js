@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { MdCancel } from "react-icons/md";
 import Axios from 'axios';
 import gmapKey from '../../../gmapconfig.js'
+import { TiLocationArrowOutline } from "react-icons/ti";
 
 export default class SearchLocation extends Component {
   constructor(props) {
@@ -43,14 +44,14 @@ export default class SearchLocation extends Component {
       <div className="search-location-container">
         <div className="icons-close-container">
           <div className="close">
-            <MdCancel className="icons-close" size={30} onClick={handleProfileIconClick} />
+            <img src={'./images/X.png'} id="X" onClick={handleProfileIconClick} ></img>
           </div>
         </div>
         <div className="search-location-modal">
           <form className="search-location-form">
             <div className="search-location-form-container">
               <input type="text" name="search-location" className="search-location" placeholder="Search Location" onSubmit={this.submitSearchLocation}></input>
-              {/* <MdCancel className="icons-search" size={30} /> */}
+              <TiLocationArrowOutline className="location-icon" size={35} color={"#ccc"} />
             </div>
             <div>
               <button className="searching-location" onClick={(e) => { this.getCurrentLocation(e) }}><span className="loc-txt">Use Current Location</span></button>

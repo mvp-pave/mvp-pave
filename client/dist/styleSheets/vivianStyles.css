@@ -18,6 +18,7 @@
 	display: flex;
 	position: relative;
 	bottom: 97px;
+	left: 10px;
 }
 
 .all-imgs {
@@ -133,6 +134,7 @@ h2 {
 	position: absolute;
 	top: 70px;
 	margin-left: 40px;
+	border: 1px solid #bfbfbf;
 }
 
 .email,
