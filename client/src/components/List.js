@@ -16,7 +16,7 @@ class List extends Component {
     this.getRestaurant = this.getRestaurant.bind(this);
   }
 
-  getIdHandleClick(e, id){
+  getIdHandleClick(e, id) {
     e.preventDefault();
     console.log("you clicked the button", id)
     this.setState({
@@ -41,7 +41,7 @@ class List extends Component {
         console.log("getRestaurant works", res.data)
       })
       .catch((err) => {
-        console.log("getRestaurant broke",err)
+        console.log("getRestaurant broke", err)
       })
   }
 
@@ -51,16 +51,14 @@ class List extends Component {
     if (this.props.results.length > 0) {
       return (
         <div className="listContainer">
-          <div className="listTitle">
-            <h2>Places to eat around the world</h2>
-          </div>
+          <h2 className="list-title">Places to eat around the world</h2>
           <div className="listStores">
             {this.props.results.map((storeInfo, index) => (
-              <ListItem storeInfo={storeInfo} key={index} id={storeInfo.id} getIdHandleClick={this.getIdHandleClick}/>
+              <ListItem storeInfo={storeInfo} key={index} id={storeInfo.id} getIdHandleClick={this.getIdHandleClick} />
             ))}
           </div>
           <div className="listMainStore">
-            <Restaurant info={this.state.info}/> 
+            <Restaurant info={this.state.info} />
           </div>
           <button onClick={this.handleClickModal}>Show More</button>
         </div>
@@ -68,7 +66,6 @@ class List extends Component {
     } else {
       return (
         <div>
-          loading ... please wait ...
         </div>
       )
     }
