@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchResults from './SearchResults.js';
-import REACT_APP_YELP_API_KEY from '../../../config.js'
+import REACT_APP_YELP_API_KEY from '../../../yelpconfig.js'
 import { IoIosSearch, IoIosArrowBack } from "react-icons/io";
 
 const suggestions = ["cajun", "chinese", "cantonese", "cuban", "coffee", "cambodian"];

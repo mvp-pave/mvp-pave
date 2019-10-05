@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ListItem from './ListItem.js'
 import Restaurant from './Restaurant.js';
-import REACT_APP_YELP_API_KEY from '../../../config.js';
+import REACT_APP_YELP_API_KEY from '../../../yelpconfig.js';
 import axios from 'axios';
 
 class List extends Component {
