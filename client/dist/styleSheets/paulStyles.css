@@ -64,10 +64,9 @@
   object-fit: cover;
   width: 320px;
   height: 180px;
-}
-
-.listItemImg {
-  border-radius: 10px;
+  border-radius: 8px;
+  position: relative;
+  right: 5px;
 }
 
 .restPics {
