@@ -6,13 +6,33 @@
   }
 } */
 
+.list-title {
+  position: relative;
+  bottom: 100px;
+}
 
-.listItemImg {  object-fit: cover;  width: 320px;  height: 180px;}
+.listStores {
+  position: relative;
+  bottom: 130px;
+}
+
+
+.listItemImg {
+  object-fit: cover;
+  width: 320px;
+  height: 180px;
+}
+
 .listItemImg {
   border-radius: 10px;
 }
 
-.restPics {  object-fit: cover;  width: 320px;  height: 180px;}
+.restPics {
+  object-fit: cover;
+  width: 320px;
+  height: 180px;
+}
+
 .restPics {
   border-radius: 10px;
 }
