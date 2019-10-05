@@ -28,7 +28,7 @@
 .listItemRating {
   position: relative;
   left: 240px;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .listItemReviews {
@@ -68,4 +68,18 @@
 
 .restPics {
   border-radius: 10px;
+}
+
+.restContainer {
+  padding: 5px;
+  margin-bottom: 45px;
+  margin-top: -20px;
+}
+
+.locationIconRest {
+  padding-right: 15px;
+}
+
+.phoneIconRest {
+  padding-right: 15px;
 }

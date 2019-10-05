@@ -78,14 +78,16 @@ export default class Facebook extends Component {
     } else {
       fbContent = (<FacebookLogin
         appId="659215294487087"
-        // autoLoad={true}
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />);
 
     }
     return (
-      <div >{fbContent}</div>
+      <div >
+        <img className="fb-icon" src="https://img.icons8.com/ios-filled/30/ffffff/facebook-f.png"></img>
+        {fbContent}
+      </div>
     )
   }
 }

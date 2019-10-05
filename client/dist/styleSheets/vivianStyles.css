@@ -24,16 +24,16 @@
 	overflow: overlay;
 	display: flex;
 	left: -8px;
-  position: relative;
+	position: relative;
 }
 
 .img-container {
 	float: left;
 	width: 400px;
 	float: left;
-  position: relative;
-  left: 10px;
-  width: 400px;
+	position: relative;
+	left: 10px;
+	width: 400px;
 }
 
 .sug-img {
@@ -331,6 +331,14 @@ h2 {
 	border-radius: 10px !important;
 	width: 290px;
 	height: 60px;
+}
+
+.fb-icon {
+	position: relative;
+	top: 47px;
+	background: transparent;
+	left: 24px;
+
 }
 
 .goBack {

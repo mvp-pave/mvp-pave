@@ -8,7 +8,6 @@ import SuggestedBottom from './SuggestedBottom.js';
 import List from './List.js'
 import UpdateProfile from './UpdateProfile.js'
 
-
 import REACT_APP_YELP_API_KEY from '../../../yelpconfig.js'
 import axios from 'axios';
 

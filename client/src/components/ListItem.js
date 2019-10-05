@@ -5,7 +5,7 @@ import { IoIosStar } from "react-icons/io";
 
 const ListItem = ({ storeInfo, id, getIdHandleClick }) => {
 
-  console.log("pcLI", storeInfo.id);
+  // console.log("pcLI", storeInfo.id);
 
   return (
     <div onClick={(e) => getIdHandleClick(e, storeInfo.id)} className="listItemContainer">
