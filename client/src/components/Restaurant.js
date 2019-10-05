@@ -7,7 +7,7 @@ const Restaurant = ({info, likeHandleClick, clickedHeart}) => {
   if (info) {
     return (
       <div className="restContainer">
-        <span className="closeModal">x</span>
+        <span className="closeModal">X</span>
         <div className="restName">{info.name} <span onClick={(e) => likeHandleClick(e)} > {clickedHeart ? <IoIosHeart className="likedIcon" color={"red"}/> : <IoIosHeartEmpty className="likedIcon"/>} </span></div>
         <img src={info.photos[2]} alt="" className="restPics"/>
         <div className="restAddress"><MdLocationOn className="locationIconRest"/>{info.location.address1}<span className="restCity">{`, ${info.location.city}`}</span></div>
