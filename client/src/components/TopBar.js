@@ -28,7 +28,7 @@ export default class TopBar extends Component {
   render() {
     let menu;
     if (this.state.burgerClick) {
-      menu = <TopBarMenu logoutCurrentUser={this.props.logoutCurrentUser} currentUser={this.props.currentUser} clickHandler={this.props.clickHandler} changeCurrentUser={this.props.changeCurrentUser} />;
+      menu = <TopBarMenu currentUser={this.props.currentUser} clickHandler={this.props.clickHandler} changeCurrentUser={this.props.changeCurrentUser} />;
     } else {
       menu = <div></div>
     }

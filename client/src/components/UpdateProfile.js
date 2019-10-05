@@ -15,7 +15,7 @@ export default class UpdateProfile extends Component {
     this.getUserProfile = this.getUserProfile.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.updateCurrentUserProfile = this.updateCurrentUserProfile.bind(this);
-
+    this.handleSubmitForm = this.handleSubmitForm.bind(this);
   }
   getUserProfile() {
     let email = this.props.currentUser;
@@ -31,15 +31,29 @@ export default class UpdateProfile extends Component {
     .catch((err) => console.log('get user by email failed', err))
   }
   
-  updateCurrentUserProfile(){
+  updateCurrentUserProfile(bio){
     let email = this.props.currentUser;
-    axios.put(`/pave/profile/${email}`)
+    axios.put(`/pave/profile/${email}`, {
+      profile_picture: this.state.file,
+      bio
+    }, () => console.log('current profile pic and bio', this.state.file, this.state.bio))
+    .then(() => {
+      this.getUserProfile();
+    })
+    .catch((err) => console.log('update Current User Profile failed', err))
   }
 
   handleChange(event) {
     this.setState({
       file: URL.createObjectURL(event.target.files[0])
     })
+  }
+  handleSubmitForm(e){
+    e.preventDefault();
+    let newBio = document.getElementById('bio-text').value;
+    console.log('newbio', newBio);
+    console.log('waht is file bio', this.state.profile_picture, this.state.bio)
+    this.updateCurrentUserProfile(newBio);
   }
 
   componentDidMount(){
@@ -57,7 +71,7 @@ export default class UpdateProfile extends Component {
     return (
       <div className="fullscreen-container">
         <div className="update-profile-modal">
-          <form className="update-profile">
+          <form className="update-profile" onSubmit={this.handleSubmitForm}>
             <div><IoIosArrowBack className="gooBack" onClick={this.props.returnToHomepage} /></div>
             <div className="update-profile-container">
               <div className="greeting">
@@ -77,7 +91,7 @@ export default class UpdateProfile extends Component {
             </div>
             <div className="update-profile-container">
               <label>Enter Updated Bio:</label><br />
-              <textarea type="text" name="bio" className="bio"></textarea>
+              <textarea type="text" name="bio" className="bio" id="bio-text"></textarea>
             </div>
             <div>
               <button className="updating-profile"><span className="prof-txt">Update Profile</span></button>
