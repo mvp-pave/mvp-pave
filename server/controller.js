@@ -110,6 +110,7 @@ let controller = {
     let { email } = req.params;
     console.log('what is email', email)
     let { profile_picture, bio } = req.body;
+    console.log('what is img picture', profile_picture)
     updateUserProfileInfo(email, profile_picture, bio)
       .then(() => res.status(200).send('User Profile Updated!'))
       .catch((err) => res.status(400).send(err))
