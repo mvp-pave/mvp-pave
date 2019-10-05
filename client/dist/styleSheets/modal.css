@@ -1,0 +1,9 @@
+.restContainer {
+  position: absolute;
+  background-color: #f7f0f0;
+  margin: auto;
+  padding: 20px;
+  border: 1px  solid #7a7a7a;
+  width: 80%;
+  z-index: 1;
+}
