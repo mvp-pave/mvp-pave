@@ -45,8 +45,6 @@ class List extends Component {
       })
   }
 
-
-
   render() {
     if (this.props.results.length > 0) {
       return (
@@ -66,6 +64,7 @@ class List extends Component {
     } else {
       return (
         <div>
+          loading... please wait...
         </div>
       )
     }
