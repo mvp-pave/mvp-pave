@@ -133,6 +133,10 @@ h2 {
 	padding-top: 10px
 }
 
+.search-location-container {
+	padding-top: 5px;
+}
+
 .login-modal,
 .search-location-modal {
 	padding: 20px;
