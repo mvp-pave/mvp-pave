@@ -20,7 +20,7 @@ export default class SuggestedBottom extends Component {
     }
     return (
       <div>
-        <div className="sug-main-title">PAVÉ YOUR WAY</div>
+        {/* <div className="sug-main-title">Explore Food, Explore Experiences</div> */}
         <div className="container-suggested-bottom">
           <div className="arrow-container">
             {/* <div>
