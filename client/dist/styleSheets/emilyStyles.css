@@ -155,7 +155,39 @@ body {
 }
 
 /* // This applies from 600px onwards */
-@media (min-width: 600px) {
+@media (min-width: 700px) {
+    .search-loc {
+        height: 30px;
+        border: 1px solid lightgrey;
+        padding: 11px;
+        border-radius: 10px;
+        background: #fff;
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        font-size: 17px;
+        line-height: 1.43;
+        color: #484848;
+        padding-left: 30px;
+        width: 700px;
+    }
+    
+    #search-button {
+        padding: 14px;
+        position: absolute;
+        right: 10px;
+        color: #484848;
+    }
+    #clear {
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        font-size: 14px;
+        line-height: 1.43;
+        color: #484848;
+        position: relative;
+        margin-left: 90%;
+        top: -20px;
+    }
+}
+
+@media (min-width: 1200px) {
     body {
         background: fff;
     }
