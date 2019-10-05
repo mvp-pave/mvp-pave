@@ -8,7 +8,8 @@ import SuggestedBottom from './SuggestedBottom.js';
 import List from './List.js'
 import UpdateProfile from './UpdateProfile.js'
 
-import REACT_APP_YELP_API_KEY from '../../../config.js'
+
+import REACT_APP_YELP_API_KEY from '../../../yelpconfig.js'
 import axios from 'axios';
 
 import { IoMdSearch } from 'react-icons/io';
@@ -139,8 +140,8 @@ export default class App extends Component {
         return (
           <div>
             <div id="full-topbar">
-              {/* <img className="app-title" src={"../images/brand1.png"}></img> */}
-              <h2 className="app-title">PAVÉ</h2>
+              <img className="app-title" src={"../images/brand4.png"}></img>
+              {/* <h2 className="app-title">PAVÉ</h2> */}
               <IoMdSearch size={28} className='search' id="searchButton" onClick={this.clickHandler} />
               <MdMailOutline size={28} className='mail' id="mailButton" onClick={this.clickHandler} />
 
