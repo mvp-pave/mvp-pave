@@ -32,11 +32,11 @@ export default class SearchLocation extends Component {
       .then(() => this.props.handleProfileIconClick())
       .catch((err) => console.log('axios get to gmaps failed', err))
   }
-  submitSearchLocation() {
+  submitSearchLocation(e) {
     e.preventDefault();
-    console.log('value of input', e.target.value)
+    let searchLocationText = document.getElementById('search-location').value;
     this.props.handleProfileIconClick();
-    this.props.changeHomeLocation(e.target.value)
+    this.props.changeHomeLocation(searchLocationText)
   }
   render() {
     let { handleProfileIconClick } = this.props;
@@ -48,15 +48,15 @@ export default class SearchLocation extends Component {
           </div>
         </div>
         <div className="search-location-modal">
-          <form className="search-location-form">
+          <form className="search-location-form" onSubmit={this.submitSearchLocation}>
             <div className="search-location-form-container">
-              <input type="text" name="search-location" className="search-location" placeholder="Search Location" onSubmit={this.submitSearchLocation}></input>
+              <input type="text" name="search-location" className="search-location" placeholder="Search Location" id="search-location"></input>
               <TiLocationArrowOutline className="location-icon" size={35} color={"#ccc"} />
             </div>
             <div>
-              <button className="searching-location" onClick={(e) => { this.getCurrentLocation(e) }}><span className="loc-txt">Use Current Location</span></button>
-            </div>
+            </div>s
           </form>
+          <button className="searching-location" onClick={(e) => { this.getCurrentLocation(e) }}><span className="loc-txt">Use Current Location</span></button>
         </div>
       </div>
     )
