@@ -138,8 +138,8 @@ html {
     padding-bottom: 10px;
     letter-spacing: 25px;
     position: relative;
-    left: 20px;
     text-align: left;
+    height: 50px;
 }
 .trend:hover {
     color: #484848;

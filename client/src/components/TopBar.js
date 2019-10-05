@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { IoMdHeart } from "react-icons/io";
-import { MdHome, MdLocationOn, MdPerson } from "react-icons/md";
+import { IoIosHeartEmpty } from "react-icons/io";
+import { GoHome, GoLocation } from "react-icons/go";
+import { MdPersonOutline } from "react-icons/md";
+
 import TopBarMenu from './TopBarMenu.js'
 import SearchLocation from './SearchLocation.js';
 
@@ -42,10 +44,13 @@ export default class TopBar extends Component {
     return (
       <div>
         <div className='columns'>
-          <div className='column'><MdHome size={28} /></div>
-          <div className='column'><MdPerson size={28} className="profile" onClick={this.props.clickHandler} /></div>
-          <div className='column'><IoMdHeart size={28} /></div>
-          <div className='column'><MdLocationOn size={28} onClick={handleProfileIconClick} /></div>
+          <div className='column'><img src={'./images/profile.png'} className="profile" onClick={this.props.clickHandler} ></img></div>
+          <div className='column'><img src={'./images/heart.png'} ></img></div>
+          <div className='column'><img src={'./images/compass.png'} onClick={handleProfileIconClick} ></img></div>
+          {/* <div className='column'><GoHome size={28} /></div>
+          <div className='column'><MdPersonOutline size={28} className="profile" onClick={this.props.clickHandler} /></div>
+          <div className='column'><IoIosHeartEmpty size={28} /></div>
+          <div className='column'><GoLocation size={28} onClick={handleProfileIconClick} /></div> */}
           <div className='column' onClick={this.handleBurgerClick}>
             <div className='bar1'></div>
             <div className='bar2'></div>

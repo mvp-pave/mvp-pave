@@ -1,7 +1,14 @@
 /* topbar styles */
 .columns {
-  display: flex;
+  position: relative;
   justify-content: center;
+  display: flex;
+  top: 60px;
+}
+
+#content {
+  position: relative;
+  top: 50px;
 }
 
 .columns .column {
