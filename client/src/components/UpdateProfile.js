@@ -20,30 +20,30 @@ export default class UpdateProfile extends Component {
   getUserProfile() {
     let email = this.props.currentUser;
     axios.get(`/pave/profile/${email}`)
-    .then(({ data }) => {
-      this.setState({
-        firstName: data.firstName,
-        lastName: data.lastName,
-        profile_picture: data.profile_picture,
-        bio: data.bio
-      }, () => console.log('fName lName profPic bio', this.state.firstName, this.state.lastName, this.state.profile_picture, this.state.bio))
-    })
-    .catch((err) => console.log('get user by email failed', err))
+      .then(({ data }) => {
+        this.setState({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          profile_picture: data.profile_picture,
+          bio: data.bio
+        }, () => console.log('fName lName profPic bio', this.state.firstName, this.state.lastName, this.state.profile_picture, this.state.bio))
+      })
+      .catch((err) => console.log('get user by email failed', err))
   }
-  
-  updateCurrentUserProfile(bio){
+
+  updateCurrentUserProfile(bio) {
     let email = this.props.currentUser;
     axios.put(`/pave/profile/${email}`, {
       profile_picture: this.state.file,
       bio
     }, () => console.log('current profile pic and bio', this.state.file, this.state.bio))
-    .then(() => {
-      this.getUserProfile();
-    })
-    .then(() => {
-      document.getElementById('bio-text').value = '';
-    })
-    .catch((err) => console.log('update Current User Profile failed', err))
+      .then(() => {
+        this.getUserProfile();
+      })
+      .then(() => {
+        document.getElementById('bio-text').value = '';
+      })
+      .catch((err) => console.log('update Current User Profile failed', err))
   }
 
   handleChange(event) {
@@ -51,7 +51,7 @@ export default class UpdateProfile extends Component {
       file: URL.createObjectURL(event.target.files[0])
     })
   }
-  handleSubmitForm(e){
+  handleSubmitForm(e) {
     e.preventDefault();
     let newBio = document.getElementById('bio-text').value;
     console.log('newbio', newBio);
@@ -59,16 +59,16 @@ export default class UpdateProfile extends Component {
     this.updateCurrentUserProfile(newBio);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getUserProfile();
   }
   render() {
-    let greeting;
-    if (this.state.firstName.length !== 0){
-      greeting = `Hello ${this.state.firstName[0].toUpperCase()}${this.state.firstName.slice(1)} ${this.state.lastName[0].toUpperCase()}${this.state.lastName.slice(1)}!`
-    } else {
-      greeting = '';
-    }
+    // let greeting;
+    // if (this.props.currentUser) {
+    //   greeting = `Hello ${this.state.firstName[0].toUpperCase()}${this.state.firstName.slice(1)} ${this.state.lastName[0].toUpperCase()}${this.state.lastName.slice(1)}!`
+    // } else {
+    //   greeting = '';
+    // }
     console.log('what is current user', this.props.currentUser)
     console.log('what is bio', this.state.bio)
     return (
@@ -78,7 +78,7 @@ export default class UpdateProfile extends Component {
             <div><IoIosArrowBack className="gooBack" onClick={this.props.returnToHomepage} /></div>
             <div className="update-profile-container">
               <div className="greeting">
-                {greeting}
+                {/* {greeting} */}
               </div>
             </div>
             <div className="update-profile-container">
@@ -90,7 +90,7 @@ export default class UpdateProfile extends Component {
             </div>
             <div className="update-profile-container">
               <label>Current Bio:</label><br />
-                <div className="update-text">{this.state.bio}</div>              
+              <div className="update-text">{this.state.bio}</div>
             </div>
             <div className="update-profile-container">
               <label>Enter Updated Bio:</label><br />

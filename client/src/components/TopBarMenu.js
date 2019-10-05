@@ -5,7 +5,8 @@ let TopBarMenu = (props) => {
     return (
       <div className='menu'>
         <div className='menu-list'>
-          <p onClick={props.logoutCurrentUser} onClick={props.clickHandler} className='homepage' >Sign Out</p>
+          <p className="border-line" ></p>
+          <p onClick={() => location.reload()} >Sign Out</p>
           <p>Settings</p>
         </div>
       </div>

@@ -61,6 +61,10 @@ export default class App extends Component {
       this.setState({
         page: name
       })
+    } else {
+      this.setState({
+        page: "login"
+      })
     }
   }
 
@@ -71,6 +75,7 @@ export default class App extends Component {
   }
 
   changeHomeLocation(location) {
+    console.log('change home location', location)
     this.setState({ homeLocation: location }, () => this.getRestaurants());
   }
 
