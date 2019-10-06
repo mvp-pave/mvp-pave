@@ -15,7 +15,6 @@ export default class Search extends Component {
       moused: false,
       results: [],
       suggestionOptions: [],
-      loading: false,
       queryClickCount: 0,
       locationClickCount: 0,
     }
@@ -29,7 +28,7 @@ export default class Search extends Component {
   }
 
   clearFields() {
-    this.setState({ query: "", location: "" });
+    this.setState({ query: "", location: "", results: [] });
   }
 
   handleQueryChange(event) {
@@ -47,8 +46,8 @@ export default class Search extends Component {
       this.setState({ queryClickCount: 0, locationClickCount: 0 });
       this.setState({ query }, () => this.getResults());
     } else {
+      this.setState({ query }, () => this.suggestionChange());
       this.setState({ queryClickCount: count });
-      this.setState({ query });
     }
   }
 
@@ -76,6 +75,7 @@ export default class Search extends Component {
   }
 
   getResults() {
+    event.preventDefault();
     let key = REACT_APP_YELP_API_KEY()
     // this.setState({ loading: true }) 
     axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
@@ -97,7 +97,7 @@ export default class Search extends Component {
         console.log(res.data.businesses)
         //change the state of App to reflect on the result we are given from the API
         //at the same time, setting the loading state to false 
-        this.setState({ results: res.data.businesses, loading: false })
+        this.setState({ results: res.data.businesses, location: res.data.businesses[0].location.city })
       })
       .catch((err) => {
         //fire the errorState message if there is no information return from the API

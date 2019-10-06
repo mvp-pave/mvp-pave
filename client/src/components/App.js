@@ -41,7 +41,7 @@ export default class App extends Component {
 
   componentDidMount() {
     if (!this.state.homeLocation) {
-      let ids = ["WHHt_Jb8Tgidn9mW7oDnIg", "5i_RyzNnkaof6M64oZqxQA", "oVoj_A1FExfvI_7UbAdQgQ", "2h89smIl2aXxa2DyxSIFmg", "bVkavwJ8OgU4yPiUMoEOPg"]
+      let ids = ["YRMHyCvqMz_lLgpqjNj_tw", "5i_RyzNnkaof6M64oZqxQA", "oVoj_A1FExfvI_7UbAdQgQ", "2h89smIl2aXxa2DyxSIFmg", "bVkavwJ8OgU4yPiUMoEOPg"]
       for (var i = 0; i < ids.length; i++) {
         this.getStore(ids[i])
       }

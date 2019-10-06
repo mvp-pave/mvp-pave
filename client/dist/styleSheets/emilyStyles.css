@@ -51,7 +51,7 @@ html {
     color: #484848;
     position: absolute;
     padding: 10px;
-    top: 35px;
+    top: 8px;
     background: transparent;
 }
 
@@ -66,7 +66,7 @@ html {
     color: #484848;
     position: relative;
     margin-left: 80%;
-    top: -5px;
+    bottom: 37px;
 }
 
 
@@ -79,6 +79,9 @@ html {
 .search-container {
     padding-bottom: 10px;
     margin-left: -1%;
+    position: relative;
+    bottom: -2px;
+    right: -3px;
 }
 
 .search-loc {
@@ -107,8 +110,9 @@ html {
 
 #search-button {
     padding: 14px;
-    position: absolute;
-    right: 30px;
+    position: relative;
+    bottom: 40px;
+    left: 270px;
     background: transparent;
     color: #484848;
 }
@@ -150,6 +154,15 @@ html {
 .trend:hover {
     color: #484848;
     cursor: pointer;
+}
+.suggestions-box {
+    position: relative;
+    bottom: 33px;
+}
+
+.suggestions-box-searched {
+    position: relative;
+    bottom: 39px;
 }
 
 .trend:before {
@@ -219,4 +232,10 @@ html {
     body {
         background: fff;
     }
+}
+
+#search-results {
+    position: relative;
+    top: 76px;
+    right: 16px;
 }

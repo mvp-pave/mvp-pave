@@ -98,14 +98,14 @@
 
 .listItemImg {
   object-fit: cover;
-  width: 320px;
+  width: 321px;
   top: 0px;
   height: 180px;
   padding-bottom: 0;
   margin-bottom: 18px;
   border-radius: 8px;
   position: relative;
-  right: 5px;
+  right: 7px;
 }
 
 .restPics {
@@ -171,7 +171,7 @@
   position: relative;
   padding-bottom: 2px;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 22px;
 }
 
 .restAddress {
@@ -220,8 +220,8 @@
 }
 
 .likedIcon {
-  position: relative;
-  left: 182px;
+  position: absolute;
+  left: 296px;
   top: 313px;
   z-index: 1000;
 }
