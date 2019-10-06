@@ -75,8 +75,7 @@ export default class Search extends Component {
     this.setState({ suggestionOptions: arr })
   }
 
-  getResults(event) {
-    event.preventDefault();
+  getResults() {
     let key = REACT_APP_YELP_API_KEY()
     // this.setState({ loading: true }) 
     axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${this.state.location}`, {
