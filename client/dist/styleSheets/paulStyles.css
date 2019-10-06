@@ -201,6 +201,7 @@
   left: 10px
 }
 
+/* responsive styling for listItemRating and listItemImgs up to width 699px */
 @media (min-width: 380px){
   .listItemRating {
     left: 72%
