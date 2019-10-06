@@ -192,9 +192,9 @@ h2 {
 	bottom: 33px;
 }
 
-.search-location-container {
+/* .search-location-container {
 	padding-top: 5px;
-}
+} */
 
 .login-modal,
 .search-location-modal {
@@ -231,7 +231,7 @@ h2 {
 .searching-location {
 	border-radius: 10px;
 	background: transparent;
-	position: relative;
+	top: 110px;
 }
 
 .reme {

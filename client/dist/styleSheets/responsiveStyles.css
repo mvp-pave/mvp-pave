@@ -295,10 +295,10 @@
 		left: 20%
 	}
 	.search-location{
-		left: 25%
+		left: 24.5%
 	}
 	.searching-location{
-		left: 25%
+		left: 24.5%
 	}
 }
 
@@ -312,12 +312,24 @@
   .login-modal {
 		left: 20.5%
   }
+  .search-location{
+		left: 25%
+	}
+	.searching-location{
+		left: 25%
+	}
 }
 
 @media (min-width:580px){
 	.login-modal {
 		left: 21.5%
+  }
+  .search-location{
+		left: 25.5%
 	}
+	.searching-location{
+		left: 25.5%
+	}  
 }
 
 @media (min-width: 600px) {
@@ -329,13 +341,25 @@
   }
   .login-modal {
 		left: 22.5%
+  }
+  .search-location{
+		left: 26%
 	}
+	.searching-location{
+		left: 26%
+	}  
 }
 
 @media (min-width:620px){
 	.login-modal {
 		left: 23.5%
+  }
+  .search-location{
+		left: 26.5%
 	}
+	.searching-location{
+		left: 26.5%
+	}  
 }
 
 @media (min-width: 630px) {
@@ -350,7 +374,13 @@
 @media (min-width:640px){
 	.login-modal {
 		left: 24.5%
+  }
+  .search-location{
+		left: 27%
 	}
+	.searching-location{
+		left: 27%
+	} 
 }
 
 @media (min-width: 660px) {
@@ -361,13 +391,45 @@
     height: 310px;
   }
   .login-modal {
-		left: 25.5%
+		left: 27.5%
+  }
+  .search-location{
+		left: 27.5%
 	}
+	.searching-location{
+		left: 27.5%
+	} 
 }
 
 @media (min-width:680px){
 	.login-modal {
 		left: 26.5%
+  }
+  .search-location{
+		left: 28%
 	}
+	.searching-location{
+		left: 28%
+	} 
 }
 
+@media (min-width:690px){
+  .listItemRating {
+    left: 86%
+  }
+  .listItemImg {
+    height: 320px;
+  }
+}
+
+@media (min-width:700px){
+	.login-modal {
+		left: 28.5%
+  }
+  .search-location{
+		left: 28.5%
+	}
+	.searching-location{
+		left: 28.5%
+	} 
+}
