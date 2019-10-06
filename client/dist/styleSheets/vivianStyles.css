@@ -94,7 +94,8 @@ h2 {
 	position: absolute;
 	left: 0px;
 	right: 0px;
-	width: 377px;
+	/* width: 377px; */
+	width: 100%;
 	height: 200px;
 }
 
@@ -102,18 +103,21 @@ h2 {
 	position: absolute;
 	z-index: 25;
 	background-color: white;
-	width: 376px;
+	/* width: 376px; */
+	width: 100%;
 	height: 2000px;
 	left: -30px;
 	margin-left: 30px;
-	top: 120px;
+	/* top: 120px; */
+	top: 140px;
 	background: rgba(0, 0, 0, 0.2);
 	z-index: 10000;
 }
 
 .search-location {
 	position: relative;
-	left: 40px;
+	/* left: 40px; */
+	left: 11%;
 }
 
 .search-location-modal {
@@ -126,6 +130,9 @@ h2 {
 	position: absolute;
 	height: 200px;
 	background: white;
+	width: 100%;
+	/* display: flex;
+	flex-direction: column; */
 }
 
 .searching-location {
@@ -133,7 +140,7 @@ h2 {
 	background: transparent;
 	position: absolute;
 	top: 90px;
-	margin-left: 20px;
+	left: 11%;
 	border: 1px solid #bfbfbf;
 }
 
@@ -198,7 +205,10 @@ h2 {
 .search-location-modal {
 	left: 0px;
 }
-
+.search-input-icon-container {
+	display: flex;
+	flex-grow: 1;
+}
 .logging,
 .searching-location {
 	width: 290px;
@@ -531,97 +541,203 @@ h2 {
 * {
 	background-color: rgb(255, 255, 255);
 }
-
 /* responsive styling for login modal up to 699px */
 @media (min-width:380px){
 	.login-modal {
 		left: 7%;
-    /* z-index: 100; */
+	}
+	.search-location{
+		left: 12%
+	}
+	.searching-location{
+		left: 12%
 	}
 }
 @media (min-width:390px){
 	.login-modal {
 		left: 7.5%
 	}
+	.search-location{
+		left: 13%
+	}
+	.searching-location{
+		left: 13%
+	} 
 }
 @media (min-width:400px){
 	.login-modal {
 		left: 8%
+	}
+	.search-location{
+		left: 14%
+	}
+	.searching-location{
+		left: 14%
 	}
 }
 @media (min-width:410px){
 	.login-modal {
 		left: 8.5%
 	}
+	.search-location{
+		left: 15%
+	}
+	.searching-location{
+		left: 15%
+	}
 }
 @media (min-width:420px){
 	.login-modal {
 		left: 9%
+	}
+	.search-location{
+		left: 16%
+	}
+	.searching-location{
+		left: 16%
 	}
 }
 @media (min-width:430px){
 	.login-modal {
 		left: 10%
 	}
+	.search-location{
+		left: 17%
+	}
+	.searching-location{
+		left: 17%
+	}
 }
 @media (min-width:440px){
 	.login-modal {
 		left: 11%
+	}
+	.search-location{
+		left: 18%
+	}
+	.searching-location{
+		left: 18%
 	}
 }
 @media (min-width:450px){
 	.login-modal {
 		left: 12.5%
 	}
+	.search-location{
+		left: 18.5%
+	}
+	.searching-location{
+		left: 18.5%
+	}
 }
 @media (min-width:460px){
 	.login-modal {
 		left: 13.5%
+	}
+	.search-location{
+		left: 19%
+	}
+	.searching-location{
+		left: 19%
 	}
 }
 @media (min-width:470px){
 	.login-modal {
 		left: 14.5%
 	}
+	.search-location{
+		left: 20%
+	}
+	.searching-location{
+		left: 20%
+	}
 }
 @media (min-width:480px){
 	.login-modal {
 		left: 15%
+	}
+	.search-location{
+		left: 20.5%
+	}
+	.searching-location{
+		left: 20.5%
 	}
 }
 @media (min-width:490px){
 	.login-modal {
 		left: 16%
 	}
+	.search-location{
+		left: 21%
+	}
+	.searching-location{
+		left: 21%
+	}
 }
 @media (min-width:500px){
 	.login-modal {
 		left: 16.5%
+	}
+	.search-location{
+		left: 22%
+	}
+	.searching-location{
+		left: 22%
 	}
 }
 @media (min-width:510px){
 	.login-modal {
 		left: 17%
 	}
+	.search-location{
+		left: 22.5%
+	}
+	.searching-location{
+		left: 22.5%
+	}
 }
 @media (min-width:520px){
 	.login-modal {
 		left: 18%
+	}
+	.search-location{
+		left: 23%
+	}
+	.searching-location{
+		left: 23%
 	}
 }
 @media (min-width:530px){
 	.login-modal {
 		left: 19%
 	}
+	.search-location{
+		left: 23.5%
+	}
+	.searching-location{
+		left: 23.5%
+	}
 }
 @media (min-width:540px){
 	.login-modal {
 		left: 19.5%
 	}
+	.search-location{
+		left: 24%
+	}
+	.searching-location{
+		left: 24%
+	}
 }
 @media (min-width:550px){
 	.login-modal {
 		left: 20%
+	}
+	.search-location{
+		left: 25%
+	}
+	.searching-location{
+		left: 25%
 	}
 }
 @media (min-width:560px){

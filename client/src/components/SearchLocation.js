@@ -49,8 +49,10 @@ export default class SearchLocation extends Component {
         <div className="search-location-modal">
           <form className="search-location-form" onSubmit={this.submitSearchLocation}>
             <div className="search-location-form-container">
-              <input type="text" name="search-location" className="search-location" placeholder="Search Location" id="search-location"></input>
-              <TiLocationArrowOutline className="location-icon" size={35} color={"#ccc"} />
+              <div className="search-input-icon-container">
+                <input type="text" name="search-location" className="search-location" placeholder="Search Location" id="search-location"></input>
+                <TiLocationArrowOutline className="location-icon" size={35} color={"#ccc"} />
+              </div>
             </div>
             <div>
             </div>s
