@@ -3,8 +3,7 @@
   position: relative;
   justify-content: center;
   display: flex;
-  /* top: 60px; */
-
+  top: -3px;
 }
 
 p {
@@ -71,7 +70,7 @@ p {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.2);
-  z-index: 100;
+  z-index: 10000;
 }
 
 .menu-list {
@@ -80,7 +79,7 @@ p {
   z-index: 1000;
   position: relative;
   background: white;
-  bottom: 33px;
+  bottom: 15px;
   padding-left: 33px;
 }
 
