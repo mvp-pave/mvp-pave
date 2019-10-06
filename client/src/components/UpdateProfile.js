@@ -87,9 +87,11 @@ export default class UpdateProfile extends Component {
               </div>
               <label className="updatePhoto">Update photo:</label>
               <input type="file" onChange={this.handleChange} name="profile_picture" className="profile_picture"></input>
+            <div className="socialInfo">
               <div className="prof-followers">Followers: 0 </div>
               <div className="prof-following">Following: 0 </div>
               <div className="prof-post">Post: 0</div>
+            </div>
             </div>
             <div className="update-profile-container">
               <label>Current Bio:</label><br />
