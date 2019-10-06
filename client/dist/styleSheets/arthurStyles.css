@@ -28,7 +28,7 @@ p {
   right: 80px;
   width: 220%;
   margin: 0;
-  bottom: 69px;
+  bottom: 72px;
   z-index: 10;
 }
 
@@ -73,9 +73,16 @@ p {
   z-index: 10000;
 }
 
+.dwnIcon {
+  top: 4px;
+  position: relative;
+  right: -3px;
+}
+
 .menu-list {
+    padding-bottom: 10px;
   width: 100%;
-  height: 154px;
+  height: auto;
   z-index: 1000;
   position: relative;
   background: white;
@@ -127,6 +134,8 @@ p {
   position: relative;
   right: 6px;
   height: 30px;
+  top: 10px;
+  z-index: 1;
 }
 
 * {
@@ -136,7 +145,7 @@ p {
 .location-icon {
   right: 5px;
   position: relative;
-  top: 9px;
+  top: 21px;
 }
 
 .bio {
@@ -205,14 +214,6 @@ p {
   .columns {
     top: -110px;
     left: 70px;
-  }
-
-  .menu-list {
-    display: inline-block;
-    position: relative;
-    top: 0;
-    left: 400px;
-    padding-bottom: 40px;
   }
 
   .login,

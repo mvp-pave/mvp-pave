@@ -5,6 +5,7 @@ import TopBar from './TopBar.js';
 import Login from './Login.js'
 import CreateAccount from './CreateAccount.js'
 import SuggestedBottom from './SuggestedBottom.js';
+import Recommendations from './Recommendations.js';
 import List from './List.js'
 import UpdateProfile from './UpdateProfile.js'
 
@@ -40,7 +41,7 @@ export default class App extends Component {
 
   componentDidMount() {
     if (!this.state.homeLocation) {
-      let ids = ["WHHt_Jb8Tgidn9mW7oDnIg", "5i_RyzNnkaof6M64oZqxQA", "oVoj_A1FExfvI_7UbAdQgQ", "2h89smIl2aXxa2DyxSIFmg", "bVkavwJ8OgU4yPiUMoEOPg"]
+      let ids = ["YRMHyCvqMz_lLgpqjNj_tw", "5i_RyzNnkaof6M64oZqxQA", "oVoj_A1FExfvI_7UbAdQgQ", "2h89smIl2aXxa2DyxSIFmg", "bVkavwJ8OgU4yPiUMoEOPg"]
       for (var i = 0; i < ids.length; i++) {
         this.getStore(ids[i])
       }
@@ -177,6 +178,8 @@ export default class App extends Component {
         return (<div><Search returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} /></div>);
       case 'login':
         return (<div><Login returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
+      case 'recommendations':
+        return (<div><Recommendations clickHandler={this.clickHandler} returnToHomepage={this.returnToHomepage} /></div>);
       case 'createAccount':
         return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
       case 'profile':

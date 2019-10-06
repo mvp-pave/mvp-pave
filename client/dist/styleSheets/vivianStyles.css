@@ -110,6 +110,7 @@ h2 {
 	margin-left: 30px;
 	/* top: 120px; */
 	top: 140px;
+/* 	top: 126px; */
 	background: rgba(0, 0, 0, 0.2);
 	z-index: 10000;
 }
@@ -118,6 +119,7 @@ h2 {
 	position: relative;
 	/* left: 40px; */
 	left: 11%;
+	bottom: -13px;
 }
 
 .search-location-modal {
@@ -174,9 +176,9 @@ h2 {
 
 .icons-close-container {
 	display: flex;
-	justify-content: space-between;
-	position: relative;
-	bottom: 10px;
+  justify-content: space-between;
+  position: relative;
+  bottom: 4px;
 }
 
 .close {
@@ -229,6 +231,7 @@ h2 {
 .searching-location {
 	border-radius: 10px;
 	background: transparent;
+	position: relative;
 }
 
 .reme {
