@@ -5,6 +5,7 @@ import TopBar from './TopBar.js';
 import Login from './Login.js'
 import CreateAccount from './CreateAccount.js'
 import SuggestedBottom from './SuggestedBottom.js';
+import Recommendations from './Recommendations.js';
 import List from './List.js'
 import UpdateProfile from './UpdateProfile.js'
 
@@ -177,6 +178,8 @@ export default class App extends Component {
         return (<div><Search returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} /></div>);
       case 'login':
         return (<div><Login returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
+      case 'recommendations':
+        return (<div><Recommendations clickHandler={this.clickHandler} returnToHomepage={this.returnToHomepage} /></div>);
       case 'createAccount':
         return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
       case 'profile':

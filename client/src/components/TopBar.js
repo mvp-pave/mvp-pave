@@ -25,7 +25,7 @@ export default class TopBar extends Component {
   handleProfileIconClick() {
     this.setState({
       profileIconClick: !this.state.profileIconClick
-    }, ()=> console.log('this state profile icon click', this.state.profileIconClick))
+    }, () => console.log('this state profile icon click', this.state.profileIconClick))
   }
   render() {
     let menu;
@@ -49,7 +49,7 @@ export default class TopBar extends Component {
             // onClick={this.props.clickHandler} 
             onClick={profileClickHandler}
           ></img></div>
-          <div className='column'><img src={'./images/heart.png'} ></img></div>
+          <div className='column'><img src={'./images/heart.png'} className="recommendations" onClick={this.props.clickHandler} ></img></div>
           <div className='column'><img src={'./images/compass.png'} onClick={handleProfileIconClick} ></img></div>
           {/* <div className='column'><GoHome size={28} /></div>
           <div className='column'><MdPersonOutline size={28} className="profile" onClick={this.props.clickHandler} /></div>
