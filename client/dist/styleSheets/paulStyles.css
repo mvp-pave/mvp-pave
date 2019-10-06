@@ -28,6 +28,7 @@
   line-height: 1.43;
   bottom: -9px;
   color: #484848;
+  width: 95%;
 }
 
 .listStores {
@@ -38,12 +39,13 @@
 }
 
 .listItemRating {
-  position: absolute;
+  /* position: absolute; */
   /* left: 246px; */
   left: 71%;
   justify-self: left;
   bottom: 82px;
   font-size: small;
+  text-align: right;
 }
 
 .listItemReviews {
