@@ -39,7 +39,7 @@ export default class App extends Component {
 
   componentDidMount() {
     if (!this.state.homeLocation) {
-      let ids = ["YRMHyCvqMz_lLgpqjNj_tw", "5i_RyzNnkaof6M64oZqxQA", "oVoj_A1FExfvI_7UbAdQgQ", "2h89smIl2aXxa2DyxSIFmg", "bVkavwJ8OgU4yPiUMoEOPg"]
+      let ids = ["WHHt_Jb8Tgidn9mW7oDnIg", "5i_RyzNnkaof6M64oZqxQA", "oVoj_A1FExfvI_7UbAdQgQ", "2h89smIl2aXxa2DyxSIFmg", "bVkavwJ8OgU4yPiUMoEOPg"]
       for (var i = 0; i < ids.length; i++) {
         this.getStore(ids[i])
       }
@@ -55,9 +55,9 @@ export default class App extends Component {
     })
   }
 
-  profileClickHandler(e){
+  profileClickHandler(e) {
     let name = e.target.getAttribute("class");
-    if (this.state.currentUser){
+    if (this.state.currentUser) {
       this.setState({
         page: name
       })
@@ -152,14 +152,14 @@ export default class App extends Component {
               <img className="app-title" src={"../images/brand10.png"}></img>
               {/* <h2 className="app-title">PAVÉ</h2> */}
               <div><FaSistrix size={30} color={'#d9d9d9'} className='search' id="searchButton" onClick={this.clickHandler} /></div>
-              {/* <MdMailOutline size={28} className='mail' id="mailButton" onClick={this.clickHandler} /> */}
+              <MdMailOutline size={30} color={'#d9d9d9'} className='mail' id="mailButton" onClick={this.clickHandler} />
 
               <br></br>
               <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler}
                 changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}
                 homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-                profileIconClick={this.state.profileIconClick} logoutCurrentUser={this.logoutCurrentUser} 
-                returnToHomepage={this.returnToHomepage} profileClickHandler={this.profileClickHandler}/>
+                profileIconClick={this.state.profileIconClick} logoutCurrentUser={this.logoutCurrentUser}
+                returnToHomepage={this.returnToHomepage} profileClickHandler={this.profileClickHandler} />
             </div>
             <p className="border-line-home" ></p>
             <div id="content">
