@@ -76,6 +76,7 @@
   color: #808080;
   z-index: 100;
   background: transparent;
+  top:-115px;
 }
 
 .listItemName {
