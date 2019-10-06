@@ -3,6 +3,8 @@ import axios from 'axios';
 import SearchResults from './SearchResults.js';
 import REACT_APP_YELP_API_KEY from '../../../yelpconfig.js'
 import { IoIosSearch, IoIosArrowBack } from "react-icons/io";
+import { MdLocationSearching } from "react-icons/md";
+
 
 const suggestions = ["cajun", "chinese", "cantonese", "cuban", "coffee", "cambodian"];
 
@@ -114,25 +116,27 @@ export default class Search extends Component {
             <form onSubmit={this.getResults}>
               <div className="search-container">
                 {/* <label className="search-labels">Find:</label> */}
-                <span className="search-goBack" ><IoIosArrowBack size={20} onClick={this.props.returnToHomepage} /></span>
+                <span className="search-goBack" ><IoIosArrowBack size={25} onClick={this.props.returnToHomepage} /></span>
 
                 <input tabIndex="1" name="query" id="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleQueryChange} type="text" placeholder="Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
               </div>
               <div className="search-container">
-                {/* <label className="search-labels">Near:</label> */}
-                <input tabIndex="1" name="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleLocationChange} type="text" placeholder="Enter a Location" className="search-loc" ></input>
-                <span id="search-button" ><IoIosSearch size={30} onClick={this.getResults} /></span>
+                <span id="location-icon-search" ><MdLocationSearching size={20} /></span>
+                  {/* <label className="search-labels">Near:</label> */}
+                  <input tabIndex="1" name="location" id="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleLocationChange} type="text" placeholder="Enter Location" className="search-loc" ></input>
+                  <span id="search-button" ><IoIosSearch size={30} onClick={this.getResults} /></span>
               </div>
-              <button type="submit" id="hidden-search-button"></button>
+                <button type="submit" id="hidden-search-button"></button>
             </form>
-            {/* <span className="homepage" onClick={this.props.clickHandler} >Cancel</span> */}
-            <span onClick={this.clearFields} id="clear">Clear</span>
+              <span id="use-my-location">Use my location</span>
+              {/* <span className="homepage" onClick={this.props.clickHandler} >Cancel</span> */}
+              <span onClick={this.clearFields} id="clear">Clear</span>
           </div>
 
-          <SearchResults destinationClick={this.destinationClick} suggestionClick={this.suggestionClick} query={this.state.query} location={this.state.location} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
+            <SearchResults destinationClick={this.destinationClick} suggestionClick={this.suggestionClick} query={this.state.query} location={this.state.location} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />
+          </div>
         </div>
-      </div>
 
-    )
-  }
-}
+        )
+      }
+    }
