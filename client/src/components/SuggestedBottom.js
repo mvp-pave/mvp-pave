@@ -46,7 +46,7 @@ export default class SuggestedBottom extends Component {
               </div>
             </div>
             <div className="img-container">
-              <img className="img-sugg" src="./images/drinks.jpeg" name="bars" onClick={(e) => {changeCategory(e); handleProfileIconClick()}}></img>
+              <img className="img-sugg" src="./images/drinks.jpeg" name="bars" onClick={(e) => {changeCategory(e); this.handleIconClick()}}></img>
               <div className="title-container">
                 <div className="sugg-title">Drinks</div>
               </div>

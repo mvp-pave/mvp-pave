@@ -80,7 +80,6 @@ export default class App extends Component {
   }
 
   changeCategory(event) {
-    console.log('what is event target name', event.target.name)
     this.setState({ category: event.target.name }, () => this.getRestaurants());
   }
 
@@ -94,8 +93,6 @@ export default class App extends Component {
   }
 
   getRestaurants() {
-    console.log('what is state category', this.state.category)
-    console.log('home location', this.state.homeLocation)
     if (this.state.homeLocation) {
       let key = REACT_APP_YELP_API_KEY()
       this.setState({ loading: true })
