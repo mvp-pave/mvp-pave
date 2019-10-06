@@ -3,7 +3,8 @@
   position: relative;
   justify-content: center;
   display: flex;
-  top: -3px;
+  /* top: 60px; */
+
 }
 
 p {
@@ -28,7 +29,7 @@ p {
   right: 80px;
   width: 220%;
   margin: 0;
-  bottom: 72px;
+  bottom: 69px;
   z-index: 10;
 }
 
@@ -70,23 +71,16 @@ p {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.2);
-  z-index: 10000;
-}
-
-.dwnIcon {
-  top: 4px;
-  position: relative;
-  right: -3px;
+  z-index: 100;
 }
 
 .menu-list {
-    padding-bottom: 10px;
   width: 100%;
-  height: auto;
+  height: 154px;
   z-index: 1000;
   position: relative;
   background: white;
-  bottom: 15px;
+  bottom: 33px;
   padding-left: 33px;
 }
 
@@ -134,8 +128,6 @@ p {
   position: relative;
   right: 6px;
   height: 30px;
-  top: 10px;
-  z-index: 1;
 }
 
 * {
@@ -145,7 +137,7 @@ p {
 .location-icon {
   right: 5px;
   position: relative;
-  top: 21px;
+  top: 9px;
 }
 
 .bio {
@@ -216,6 +208,14 @@ p {
     left: 70px;
   }
 
+  .menu-list {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 400px;
+    padding-bottom: 40px;
+  }
+
   .login,
   .createAccount,
   .setting {
@@ -256,4 +256,21 @@ p {
     right: 660px;
     bottom: 130px;
   }
+}
+
+.socialInfo {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.prof-followers {
+  display: inline-block
+}
+
+.prof-following {
+  display: inline-block
+}
+
+.prof-post {
+  display: inline-block
 }
