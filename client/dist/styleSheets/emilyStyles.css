@@ -258,39 +258,6 @@ html {
 
 
 /* responsive styling for search and mail buttons up to width 699px*/
-@media (min-width: 380px){
-    #searchButton {
-        left: 77%
-    }
-}
-@media (min-width: 420px) {
-    #searchButton {
-        left: 78%
-    }
-    #mailButton {
-        left: 88%
-    }
-}
-@media (min-width: 450px) {
-    #searchButton {
-        left: 79% 
-    }
-    #mailButton {
-        left: 89%
-    }
-}
-@media (min-width: 475px) {
-    #searchButton {
-        left: 80%
-    }
-}
-@media (min-width: 500px) {
-    #searchButton {
-        left: 81%     
-    }
-    #mailButton {
-        left: 90%
-    }
 
 #search-results {
     position: relative;

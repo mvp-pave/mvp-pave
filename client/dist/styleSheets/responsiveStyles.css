@@ -1,0 +1,373 @@
+/* responsive styling*/
+@media (min-width: 380px){
+  .listItemRating {
+    left: 72%
+  }
+  .listItemImg {
+    height: 185px;
+  }
+  .login-modal {
+		left: 7%;
+	}
+	.search-location{
+		left: 12%
+	}
+	.searching-location{
+		left: 12%
+  }
+  #searchButton {
+    left: 77%
+}
+}
+
+@media (min-width: 390px) {
+  .listItemRating {
+    left: 73%
+  }
+  .listItemImg {
+    height: 190px;
+  }
+  .login-modal {
+		left: 7.5%
+	}
+	.search-location{
+		left: 13%
+	}
+	.searching-location{
+		left: 13%
+	} 
+}
+
+@media (min-width:400px){
+	.login-modal {
+		left: 8%
+	}
+	.search-location{
+		left: 14%
+	}
+	.searching-location{
+		left: 14%
+	}
+}
+
+@media (min-width: 410px) {
+  .listItemRating {
+    left: 74%
+  }
+  .listItemImg {
+    height: 200px;
+  }
+  .login-modal {
+		left: 8.5%
+	}
+	.search-location{
+		left: 15%
+	}
+	.searching-location{
+		left: 15%
+	}
+}
+
+@media (min-width: 420px) {
+  .listItemRating {
+    left: 75%
+  }
+  .listItemImg {
+    height: 210px;
+  }
+  .login-modal {
+		left: 9%
+	}
+	.search-location{
+		left: 16%
+	}
+	.searching-location{
+		left: 16%
+  }
+  #searchButton {
+    left: 78%
+  }
+  #mailButton {
+    left: 88%
+  }
+}
+
+@media (min-width: 430px) {
+  .listItemRating {
+    left: 76%
+  }
+  .listItemImg {
+    height: 220px;
+  }
+  .login-modal {
+		left: 10%
+	}
+	.search-location{
+		left: 17%
+	}
+	.searching-location{
+		left: 17%
+	}
+}
+
+@media (min-width:440px){
+	.login-modal {
+		left: 11%
+	}
+	.search-location{
+		left: 18%
+	}
+	.searching-location{
+		left: 18%
+	}
+}
+
+@media (min-width: 450px) {
+  .listItemRating {
+    left: 77%
+  }
+  .listItemImg {
+    height: 230px;
+  }
+  .login-modal {
+		left: 12.5%
+	}
+	.search-location{
+		left: 18.5%
+	}
+	.searching-location{
+		left: 18.5%
+  }
+  #searchButton {
+    left: 79% 
+  }
+  #mailButton {
+    left: 89%
+  }
+}
+
+@media (min-width:460px){
+	.login-modal {
+		left: 13.5%
+	}
+	.search-location{
+		left: 19%
+	}
+	.searching-location{
+		left: 19%
+	}
+}
+
+@media (min-width: 470px) {
+  .listItemRating {
+    left: 78%
+  }
+  .listItemImg {
+    height: 240px;
+  }
+  .login-modal {
+		left: 14.5%
+	}
+	.search-location{
+		left: 20%
+	}
+	.searching-location{
+		left: 20%
+	}
+}
+
+@media (min-width: 475px) {
+  #searchButton {
+      left: 80%
+  }
+}
+
+@media (min-width:480px){
+	.login-modal {
+		left: 15%
+	}
+	.search-location{
+		left: 20.5%
+	}
+	.searching-location{
+		left: 20.5%
+	}
+}
+
+@media (min-width: 490px) {
+  .listItemRating {
+    left: 79%
+  }
+  .listItemImg {
+    height: 250px;
+  }
+  .login-modal {
+		left: 16%
+	}
+	.search-location{
+		left: 21%
+	}
+	.searching-location{
+		left: 21%
+	}
+}
+
+@media (min-width:500px){
+	.login-modal {
+		left: 16.5%
+	}
+	.search-location{
+		left: 22%
+	}
+	.searching-location{
+		left: 22%
+  }
+  #searchButton {
+    left: 81%     
+  }
+  #mailButton {
+    left: 90%
+  }
+}
+
+@media (min-width: 510px) {
+  .listItemRating {
+    left: 80%
+  }
+  .listItemImg {
+    height: 260px;
+  }
+  .login-modal {
+		left: 17%
+	}
+	.search-location{
+		left: 22.5%
+	}
+	.searching-location{
+		left: 22.5%
+	}
+}
+
+@media (min-width:520px){
+	.login-modal {
+		left: 18%
+	}
+	.search-location{
+		left: 23%
+	}
+	.searching-location{
+		left: 23%
+	}
+}
+
+@media (min-width: 530px) {
+  .listItemRating {
+    left: 81%
+  }
+  .listItemImg {
+    height: 270px;
+  }
+  .login-modal {
+		left: 19%
+	}
+	.search-location{
+		left: 23.5%
+	}
+	.searching-location{
+		left: 23.5%
+	}
+}
+
+@media (min-width:540px){
+	.login-modal {
+		left: 19.5%
+	}
+	.search-location{
+		left: 24%
+	}
+	.searching-location{
+		left: 24%
+	}
+}
+
+@media (min-width:550px){
+	.login-modal {
+		left: 20%
+	}
+	.search-location{
+		left: 25%
+	}
+	.searching-location{
+		left: 25%
+	}
+}
+
+@media (min-width: 560px) {
+  .listItemRating {
+    left: 82%
+  }
+  .listItemImg {
+    height: 280px;
+  }
+  .login-modal {
+		left: 20.5%
+  }
+}
+
+@media (min-width:580px){
+	.login-modal {
+		left: 21.5%
+	}
+}
+
+@media (min-width: 600px) {
+  .listItemRating {
+    left: 83%
+  }
+  .listItemImg {
+    height: 290px;
+  }
+  .login-modal {
+		left: 22.5%
+	}
+}
+
+@media (min-width:620px){
+	.login-modal {
+		left: 23.5%
+	}
+}
+
+@media (min-width: 630px) {
+  .listItemRating {
+    left: 84%
+  }
+  .listItemImg {
+    height: 300px;
+  }
+}
+
+@media (min-width:640px){
+	.login-modal {
+		left: 24.5%
+	}
+}
+
+@media (min-width: 660px) {
+  .listItemRating {
+    left: 85%
+  }
+  .listItemImg {
+    height: 310px;
+  }
+  .login-modal {
+		left: 25.5%
+	}
+}
+
+@media (min-width:680px){
+	.login-modal {
+		left: 26.5%
+	}
+}
+
