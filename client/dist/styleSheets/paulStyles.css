@@ -71,7 +71,7 @@
 .listItemPrice {
   position: relative;
   text-align: right;
-  right: 32px;
+  /* right: 32px; */
   bottom: 98px;
   color: #808080;
   z-index: 100;
