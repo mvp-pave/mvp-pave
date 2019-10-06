@@ -5,6 +5,7 @@ import TopBar from './TopBar.js';
 import Login from './Login.js'
 import CreateAccount from './CreateAccount.js'
 import SuggestedBottom from './SuggestedBottom.js';
+import Recommendations from './Recommendations.js';
 import List from './List.js'
 import UpdateProfile from './UpdateProfile.js'
 
@@ -35,6 +36,7 @@ export default class App extends Component {
     this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
     this.logoutCurrentUser = this.logoutCurrentUser.bind(this);
     this.profileClickHandler = this.profileClickHandler.bind(this);
+    this.changeCategory = this.changeCategory.bind(this);
   }
 
   componentDidMount() {
@@ -55,9 +57,9 @@ export default class App extends Component {
     })
   }
 
-  profileClickHandler(e){
+  profileClickHandler(e) {
     let name = e.target.getAttribute("class");
-    if (this.state.currentUser){
+    if (this.state.currentUser) {
       this.setState({
         page: name
       })
@@ -152,20 +154,20 @@ export default class App extends Component {
               <img className="app-title" src={"../images/brand10.png"}></img>
               {/* <h2 className="app-title">PAVÉ</h2> */}
               <div><FaSistrix size={30} color={'#d9d9d9'} className='search' id="searchButton" onClick={this.clickHandler} /></div>
-              {/* <MdMailOutline size={28} className='mail' id="mailButton" onClick={this.clickHandler} /> */}
+              <MdMailOutline size={30} color={'#d9d9d9'} className='mail' id="mailButton" onClick={this.clickHandler} />
 
               <br></br>
               <TopBar currentUser={this.state.currentUser} clickHandler={this.clickHandler}
                 changeHomeLocation={this.changeHomeLocation} changeCurrentUser={this.changeCurrentUser}
                 homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-                profileIconClick={this.state.profileIconClick} logoutCurrentUser={this.logoutCurrentUser} 
-                returnToHomepage={this.returnToHomepage} profileClickHandler={this.profileClickHandler}/>
+                profileIconClick={this.state.profileIconClick} logoutCurrentUser={this.logoutCurrentUser}
+                returnToHomepage={this.returnToHomepage} profileClickHandler={this.profileClickHandler} />
             </div>
             <p className="border-line-home" ></p>
             <div id="content">
               <SuggestedBottom changeHomeLocation={this.changeHomeLocation}
                 homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-                profileIconClick={this.state.profileIconClick} />
+                profileIconClick={this.state.profileIconClick} changeCategory={this.changeCategory} />
               <List homeLocation={this.state.homeLocation} results={this.state.results} />
             </div>
             {/* update profile which works on click of Top Bar */}
@@ -176,6 +178,8 @@ export default class App extends Component {
         return (<div><Search returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} /></div>);
       case 'login':
         return (<div><Login returnToHomepage={this.returnToHomepage} clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} /></div>);
+      case 'recommendations':
+        return (<div><Recommendations clickHandler={this.clickHandler} returnToHomepage={this.returnToHomepage} /></div>);
       case 'createAccount':
         return (<div><CreateAccount clickHandler={this.clickHandler} changeCurrentUser={this.changeCurrentUser} returnToHomepage={this.returnToHomepage} /></div>);
       case 'profile':

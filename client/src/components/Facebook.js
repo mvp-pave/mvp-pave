@@ -72,9 +72,9 @@ export default class Facebook extends Component {
       .catch((error) => console.log(error))
   }
 
-  // componentClicked() {
-  //   console.log('CLICKED')
-  // }
+  componentClicked() {
+    console.log('CLICKED')
+  }
 
   render() {
     let fbContent;

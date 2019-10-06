@@ -22,7 +22,6 @@ export default class SearchLocation extends Component {
     }
   }
   showPosition(position) {
-    console.log('Lat, Long', position.coords.latitude, position.coords.longitude)
     this.getCityName(position.coords.latitude, position.coords.longitude)
   }
   getCityName(latitude, longitude) {
