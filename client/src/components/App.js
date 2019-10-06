@@ -35,6 +35,7 @@ export default class App extends Component {
     this.handleProfileIconClick = this.handleProfileIconClick.bind(this);
     this.logoutCurrentUser = this.logoutCurrentUser.bind(this);
     this.profileClickHandler = this.profileClickHandler.bind(this);
+    this.changeCategory = this.changeCategory.bind(this);
   }
 
   componentDidMount() {
@@ -79,6 +80,7 @@ export default class App extends Component {
   }
 
   changeCategory(event) {
+    console.log('what is event target name', event.target.name)
     this.setState({ category: event.target.name }, () => this.getRestaurants());
   }
 
@@ -92,6 +94,8 @@ export default class App extends Component {
   }
 
   getRestaurants() {
+    console.log('what is state category', this.state.category)
+    console.log('home location', this.state.homeLocation)
     if (this.state.homeLocation) {
       let key = REACT_APP_YELP_API_KEY()
       this.setState({ loading: true })
@@ -165,7 +169,7 @@ export default class App extends Component {
             <div id="content">
               <SuggestedBottom changeHomeLocation={this.changeHomeLocation}
                 homeLocation={this.state.homeLocation} handleProfileIconClick={this.handleProfileIconClick}
-                profileIconClick={this.state.profileIconClick} />
+                profileIconClick={this.state.profileIconClick} changeCategory={this.changeCategory} />
               <List homeLocation={this.state.homeLocation} results={this.state.results} />
             </div>
             {/* update profile which works on click of Top Bar */}
