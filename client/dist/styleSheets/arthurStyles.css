@@ -259,8 +259,9 @@ p {
 }
 
 .socialInfo {
-  border: 1px solid black;
   display: inline-block;
+  padding-left: 25px;
+  padding-right: 15px;
 }
 
 .prof-followers {
