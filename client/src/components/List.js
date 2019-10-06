@@ -64,7 +64,7 @@ class List extends Component {
     if (this.props.results.length > 0) {
       return (
         <div className="listContainer">
-          <h2 className="list-title">Places to eat around the world</h2>
+          {/* <h2 className="list-title">Places to eat around the world</h2> */}
           <div className="listStores">
             {this.props.results.map((storeInfo, index) => (
               <ListItem className="each-list-item" storeInfo={storeInfo} key={index} id={storeInfo.id} getIdHandleClick={this.getIdHandleClick} />
