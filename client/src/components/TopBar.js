@@ -20,12 +20,12 @@ export default class TopBar extends Component {
   handleBurgerClick() {
     this.setState({
       burgerClick: !this.state.burgerClick
-    }, () => console.log('burgerClick', this.state.burgerClick))
+    })
   }
   handleProfileIconClick() {
     this.setState({
       profileIconClick: !this.state.profileIconClick
-    }, () => console.log('this state profile icon click', this.state.profileIconClick))
+    })
   }
   render() {
     let menu;
