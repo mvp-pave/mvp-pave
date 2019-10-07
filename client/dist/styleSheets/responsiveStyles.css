@@ -525,8 +525,8 @@
     bottom: -10px;
     color: #484848;
   }
-  .update-fullscreen {
-    
+  .app {
+      margin-left: 15px;
   }
 }
 @media (min-width: 1024px) {
