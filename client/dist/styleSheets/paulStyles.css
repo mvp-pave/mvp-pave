@@ -29,6 +29,7 @@
   bottom: -9px;
   color: #484848;
   width: 95%;
+  height: 80px;
 }
 
 .listStores {
@@ -39,13 +40,13 @@
 }
 
 .listItemRating {
-  /* position: absolute; */
+  position: relative;
   /* left: 246px; */
-  left: 71%;
   justify-self: left;
   bottom: 82px;
   font-size: small;
   text-align: right;
+  top: -16px;
 }
 
 .listItemReviews {
@@ -85,6 +86,7 @@
   font-weight: bold;
   z-index: 100;
   font-size: larger;
+  top: -30px;
 }
 
 .each-list-item {
@@ -97,6 +99,7 @@
   z-index: 100;
   font-weight: 100;
   background: transparent;
+  top: -35px;
 }
 
 
