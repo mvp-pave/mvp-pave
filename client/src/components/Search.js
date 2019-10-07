@@ -121,12 +121,12 @@ export default class Search extends Component {
                 <input tabIndex="1" name="query" id="query" value={this.state.query} ref={this.setWrapperRef} onChange={this.handleQueryChange} type="text" placeholder="Greek, Chinese, Thai, Italian..." className="search-loc" ></input>
               </div>
               <div className="search-container">
-                <span id="location-icon-search" ><MdLocationSearching size={20} /></span>
+                <span id="location-icon-search" ><MdLocationSearching size={20} color={'#fff'}  /></span>
                   {/* <label className="search-labels">Near:</label> */}
                   <input tabIndex="1" name="location" id="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleLocationChange} type="text" placeholder="Enter Location" className="search-loc" ></input>
                   <span id="search-button" ><IoIosSearch size={30} onClick={this.getResults} /></span>
                   <div className="search-container-subcontainer">
-                    <span id="use-my-location">Use my location</span>
+                    {/* <span id="use-my-location">Use my location</span> */}
                     {/* <span className="homepage" onClick={this.props.clickHandler} >Cancel</span> */}
                     <span onClick={this.clearFields} id="clear">Clear</span>
                   </div>
