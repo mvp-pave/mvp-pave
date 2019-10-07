@@ -3,676 +3,521 @@
   .listItemImg {
     height: 185px;
   }
-
   .login-modal {
     left: 7%;
   }
-
   .search-location {
     left: 12%;
   }
-
   .searching-location {
     left: 12%;
   }
-
   #searchButton {
     left: 77%;
   }
-
   .location-icon {
     right: -1%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 6%;
   }
 }
-
 @media (min-width: 390px) {
   .listItemImg {
     height: 190px;
-    width: 714px;
   }
-
   .login-modal {
     left: 7.5%;
   }
-
   .search-location {
     left: 13%;
   }
-
   .searching-location {
     left: 13%;
   }
-
   .location-icon {
     right: -2%;
   }
-
   .restContainer {
     left: -1%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 7%;
   }
 }
-
 @media (min-width: 400px) {
   .login-modal {
     left: 8%;
   }
-
   .search-location {
     left: 14%;
   }
-
   .searching-location {
     left: 14%;
   }
-
   .location-icon {
     right: -3%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 8%;
   }
 }
-
 @media (min-width: 410px) {
   .listItemImg {
     height: 200px;
   }
-
   .login-modal {
     left: 8.5%;
   }
-
   .search-location {
     left: 15%;
   }
-
   .searching-location {
     left: 15%;
   }
-
   .location-icon {
     right: -4%;
   }
-
   .restContainer {
     left: -1.5%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 9%;
   }
 }
-
 @media (min-width: 420px) {
   .listItemImg {
     height: 210px;
   }
-
   .login-modal {
     left: 9%;
   }
-
   .search-location {
     left: 16%;
   }
-
   .searching-location {
     left: 16%;
   }
-
   #searchButton {
     left: 78%;
   }
-
   #mailButton {
     left: 88%;
   }
-
   .location-icon {
     right: -5%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 10%;
   }
 }
-
 @media (min-width: 430px) {
   .listItemImg {
     height: 220px;
   }
-
   .login-modal {
     left: 10%;
   }
-
   .search-location {
     left: 17%;
   }
-
   .searching-location {
     left: 17%;
   }
-
   .location-icon {
     right: -6%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 11%;
   }
 }
-
 @media (min-width: 440px) {
   .login-modal {
     left: 11%;
   }
-
   .search-location {
     left: 18%;
   }
-
   .searching-location {
     left: 18%;
   }
-
   .location-icon {
     right: -7%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 12%;
   }
 }
-
 @media (min-width: 450px) {
   .listItemImg {
     height: 230px;
   }
-
   .login-modal {
     left: 12.5%;
   }
-
   .search-location {
     left: 18.5%;
   }
-
   .searching-location {
     left: 18.5%;
   }
-
   #searchButton {
     left: 79%;
   }
-
   #mailButton {
     left: 89%;
   }
-
   .location-icon {
     right: -8%;
   }
-
   .restContainer {
     left: -1%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 13%;
   }
 }
-
 @media (min-width: 460px) {
   .login-modal {
     left: 13.5%;
   }
-
   .search-location {
     left: 19%;
   }
-
   .searching-location {
     left: 19%;
   }
-
   .location-icon {
     right: -9%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 14%;
   }
 }
-
 @media (min-width: 470px) {
   .listItemImg {
     height: 240px;
   }
-
   .login-modal {
     left: 14.5%;
   }
-
   .search-location {
     left: 20%;
   }
-
   .searching-location {
     left: 20%;
   }
-
   .location-icon {
     right: -10%;
   }
-
   #search-button {
     bottom: 40px;
     left: 69%;
-  }
-
+}
   .search-container-subcontainer {
     position: relative;
     top: 40px;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 15%;
   }
 }
-
 @media (min-width: 480px) {
   .login-modal {
     left: 15%;
   }
-
   .search-location {
     left: 20.5%;
   }
-
   .searching-location {
     left: 20.5%;
   }
-
   .location-icon {
     right: -11%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 16%;
   }
-
   /* .suggestions-box {
     bottom: 0px;
   } */
 }
-
 @media (min-width: 490px) {
   .listItemImg {
     height: 250px;
   }
-
   .login-modal {
     left: 16%;
   }
-
   .search-location {
     left: 21%;
   }
-
   .searching-location {
     left: 21%;
   }
-
   .location-icon {
     right: -12%;
   }
-
   .restContainer {
     left: -0.5%;
   }
-
   #search-button {
     left: -17%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 17%;
   }
 }
-
 @media (min-width: 500px) {
   .login-modal {
     left: 16.5%;
   }
-
   .search-location {
     left: 22%;
   }
-
   .searching-location {
     left: 22%;
   }
-
   #search-button {
     left: -16%;
   }
-
   #mailButton {
     left: 90%;
   }
-
   .location-icon {
     right: -13%;
   }
-
-  .allSearch {
+  .allSearch{
     padding-left: 18%;
   }
 }
-
 @media (min-width: 510px) {
   .listItemImg {
     height: 260px;
   }
-
   .login-modal {
     left: 17%;
   }
-
   .search-location {
     left: 22.5%;
   }
-
   .searching-location {
     left: 22.5%;
   }
-
   .location-icon {
     right: -14%;
   }
-
   #search-button {
     left: -15%;
   }
 }
-
 @media (min-width: 520px) {
   .login-modal {
     left: 18%;
   }
-
   .search-location {
     left: 23%;
   }
-
   .searching-location {
     left: 23%;
   }
-
   .location-icon {
     right: -15%;
   }
 }
-
 @media (min-width: 530px) {
   .listItemImg {
     height: 270px;
   }
-
   .login-modal {
     left: 19%;
   }
-
   .search-location {
     left: 23.5%;
   }
-
   .searching-location {
     left: 23.5%;
   }
-
   .location-icon {
     right: -16%;
   }
-
   .restContainer {
     left: 0%;
   }
 }
-
 @media (min-width: 540px) {
   .login-modal {
     left: 19.5%;
   }
-
   .search-location {
     left: 24%;
   }
-
   .searching-location {
     left: 24%;
   }
-
   .location-icon {
     right: -17%;
   }
 }
-
 @media (min-width: 550px) {
   .login-modal {
     left: 20%;
   }
-
   .search-location {
     left: 24.5%;
   }
-
   .searching-location {
     left: 24.5%;
   }
-
   .location-icon {
     right: -18%;
   }
-
   .restContainer {
     left: 0.5%;
   }
 }
-
 @media (min-width: 560px) {
   .listItemImg {
     height: 280px;
   }
-
   .login-modal {
     left: 20.5%;
   }
-
   .search-location {
     left: 25%;
   }
-
   .searching-location {
     left: 25%;
   }
-
   .location-icon {
     right: -18.5%;
   }
 }
-
 @media (min-width: 580px) {
   .login-modal {
     left: 21.5%;
   }
-
   .search-location {
     left: 25.5%;
   }
-
   .searching-location {
     left: 25.5%;
   }
-
   .location-icon {
     right: -19%;
   }
 }
-
 @media (min-width: 600px) {
   .listItemImg {
     height: 290px;
   }
-
   .login-modal {
     left: 22.5%;
   }
-
   .search-location {
     left: 26%;
   }
-
   .searching-location {
     left: 26%;
   }
-
   .location-icon {
     right: -20%;
   }
-
   #search-button {
     left: -14%;
   }
 }
-
 @media (min-width: 620px) {
   .login-modal {
     left: 23.5%;
   }
-
   .search-location {
     left: 26.5%;
   }
-
   .searching-location {
     left: 26.5%;
   }
-
   .location-icon {
     right: -20.5%;
   }
 }
-
 @media (min-width: 630px) {
   .listItemImg {
     height: 300px;
   }
 }
-
 @media (min-width: 640px) {
   .login-modal {
     left: 24.5%;
   }
-
   .search-location {
     left: 27%;
   }
-
   .searching-location {
     left: 27%;
   }
-
   .location-icon {
     right: -21%;
   }
-
   .restContainer {
     left: 1%;
   }
 }
-
 @media (min-width: 660px) {
   .listItemImg {
     height: 310px;
   }
-
   .login-modal {
     left: 27.5%;
   }
-
   .search-location {
     left: 27.5%;
   }
-
   .searching-location {
     left: 27.5%;
   }
-
   .location-icon {
     right: -21.5%;
   }
 }
-
 @media (min-width: 680px) {
   .login-modal {
     left: 26.5%;
   }
-
   .search-location {
     left: 28%;
   }
-
   .searching-location {
     left: 28%;
   }
-
   .location-icon {
     right: -22%;
   }
 }
-
 @media (min-width: 690px) {
   .listItemImg {
     height: 320px;
   }
-
   .location-icon {
     right: -25%;
   }
 }
-
 @media (min-width: 700px) {
   .login-modal {
     left: 23.5%;
   }
-
   .search-location {
     left: 28.5%;
   }
-
   .searching-location {
     left: 28.5%;
   }
-
   .location-icon {
     right: -22.5%;
   }
-
   .restContainer {
     left: 1.5%;
   }
-
   #search-button {
     padding: 14px;
     position: relative;
@@ -680,16 +525,15 @@
     bottom: -10px;
     color: #484848;
   }
-
-  .update-fullscreen {}
+  .update-fullscreen {
+    
+  }
 }
-
 @media (min-width: 1024px) {
   .login-modal {
     left: 29%;
     top: 15%;
   }
-
   .goBack {
     right: 280px;
     bottom: 160px;
