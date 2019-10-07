@@ -279,17 +279,20 @@ p {
 .socialInfo {
   display: inline-block;
   padding-left: 25px;
-  padding-right: 15px;
+  margin-top: 25px;
 }
 
 .prof-followers {
-  display: inline-block
+  display: inline-block;
+  padding-right: 15px;
 }
 
 .prof-following {
-  display: inline-block
+  display: inline-block;
+  padding-right: 15px;
 }
 
 .prof-post {
-  display: inline-block
+  display: inline-block;
+  padding-right: 15px;
 }
