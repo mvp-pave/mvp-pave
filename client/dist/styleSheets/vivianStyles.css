@@ -122,12 +122,6 @@ h2 {
 	bottom: -13px;
 }
 
-.search-location-modal {
-	padding: 0;
-	left: 0px;
-	bottom: 9px;
-}
-
 .search-location-form-container {
 	position: absolute;
 	height: 200px;
@@ -183,6 +177,7 @@ h2 {
 
 .close {
 	margin-left: 91%;
+	z-index: 20;
 }
 
 .login-container {
@@ -207,10 +202,13 @@ h2 {
 .search-location-modal {
 	left: 0px;
 }
+
 .search-input-icon-container {
 	display: flex;
 	flex-grow: 1;
+	padding-top: 20px;
 }
+
 .logging,
 .searching-location {
 	width: 290px;
@@ -221,6 +219,12 @@ h2 {
 	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 	font-size: 17px;
 	color: black;
+}
+
+.search-location-modal {
+	padding: 0;
+	left: 0px;
+	bottom: 34px;
 }
 
 .logging {
@@ -304,6 +308,7 @@ h2 {
 	padding: 20px;
 	position: relative;
 	right: 15px;
+	top: -30px;
 }
 
 /* Signing Up styles */
@@ -541,9 +546,9 @@ h2 {
 	}
 }
 
-* {
+/* * {
 	background-color: rgb(255, 255, 255);
-}
+} */
 
 
 

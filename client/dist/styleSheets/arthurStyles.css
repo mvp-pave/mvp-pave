@@ -84,6 +84,24 @@ p {
   padding-left: 33px;
 }
 
+.signin-menu-list {
+  width: 100%;
+  height: 154px;
+  z-index: 1000;
+  position: relative;
+  background: white;
+  bottom: 15px;
+  padding-left: 33px;
+}
+.signin-user-menu-list {
+  width: 100%;
+  height: 200px;
+  z-index: 1000;
+  position: relative;
+  background: white;
+  bottom: 15px;
+  padding-left: 33px;
+}
 /* searchlocation styles */
 .search-location-input {
   width: 265px;

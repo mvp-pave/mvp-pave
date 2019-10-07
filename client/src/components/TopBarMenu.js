@@ -6,7 +6,7 @@ let TopBarMenu = (props) => {
   if (props.currentUser) {
     return (
       <div className='menu'>
-        <div className='menu-list'>
+        <div className='signin-user-menu-list'>
           <p className="border-line" ></p>
           <p className="dwnOptions" >Find Friends <MdLocationSearching color={'#bfbfbf'} className="dwnIcon" size={20} /></p>
           <p className="dwnOptions">Groups <MdPeople color={'#bfbfbf'} size={20} className="dwnIcon" /> </p>
@@ -19,7 +19,7 @@ let TopBarMenu = (props) => {
   } else {
   return (
     <div className='menu'>
-      <div className='menu-list'>
+      <div className='signin-menu-list'>
         <p className="border-line" ></p>
         <p className="dwnOptions" onClick={props.clickHandler} className='login' >Sign In</p>
         <p className="dwnOptions" onClick={props.clickHandler} className='createAccount' >Sign Up</p>
