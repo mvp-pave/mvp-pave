@@ -125,12 +125,14 @@ export default class Search extends Component {
                   {/* <label className="search-labels">Near:</label> */}
                   <input tabIndex="1" name="location" id="location" value={this.state.location} ref={this.setWrapperRef} onChange={this.handleLocationChange} type="text" placeholder="Enter Location" className="search-loc" ></input>
                   <span id="search-button" ><IoIosSearch size={30} onClick={this.getResults} /></span>
+                  <div className="search-container-subcontainer">
+                    <span id="use-my-location">Use my location</span>
+                    {/* <span className="homepage" onClick={this.props.clickHandler} >Cancel</span> */}
+                    <span onClick={this.clearFields} id="clear">Clear</span>
+                  </div>
               </div>
                 <button type="submit" id="hidden-search-button"></button>
             </form>
-              <span id="use-my-location">Use my location</span>
-              {/* <span className="homepage" onClick={this.props.clickHandler} >Cancel</span> */}
-              <span onClick={this.clearFields} id="clear">Clear</span>
           </div>
 
             <SearchResults destinationClick={this.destinationClick} suggestionClick={this.suggestionClick} query={this.state.query} location={this.state.location} results={this.state.results} suggestionOptions={this.state.suggestionOptions} trending={this.state.trending} />

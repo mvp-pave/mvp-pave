@@ -18,6 +18,9 @@
   .location-icon {
     right: -1%;
   }
+  .allSearch{
+    padding-left: 6%;
+  }
 }
 @media (min-width: 390px) {
   .listItemImg {
@@ -38,6 +41,9 @@
   .restContainer {
     left: -1%;
   }
+  .allSearch{
+    padding-left: 7%;
+  }
 }
 @media (min-width: 400px) {
   .login-modal {
@@ -51,6 +57,9 @@
   }
   .location-icon {
     right: -3%;
+  }
+  .allSearch{
+    padding-left: 8%;
   }
 }
 @media (min-width: 410px) {
@@ -71,6 +80,9 @@
   }
   .restContainer {
     left: -1.5%;
+  }
+  .allSearch{
+    padding-left: 9%;
   }
 }
 @media (min-width: 420px) {
@@ -95,6 +107,9 @@
   .location-icon {
     right: -5%;
   }
+  .allSearch{
+    padding-left: 10%;
+  }
 }
 @media (min-width: 430px) {
   .listItemImg {
@@ -112,6 +127,9 @@
   .location-icon {
     right: -6%;
   }
+  .allSearch{
+    padding-left: 11%;
+  }
 }
 @media (min-width: 440px) {
   .login-modal {
@@ -125,6 +143,9 @@
   }
   .location-icon {
     right: -7%;
+  }
+  .allSearch{
+    padding-left: 12%;
   }
 }
 @media (min-width: 450px) {
@@ -152,6 +173,9 @@
   .restContainer {
     left: -1%;
   }
+  .allSearch{
+    padding-left: 13%;
+  }
 }
 @media (min-width: 460px) {
   .login-modal {
@@ -165,6 +189,9 @@
   }
   .location-icon {
     right: -9%;
+  }
+  .allSearch{
+    padding-left: 14%;
   }
 }
 @media (min-width: 470px) {
@@ -183,10 +210,16 @@
   .location-icon {
     right: -10%;
   }
+  #search-button {
+    bottom: 40px;
+    left: 69%;
 }
-@media (min-width: 475px) {
-  #searchButton {
-    left: 80%;
+  .search-container-subcontainer {
+    position: relative;
+    top: 40px;
+  }
+  .allSearch{
+    padding-left: 15%;
   }
 }
 @media (min-width: 480px) {
@@ -202,6 +235,12 @@
   .location-icon {
     right: -11%;
   }
+  .allSearch{
+    padding-left: 16%;
+  }
+  /* .suggestions-box {
+    bottom: 0px;
+  } */
 }
 @media (min-width: 490px) {
   .listItemImg {
@@ -222,6 +261,12 @@
   .restContainer {
     left: -0.5%;
   }
+  #search-button {
+    left: -17%;
+  }
+  .allSearch{
+    padding-left: 17%;
+  }
 }
 @media (min-width: 500px) {
   .login-modal {
@@ -233,14 +278,17 @@
   .searching-location {
     left: 22%;
   }
-  #searchButton {
-    left: 81%;
+  #search-button {
+    left: -16%;
   }
   #mailButton {
     left: 90%;
   }
   .location-icon {
     right: -13%;
+  }
+  .allSearch{
+    padding-left: 18%;
   }
 }
 @media (min-width: 510px) {
@@ -258,6 +306,9 @@
   }
   .location-icon {
     right: -14%;
+  }
+  #search-button {
+    left: -15%;
   }
 }
 @media (min-width: 520px) {
@@ -371,6 +422,9 @@
   }
   .location-icon {
     right: -20%;
+  }
+  #search-button {
+    left: -14%;
   }
 }
 @media (min-width: 620px) {

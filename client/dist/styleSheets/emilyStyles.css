@@ -45,8 +45,10 @@ html {
 }
 
 .allSearch {
-    padding-left: 20px;
-    padding-top: 20px;
+    /* padding-left: 20px;
+    padding-top: 20px; */
+    padding-left: 5%;
+    padding-top: 5%;
 }
 
 .search-goBack {
@@ -94,6 +96,10 @@ html {
     position: relative;
     bottom: -2px;
     right: -3px;
+}
+
+.search-container-subcontainer {
+    padding-top: 10px;
 }
 
 .search-loc {
