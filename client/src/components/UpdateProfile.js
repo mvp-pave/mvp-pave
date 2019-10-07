@@ -63,12 +63,12 @@ export default class UpdateProfile extends Component {
     this.getUserProfile();
   }
   render() {
-    // let greeting;
-    // if (this.props.currentUser) {
-    //   greeting = `Hello ${this.state.firstName[0].toUpperCase()}${this.state.firstName.slice(1)} ${this.state.lastName[0].toUpperCase()}${this.state.lastName.slice(1)}!`
-    // } else {
-    //   greeting = '';
-    // }
+    let greeting;
+    if (this.props.currentUser && this.state.firstName) {
+      greeting = `Hello ${this.state.firstName[0].toUpperCase()}${this.state.firstName.slice(1)}!`
+    } else {
+      greeting = '';
+    }
     console.log('what is current user', this.props.currentUser)
     console.log('what is bio', this.state.bio)
     return (
@@ -78,28 +78,28 @@ export default class UpdateProfile extends Component {
             <div><IoIosArrowBack className="gooBack" onClick={this.props.returnToHomepage} /></div>
             <div className="update-profile-container">
               <div className="greeting">
-                {/* {greeting} */}
+                {greeting}
               </div>
             </div>
             <div className="update-profile-container">
               <div>
                 {this.state.file ? <img className="profile-picture" src={this.state.file}></img> : <img className="profile-picture" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"></img>}
               </div>
-              <label className="updatePhoto">Update photo:</label>
+              {/* <label className="updatePhoto">Update photo:</label> */}
               <input type="file" onChange={this.handleChange} name="profile_picture" className="profile_picture"></input>
-            <div className="socialInfo">
-              <div className="prof-followers">Followers: 0 </div>
-              <div className="prof-following">Following: 0 </div>
-              <div className="prof-post">Post: 0</div>
-            </div>
-            </div>
-            <div className="update-profile-container">
-              <label>Current Bio:</label><br />
-              <div className="update-text">{this.state.bio}</div>
+              {/* <div className="socialInfo">
+                <span className="profile-detail">0 Posts</span>
+                <span className="profile-detail">0 Followers</span>
+                <span className="profile-detail">0 Following</span>
+              </div> */}
             </div>
             <div className="update-profile-container">
-              <label>Enter Updated Bio:</label><br />
-              <textarea type="text" name="bio" className="bio" id="bio-text"></textarea>
+              <label className="profileH">Cities I've visited</label><br />
+              <div className="add-city">Add more</div>
+            </div>
+            <div className="update-profile-container">
+              <label className="profileH">About Me</label><br />
+              <textarea type="text" name="bio" className="bio" id="bio-text" placeholder={this.state.bio} ></textarea>
             </div>
             <div>
               <button className="updating-profile"><span className="prof-txt">Update Profile</span></button>
