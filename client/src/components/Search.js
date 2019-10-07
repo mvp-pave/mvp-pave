@@ -96,14 +96,14 @@ export default class Search extends Component {
       }
     })
       .then((res) => {
-        console.log(res.data.businesses)
+        // console.log(res.data.businesses)
         //change the state of App to reflect on the result we are given from the API
         //at the same time, setting the loading state to false 
         this.setState({ results: res.data.businesses, location: res.data.businesses[0].location.city })
       })
       .catch((err) => {
         //fire the errorState message if there is no information return from the API
-        console.log(err)
+        // console.log(err)
         // this.setState({ errorState: `Sorry we couldn't find information related to the location you search, do you want to try something else?`, loading: false })
       })
   }

@@ -110,7 +110,7 @@ export default class App extends Component {
           this.setState({ results: res.data.businesses })
         })
         .catch((err) => {
-          console.log('fix the broke', err)
+          // console.log('fix the broke', err)
         })
     }
   }
@@ -133,7 +133,7 @@ export default class App extends Component {
         this.setState({ results: arr })
       })
       .catch((err) => {
-        console.log(err)
+        // console.log(err)
         // this.setState({ errorState: `Sorry we couldn't find information related to the location you search, do you want to try something else?`, loading: false })
       })
   }

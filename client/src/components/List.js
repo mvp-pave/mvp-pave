@@ -44,7 +44,7 @@ getRestaurant(id) {
       // console.log("getRestaurant works", res.data)
     })
     .catch((err) => {
-      console.log("getRestaurant broke", err)
+      // console.log("getRestaurant broke", err)
     })
 }
 

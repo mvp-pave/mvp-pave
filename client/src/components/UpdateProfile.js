@@ -26,7 +26,9 @@ export default class UpdateProfile extends Component {
           lastName: data.lastName,
           profile_picture: data.profile_picture,
           bio: data.bio
-        }, () => console.log('fName lName profPic bio', this.state.firstName, this.state.lastName, this.state.profile_picture, this.state.bio))
+        }
+        // , () => console.log('fName lName profPic bio', this.state.firstName, this.state.lastName, this.state.profile_picture, this.state.bio)
+        )
       })
       .catch((err) => console.log('get user by email failed', err))
   }
@@ -36,14 +38,18 @@ export default class UpdateProfile extends Component {
     axios.put(`/pave/profile/${email}`, {
       profile_picture: this.state.file,
       bio
-    }, () => console.log('current profile pic and bio', this.state.file, this.state.bio))
+    }
+    // , () => console.log('current profile pic and bio', this.state.file, this.state.bio)
+    )
       .then(() => {
         this.getUserProfile();
       })
       .then(() => {
         document.getElementById('bio-text').value = '';
       })
-      .catch((err) => console.log('update Current User Profile failed', err))
+      .catch((err) => {
+        // console.log('update Current User Profile failed', err)
+      })
   }
 
   handleChange(event) {
@@ -54,8 +60,8 @@ export default class UpdateProfile extends Component {
   handleSubmitForm(e) {
     e.preventDefault();
     let newBio = document.getElementById('bio-text').value;
-    console.log('newbio', newBio);
-    console.log('waht is file bio', this.state.profile_picture, this.state.bio)
+    // console.log('newbio', newBio);
+    // console.log('waht is file bio', this.state.profile_picture, this.state.bio)
     this.updateCurrentUserProfile(newBio);
   }
 
@@ -69,10 +75,10 @@ export default class UpdateProfile extends Component {
     } else {
       greeting = '';
     }
-    console.log('what is current user', this.props.currentUser)
-    console.log('what is bio', this.state.bio)
+    // console.log('what is current user', this.props.currentUser)
+    // console.log('what is bio', this.state.bio)
     return (
-      <div className="fullscreen-container">
+      <div className="fullscreen-container" id="update-fullscreen">
         <div className="update-profile-modal">
           <form className="update-profile" onSubmit={this.handleSubmitForm}>
             <div><IoIosArrowBack className="gooBack" onClick={this.props.returnToHomepage} /></div>
