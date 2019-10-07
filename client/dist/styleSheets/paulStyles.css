@@ -5,7 +5,6 @@
     }
   }
 } */
-
 .list-title {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   font-size: 18px;
@@ -20,7 +19,6 @@
   letter-spacing: 1.2px;
   padding-bottom: 2px;
 }
-
 .listInfo {
   position: relative;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
@@ -31,14 +29,12 @@
   width: 95%;
   height: 80px;
 }
-
 .listStores {
   position: relative;
   bottom: 130px;
   margin-left: 5px;
   padding-left: 20px;
 }
-
 .listItemRating {
   position: relative;
   /* left: 246px; */
@@ -48,12 +44,10 @@
   text-align: right;
   top: -16px;
 }
-
 .listItemReviews {
   color: #bfbfbf;
   z-index: 100;
 }
-
 .reccommended {
   font-size: smaller;
   position: relative;
@@ -68,7 +62,6 @@
   z-index: 100;
   background: transparent;
 }
-
 .listItemPrice {
   position: relative;
   text-align: right;
@@ -79,7 +72,6 @@
   background: transparent;
   top:-115px;
 }
-
 .listItemName {
   position: relative;
   bottom: 19px;
@@ -88,11 +80,9 @@
   font-size: larger;
   top: -30px;
 }
-
 .each-list-item {
   position: relative;
 }
-
 .listItemCity {
   position: relative;
   bottom: 20px;
@@ -101,8 +91,6 @@
   background: transparent;
   top: -35px;
 }
-
-
 .listItemImg {
   object-fit: cover;
   width: 96%;
@@ -115,7 +103,6 @@
   position: relative;
   right: 7px;
 }
-
 .restPics {
   top: 21px;
   object-fit: cover;
@@ -125,21 +112,17 @@
   width: 260px;
   margin-right: 15px;
 }
-
 .restContainer {
   padding: 5px;
   margin-bottom: 45px;
   margin-top: -20px;
 }
-
 .locationIconRest {
   padding-right: 15px;
 }
-
 .phoneIconRest {
   padding-right: 15px;
 }
-
 .all-restContainer {
   position: fixed;
   z-index: 100;
@@ -147,7 +130,6 @@
   left: 11px;
   right: 0;
 }
-
 .restContainer {
   height: 400px;
   position: absolute;
@@ -161,14 +143,12 @@
   z-index: 1000;
   bottom: 1017px;
 }
-
 .closing {
   position: relative;
   left: 295px;
   bottom: 10px;
   height: 30px;
 }
-
 .restName {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   line-height: 1.43;
@@ -181,7 +161,6 @@
   font-weight: bold;
   font-size: 22px;
 }
-
 .restAddress {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   font-size: 15px;
@@ -194,7 +173,6 @@
   z-index: 100;
   position: relative;
 }
-
 .restPhone {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   font-size: 14px;
@@ -206,7 +184,6 @@
   position: relative;
   background: transparent;
 }
-
 .restRating {
   position: relative;
   font-size: small;
@@ -215,7 +192,6 @@
   left: 251px;
   background: transparent;
 }
-
 .restPrice {
   font-size: medium;
   position: relative;
@@ -224,16 +200,13 @@
   color: #808080;
   z-index: 100;
   background: transparent;
-
 }
-
 .likedIcon {
   position: absolute;
   left: 296px;
   top: 313px;
   z-index: 1000;
 }
-
 .all-rest-imgs {
   overflow: overlay;
   display: flex;
@@ -241,13 +214,11 @@
   bottom: 41px;
   left: 10px
 }
-
 .restInfo {
   position: relative;
   background: transparent;
   bottom: 161px;
 }
-
 .reccommendFriend {
   font-size: x-small;
   position: relative;
@@ -259,7 +230,6 @@
   z-index: 100;
   background: transparent;
 }
-
 .viewReccommended {
   font-size: smaller;
   position: relative;
@@ -274,7 +244,6 @@
   z-index: 100;
   background: transparent;
 }
-
 .innerRestContainer {
   position: relative;
   background: transparent;

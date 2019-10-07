@@ -4,16 +4,13 @@
   justify-content: center;
   display: flex;
   /* top: 60px; */
-
 }
-
 p {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   font-size: 15px;
   line-height: 1.43;
   color: #484848;
 }
-
 .border-line {
   height: 1px;
   position: relative;
@@ -21,7 +18,6 @@ p {
   right: 33px;
   width: 100%;
 }
-
 .border-line-home {
   height: 1px;
   position: relative;
@@ -32,24 +28,20 @@ p {
   bottom: 69px;
   z-index: 10;
 }
-
 #content {
   width: 100%;
   position: relative;
   top: 50px;
 }
-
 .columns .column {
   width: 40px;
   margin: 0 20px;
   position: relative;
   bottom: 70px;
 }
-
 .login {
   padding-top: 10px;
 }
-
 .bar1,
 .bar2,
 .bar3 {
@@ -59,11 +51,9 @@ p {
   margin: 6px 0;
   margin-top: 7.5px;
 }
-
 .burger {
   padding-top: 7px;
 }
-
 .menu {
   position: fixed;
   bottom: 0;
@@ -73,7 +63,6 @@ p {
   background: rgba(0, 0, 0, 0.2);
   z-index: 100;
 }
-
 .menu-list {
   width: 100%;
   height: 154px;
@@ -83,7 +72,6 @@ p {
   bottom: 33px;
   padding-left: 33px;
 }
-
 .signin-menu-list {
   width: 100%;
   height: 154px;
@@ -116,21 +104,17 @@ p {
   line-height: 1.43;
   color: #484848;
 }
-
-
 /* Update Profile */
 .fullscreen-container {
   position: relative;
   top: 20px;
 }
-
 .update-profile-modal {
   padding: 20px;
   position: relative;
   left: 15px;
   top: 30px;
 }
-
 .firstName,
 .lastName,
 .profile_picture {
@@ -141,23 +125,19 @@ p {
   padding: 11px;
   border-radius: 10px;
 }
-
 #X {
   position: relative;
   right: 6px;
   height: 30px;
 }
-
 * {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
-
 .location-icon {
   right: 5px;
   position: relative;
   top: 25px;
 }
-
 .bio {
   width: 265px;
   height: 70px;
@@ -167,14 +147,12 @@ p {
   border-radius: 10px;
   margin-bottom: 10px;
 }
-
 .update-profile-container {
   padding-bottom: 5px;
   padding-top: 10px;
   position: relative;
   bottom: 120px;
 }
-
 .updating-profile {
   width: 290px;
   height: 40px;
@@ -185,17 +163,14 @@ p {
   bottom: 120px;
   border-radius: 10px;
 }
-
 .prof-txt {
   position: relative;
   bottom: 7px;
 }
-
 .update-title {
   position: relative;
   bottom: 80px;
 }
-
 .profile-picture {
   width: 100px;
   height: 100px;
@@ -204,7 +179,6 @@ p {
   top: -1px;
   border-radius: 150px;
 }
-
 .gooBack {
   position: relative;
   width: 50px;
@@ -212,20 +186,17 @@ p {
   right: 30px;
   bottom: 60px;
 }
-
 @media screen and (min-width:700px) {
   /* .app-title {
     font-size: 50px;
     position: relative;
     right: 300px;
   } */
-
   /* .column,
   .columns {
     top: -110px;
     left: 70px;
   } */
-
   .menu-list {
     display: inline-block;
     position: relative;
@@ -233,7 +204,6 @@ p {
     left: 400px;
     padding-bottom: 40px;
   }
-
   .login,
   .createAccount,
   .setting {
@@ -242,7 +212,6 @@ p {
     font-size: 20px;
   }
 }
-
 @media screen and (min-width:1200px) {
   .fullscreen-container {
     position: fixed;
@@ -253,13 +222,11 @@ p {
     background: rgba(0, 0, 0, 0.2);
     z-index: 100;
   }
-
   .log-in {
     width: 320px;
     padding-left: 50px;
     padding-top: 20px;
   }
-
   .signup-modal {
     background: #fff;
     position: absolute;
@@ -268,30 +235,25 @@ p {
     width: 400px;
     height: 620px;
   }
-
   .goingBack {
     position: relative;
     right: 660px;
     bottom: 130px;
   }
 }
-
 .socialInfo {
   display: inline-block;
   padding-left: 20px;
   margin-top: 25px;
 }
-
 .prof-followers {
   display: inline-block;
   padding-right: 15px;
 }
-
 .prof-following {
   display: inline-block;
   padding-right: 15px;
 }
-
 .prof-post {
   display: inline-block;
   padding-right: 15px;
