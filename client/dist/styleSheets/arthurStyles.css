@@ -186,6 +186,15 @@ p {
   right: 30px;
   bottom: 60px;
 }
+.dwnOptions {
+  display: flex;
+}
+.dwnOptions-loc-icon {
+  padding-left: 5px;
+}
+.dwnOptions-people-icon {
+  padding-left: 5px;
+}
 @media screen and (min-width:700px) {
   /* .app-title {
     font-size: 50px;
@@ -204,13 +213,13 @@ p {
     left: 400px;
     padding-bottom: 40px;
   }
-  .login,
+  /* .login,
   .createAccount,
   .setting {
     position: relative;
     left: 140px;
     font-size: 20px;
-  }
+  } */
 }
 @media screen and (min-width:1200px) {
   .fullscreen-container {

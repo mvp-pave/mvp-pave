@@ -8,8 +8,14 @@ let TopBarMenu = (props) => {
       <div className='menu'>
         <div className='signin-user-menu-list'>
           <p className="border-line" ></p>
-          <p className="dwnOptions" >Find Friends <MdLocationSearching color={'#bfbfbf'} className="dwnIcon" size={20} /></p>
-          <p className="dwnOptions">Groups <MdPeople color={'#bfbfbf'} size={20} className="dwnIcon" /> </p>
+          <p className="dwnOptions" >Find Friends 
+          <div className="dwnOptions-loc-icon">
+            <MdLocationSearching color={'#bfbfbf'} className="dwnIcon" size={20} />
+          </div></p>
+          <p className="dwnOptions">Groups 
+          <div className="dwnOptions-people-icon">
+            <MdPeople color={'#bfbfbf'} size={20} className="dwnIcon" />
+          </div></p>
           <p className="dwnOptions">Events</p>
           <p className="dwnOptions">Settings</p>
         <p className="dwnOptions"onClick={() => location.reload()} >Sign Out</p>
