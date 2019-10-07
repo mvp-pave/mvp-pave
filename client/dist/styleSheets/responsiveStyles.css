@@ -1,19 +1,19 @@
 /* responsive styling*/
-@media (min-width: 380px){
+@media (min-width: 380px) {
   .listItemImg {
     height: 185px;
   }
   .login-modal {
-        left: 7%;
-    }
-    .search-location{
-        left: 12%
-    }
-    .searching-location{
-        left: 12%
+    left: 7%;
+  }
+  .search-location {
+    left: 12%;
+  }
+  .searching-location {
+    left: 12%;
   }
   #searchButton {
-    left: 77%
+    left: 77%;
   }
   .location-icon {
     right: -1%;
@@ -24,27 +24,30 @@
     height: 190px;
   }
   .login-modal {
-        left: 7.5%
-    }
-    .search-location{
-        left: 13%
-    }
-    .searching-location{
-        left: 13%
+    left: 7.5%;
+  }
+  .search-location {
+    left: 13%;
+  }
+  .searching-location {
+    left: 13%;
   }
   .location-icon {
     right: -2%;
-  } 
+  }
+  .restContainer {
+    left: -1%;
+  }
 }
-@media (min-width:400px){
-    .login-modal {
-        left: 8%
-    }
-    .search-location{
-        left: 14%
-    }
-    .searching-location{
-        left: 14%
+@media (min-width: 400px) {
+  .login-modal {
+    left: 8%;
+  }
+  .search-location {
+    left: 14%;
+  }
+  .searching-location {
+    left: 14%;
   }
   .location-icon {
     right: -3%;
@@ -55,16 +58,19 @@
     height: 200px;
   }
   .login-modal {
-        left: 8.5%
-    }
-    .search-location{
-        left: 15%
-    }
-    .searching-location{
-        left: 15%
+    left: 8.5%;
+  }
+  .search-location {
+    left: 15%;
+  }
+  .searching-location {
+    left: 15%;
   }
   .location-icon {
     right: -4%;
+  }
+  .restContainer {
+    left: -1.5%;
   }
 }
 @media (min-width: 420px) {
@@ -72,19 +78,19 @@
     height: 210px;
   }
   .login-modal {
-        left: 9%
-    }
-    .search-location{
-        left: 16%
-    }
-    .searching-location{
-        left: 16%
+    left: 9%;
+  }
+  .search-location {
+    left: 16%;
+  }
+  .searching-location {
+    left: 16%;
   }
   #searchButton {
-    left: 78%
+    left: 78%;
   }
   #mailButton {
-    left: 88%
+    left: 88%;
   }
   .location-icon {
     right: -5%;
@@ -95,27 +101,27 @@
     height: 220px;
   }
   .login-modal {
-        left: 10%
-    }
-    .search-location{
-        left: 17%
-    }
-    .searching-location{
-        left: 17%
+    left: 10%;
+  }
+  .search-location {
+    left: 17%;
+  }
+  .searching-location {
+    left: 17%;
   }
   .location-icon {
     right: -6%;
   }
 }
-@media (min-width:440px){
-    .login-modal {
-        left: 11%
-    }
-    .search-location{
-        left: 18%
-    }
-    .searching-location{
-        left: 18%
+@media (min-width: 440px) {
+  .login-modal {
+    left: 11%;
+  }
+  .search-location {
+    left: 18%;
+  }
+  .searching-location {
+    left: 18%;
   }
   .location-icon {
     right: -7%;
@@ -126,33 +132,36 @@
     height: 230px;
   }
   .login-modal {
-        left: 12.5%
-    }
-    .search-location{
-        left: 18.5%
-    }
-    .searching-location{
-        left: 18.5%
+    left: 12.5%;
+  }
+  .search-location {
+    left: 18.5%;
+  }
+  .searching-location {
+    left: 18.5%;
   }
   #searchButton {
-    left: 79% 
+    left: 79%;
   }
   #mailButton {
-    left: 89%
+    left: 89%;
   }
   .location-icon {
     right: -8%;
   }
+  .restContainer {
+    left: -1%;
+  }
 }
-@media (min-width:460px){
-    .login-modal {
-        left: 13.5%
-    }
-    .search-location{
-        left: 19%
-    }
-    .searching-location{
-        left: 19%
+@media (min-width: 460px) {
+  .login-modal {
+    left: 13.5%;
+  }
+  .search-location {
+    left: 19%;
+  }
+  .searching-location {
+    left: 19%;
   }
   .location-icon {
     right: -9%;
@@ -163,13 +172,13 @@
     height: 240px;
   }
   .login-modal {
-        left: 14.5%
-    }
-    .search-location{
-        left: 20%
-    }
-    .searching-location{
-        left: 20%
+    left: 14.5%;
+  }
+  .search-location {
+    left: 20%;
+  }
+  .searching-location {
+    left: 20%;
   }
   .location-icon {
     right: -10%;
@@ -177,18 +186,18 @@
 }
 @media (min-width: 475px) {
   #searchButton {
-      left: 80%
+    left: 80%;
   }
 }
-@media (min-width:480px){
-    .login-modal {
-        left: 15%
-    }
-    .search-location{
-        left: 20.5%
-    }
-    .searching-location{
-        left: 20.5%
+@media (min-width: 480px) {
+  .login-modal {
+    left: 15%;
+  }
+  .search-location {
+    left: 20.5%;
+  }
+  .searching-location {
+    left: 20.5%;
   }
   .location-icon {
     right: -11%;
@@ -199,33 +208,36 @@
     height: 250px;
   }
   .login-modal {
-        left: 16%
-    }
-    .search-location{
-        left: 21%
-    }
-    .searching-location{
-        left: 21%
+    left: 16%;
+  }
+  .search-location {
+    left: 21%;
+  }
+  .searching-location {
+    left: 21%;
   }
   .location-icon {
     right: -12%;
   }
+  .restContainer {
+    left: -0.5%;
+  }
 }
-@media (min-width:500px){
-    .login-modal {
-        left: 16.5%
-    }
-    .search-location{
-        left: 22%
-    }
-    .searching-location{
-        left: 22%
+@media (min-width: 500px) {
+  .login-modal {
+    left: 16.5%;
+  }
+  .search-location {
+    left: 22%;
+  }
+  .searching-location {
+    left: 22%;
   }
   #searchButton {
-    left: 81%     
+    left: 81%;
   }
   #mailButton {
-    left: 90%
+    left: 90%;
   }
   .location-icon {
     right: -13%;
@@ -236,27 +248,27 @@
     height: 260px;
   }
   .login-modal {
-        left: 17%
-    }
-    .search-location{
-        left: 22.5%
-    }
-    .searching-location{
-        left: 22.5%
+    left: 17%;
+  }
+  .search-location {
+    left: 22.5%;
+  }
+  .searching-location {
+    left: 22.5%;
   }
   .location-icon {
     right: -14%;
   }
 }
-@media (min-width:520px){
-    .login-modal {
-        left: 18%
-    }
-    .search-location{
-        left: 23%
-    }
-    .searching-location{
-        left: 23%
+@media (min-width: 520px) {
+  .login-modal {
+    left: 18%;
+  }
+  .search-location {
+    left: 23%;
+  }
+  .searching-location {
+    left: 23%;
   }
   .location-icon {
     right: -15%;
@@ -267,44 +279,50 @@
     height: 270px;
   }
   .login-modal {
-        left: 19%
-    }
-    .search-location{
-        left: 23.5%
-    }
-    .searching-location{
-        left: 23.5%
+    left: 19%;
+  }
+  .search-location {
+    left: 23.5%;
+  }
+  .searching-location {
+    left: 23.5%;
   }
   .location-icon {
     right: -16%;
   }
+  .restContainer {
+    left: 0%;
+  }
 }
-@media (min-width:540px){
-    .login-modal {
-        left: 19.5%
-    }
-    .search-location{
-        left: 24%
-    }
-    .searching-location{
-        left: 24%
+@media (min-width: 540px) {
+  .login-modal {
+    left: 19.5%;
+  }
+  .search-location {
+    left: 24%;
+  }
+  .searching-location {
+    left: 24%;
   }
   .location-icon {
     right: -17%;
   }
 }
-@media (min-width:550px){
-    .login-modal {
-        left: 20%
-    }
-    .search-location{
-        left: 24.5%
-    }
-    .searching-location{
-        left: 24.5%
+@media (min-width: 550px) {
+  .login-modal {
+    left: 20%;
+  }
+  .search-location {
+    left: 24.5%;
+  }
+  .searching-location {
+    left: 24.5%;
   }
   .location-icon {
     right: -18%;
+  }
+  .restContainer {
+    left: 0.5%;
   }
 }
 @media (min-width: 560px) {
@@ -312,137 +330,143 @@
     height: 280px;
   }
   .login-modal {
-        left: 20.5%
+    left: 20.5%;
   }
-  .search-location{
-        left: 25%
-    }
-    .searching-location{
-        left: 25%
+  .search-location {
+    left: 25%;
+  }
+  .searching-location {
+    left: 25%;
   }
   .location-icon {
     right: -18.5%;
   }
 }
-@media (min-width:580px){
-    .login-modal {
-        left: 21.5%
+@media (min-width: 580px) {
+  .login-modal {
+    left: 21.5%;
   }
-  .search-location{
-        left: 25.5%
-    }
-    .searching-location{
-        left: 25.5%
+  .search-location {
+    left: 25.5%;
+  }
+  .searching-location {
+    left: 25.5%;
   }
   .location-icon {
     right: -19%;
-  }  
+  }
 }
 @media (min-width: 600px) {
   .listItemImg {
     height: 290px;
   }
   .login-modal {
-        left: 22.5%
+    left: 22.5%;
   }
-  .search-location{
-        left: 26%
-    }
-    .searching-location{
-        left: 26%
-  }  
+  .search-location {
+    left: 26%;
+  }
+  .searching-location {
+    left: 26%;
+  }
   .location-icon {
     right: -20%;
-  }  
-}
-@media (min-width:620px){
-    .login-modal {
-        left: 23.5%
   }
-  .search-location{
-        left: 26.5%
-    }
-    .searching-location{
-        left: 26.5%
-  } 
+}
+@media (min-width: 620px) {
+  .login-modal {
+    left: 23.5%;
+  }
+  .search-location {
+    left: 26.5%;
+  }
+  .searching-location {
+    left: 26.5%;
+  }
   .location-icon {
     right: -20.5%;
-  }   
+  }
 }
 @media (min-width: 630px) {
   .listItemImg {
     height: 300px;
   }
 }
-@media (min-width:640px){
-    .login-modal {
-        left: 24.5%
+@media (min-width: 640px) {
+  .login-modal {
+    left: 24.5%;
   }
-  .search-location{
-        left: 27%
-    }
-    .searching-location{
-        left: 27%
-  } 
+  .search-location {
+    left: 27%;
+  }
+  .searching-location {
+    left: 27%;
+  }
   .location-icon {
     right: -21%;
-  }  
+  }
+  .restContainer {
+    left: 1%;
+  }
 }
 @media (min-width: 660px) {
   .listItemImg {
     height: 310px;
   }
   .login-modal {
-        left: 27.5%
+    left: 27.5%;
   }
-  .search-location{
-        left: 27.5%
-    }
-    .searching-location{
-        left: 27.5%
-  } 
+  .search-location {
+    left: 27.5%;
+  }
+  .searching-location {
+    left: 27.5%;
+  }
   .location-icon {
     right: -21.5%;
-  }  
-}
-@media (min-width:680px){
-    .login-modal {
-        left: 26.5%
   }
-  .search-location{
-        left: 28%
-    }
-    .searching-location{
-        left: 28%
-  }  
+}
+@media (min-width: 680px) {
+  .login-modal {
+    left: 26.5%;
+  }
+  .search-location {
+    left: 28%;
+  }
+  .searching-location {
+    left: 28%;
+  }
   .location-icon {
     right: -22%;
-  } 
+  }
 }
-@media (min-width:690px){
+@media (min-width: 690px) {
   .listItemImg {
     height: 320px;
   }
   .location-icon {
     right: -25%;
-  }  
-}
-@media (min-width:700px){
-    .login-modal {
-        left: 23.5%
   }
-  .search-location{
-        left: 28.5%
-    }
-    .searching-location{
-        left: 28.5%
-  } 
+}
+@media (min-width: 700px) {
+  .login-modal {
+    left: 23.5%;
+  }
+  .search-location {
+    left: 28.5%;
+  }
+  .searching-location {
+    left: 28.5%;
+  }
   .location-icon {
     right: -22.5%;
-  } 
+  }
+  .restContainer {
+    left: 1.5%;
+  }
 }
-@media (min-width:1024px){
-    .login-modal {
+@media (min-width: 1024px) {
+  .login-modal {
     left: 29%;
     top: 15%;
   }
@@ -451,7 +475,6 @@
     bottom: 160px;
   }
 }
-
 
 /* for the search */
 
