@@ -19,7 +19,7 @@ export default class Facebook extends Component {
   }
 
   responseFacebook(response) {
-    console.log(response);
+    // console.log(response);
     event.preventDefault();
     let newName = response.name.split(' ');
     this.setState({
@@ -29,7 +29,7 @@ export default class Facebook extends Component {
       lastName: newName[1],
       email: response.email
     }, () => {
-      console.log("FACEBOOK", this.state)
+      // console.log("FACEBOOK", this.state)
       this.getUsers()
     })
   }
@@ -53,7 +53,9 @@ export default class Facebook extends Component {
           this.postUsers()
         }
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        // console.log(error)
+      })
   }
 
   postUser() {
@@ -69,11 +71,13 @@ export default class Facebook extends Component {
         this.props.changeCurrentUser(this.state.email);
         this.props.returnToHomepage();
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        // console.log(error)
+      })
   }
 
   componentClicked() {
-    console.log('CLICKED')
+    // console.log('CLICKED')
   }
 
   render() {

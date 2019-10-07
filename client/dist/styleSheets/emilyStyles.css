@@ -282,15 +282,17 @@ html {
         line-height: 1.43;
         color: #484848;
         padding-left: 30px;
-        width: 700px;
+        /* width: 700px; */
+        width: 70%;
     }
     
-    #search-button {
+    /* #search-button {
         padding: 14px;
-        position: absolute;
+        position: relative;
         right: 10px;
+        left: -20%;
         color: #484848;
-    }
+    } */
     #clear {
         font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
         font-size: 14px;

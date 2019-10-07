@@ -19,7 +19,9 @@ export default class Login extends Component {
 
   handleChange(event) {
     let { name, value } = event.target;
-    this.setState({ [name]: value }, () => console.log('EMAIL:', this.state.email))
+    this.setState({ [name]: value }
+      // , () => console.log('EMAIL:', this.state.email)
+      )
   }
 
   getAll(event) {
@@ -45,7 +47,9 @@ export default class Login extends Component {
           this.setState({ emailError: true })
         }
       })
-      .catch((error) => console.log(error))
+      .catch((error) => { 
+      // {console.log(error)
+      })
   }
 
 

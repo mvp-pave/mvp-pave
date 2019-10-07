@@ -25,8 +25,12 @@ export default class App extends Component {
   getAll() {
     axios
       .get('/pave/user')
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(error))
+      .then((response) => {
+        // console.log(response.data)
+      })
+      .catch((error) => {
+        // console.log(error)
+      })
   }
 
   handleChange(event) {
@@ -42,8 +46,12 @@ export default class App extends Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName
       })
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error))
+      .then((response) => {
+        // console.log(response)
+      })
+      .catch((error) => {
+        // console.log(error)
+      })
   }
 
   render() {

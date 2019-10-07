@@ -29,7 +29,9 @@ export default class SearchLocation extends Component {
       .get(`${'https://cors-anywhere.herokuapp.com/'}https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&sensor=true&key=${gmapKey}`)
       .then(({ data }) => this.props.changeHomeLocation(data.results[0].address_components[3].long_name))
       .then(() => this.props.handleProfileIconClick())
-      .catch((err) => console.log('axios get to gmaps failed', err))
+      .catch((err) => {
+        // console.log('axios get to gmaps failed', err)
+      })
   }
   submitSearchLocation(e) {
     e.preventDefault();

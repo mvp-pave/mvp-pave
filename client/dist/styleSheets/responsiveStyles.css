@@ -518,6 +518,16 @@
   .restContainer {
     left: 1.5%;
   }
+  #search-button {
+    padding: 14px;
+    position: relative;
+    left: -11%;
+    bottom: -10px;
+    color: #484848;
+  }
+  .update-fullscreen {
+    
+  }
 }
 @media (min-width: 1024px) {
   .login-modal {
