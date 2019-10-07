@@ -451,3 +451,16 @@
     bottom: 160px;
   }
 }
+
+
+/* for the search */
+
+/* @media (min-width:428px){
+  .search-container {
+    padding-bottom: 10px;
+    position: relative;
+    bottom: -2px;
+    right: -3px;
+  }
+}
+ */

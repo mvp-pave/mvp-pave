@@ -142,6 +142,7 @@
   border-radius: 10px;
   z-index: 1000;
   bottom: 1017px;
+  background-color: white;
 }
 .closing {
   position: relative;
