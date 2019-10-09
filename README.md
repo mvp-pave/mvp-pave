@@ -13,8 +13,7 @@
 
 ## Demo
 
-![Pavé Video](./readme_video.png)
-(https://www.youtube.com/watch?v=y_v-QENqzMs&t=0m1s "Pavé Video")
+[![Pavé Demo Video](./readme_video.png)](https://www.youtube.com/watch?v=y_v-QENqzMs&t=0m1s)
 
 ## Setup
 Create yelpconfig.js and gmapconfig.js files in the root directory to hold yelp and google maps geocoding API keys
