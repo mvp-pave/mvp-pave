@@ -31,6 +31,7 @@ gmapconfig.js file format:
     module.exports = gmapKey;
 
 To run this project, install it locally using npm:
+
     $ npm install
     $ npm run build
     $ npm start
