@@ -13,7 +13,7 @@
 
 ## Demo
 
-[![Pavé Video](./readme_video.png)]
+![Pavé Video](./readme_video.png)
 (https://www.youtube.com/watch?v=y_v-QENqzMs&t=0m1s "Pavé Video")
 
 ## Setup
